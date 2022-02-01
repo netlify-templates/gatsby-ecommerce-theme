@@ -37,5 +37,22 @@ module.exports = (plop) => {
         },
       ],
     });
+    plop.setGenerator('icon', {
+      description: 'Adds an icon',
+      prompts: [
+        {
+          type: 'input',
+          name: 'name',
+          message: 'What is your icon name?',
+        },
+      ],
+      actions: [
+        {
+          type: 'add',
+          path: './../components/Icons/{{pascalCase name}}.js',
+          templateFile: 'base.icon.hbs',
+        },
+      ],
+    });
   };
   
