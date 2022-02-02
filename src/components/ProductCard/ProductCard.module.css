@@ -1,3 +1,28 @@
 .root {
+    cursor: pointer;
+}
 
+.root img {
+    display: block;
+    width: 440px;
+    height: 580px;
+    object-fit: cover;
+    border-radius: 1px;
+}
+
+/* to be implemented global colors */
+.salePrice {
+    color: var(--sale);
+}
+
+.originalPrice {
+    text-decoration: line-through;
+}
+
+.meta {
+
+}
+
+.prices {
+    
 }

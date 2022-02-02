@@ -1,0 +1,81 @@
+.root {
+    position: fixed;
+    width: 100%;
+    background-color: var(--standard-white);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    z-index: 50;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 48px 0px 48px 0px;
+    margin: 0 auto;
+}
+
+.headerMessageContainer {
+    background-color: var(--bg-grey);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.root .linkContainers {
+    display: flex;
+}
+
+.root .navLink {
+    margin-right: 40px;
+    text-transform: uppercase;
+    color: var(--standard-black);
+    font-weight: 500;
+    padding-bottom: 48px;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+    width: 100%;
+}
+
+.root .navLink:hover {
+    border-bottom: 2px solid var(--standard-black);
+}
+
+.brandContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.brandContainer h4 {
+    font-family: var(--brand-font);
+}
+
+.actionContainers {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.actionContainers > svg {
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+.actionContainers > svg:first-child {
+    margin-right: 0px;
+}
+
+.menuContainer {
+    position: absolute;
+    background-color: var(--standard-white);
+    width: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 2px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}

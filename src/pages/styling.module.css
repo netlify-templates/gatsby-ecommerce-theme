@@ -1,0 +1,34 @@
+.root {
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-end;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.grid4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-end;
+    margin-top: 16px;
+    gap: 16px;
+}
+
+.brand {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.text {
+    color: var(--standard-white);
+    display: block;
+}

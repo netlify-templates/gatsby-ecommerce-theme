@@ -1,0 +1,60 @@
+.formField {
+    position: relative;
+    /* background-color: var(--standard-white); */
+}
+
+.label {
+    font-size: 14px;
+    line-height: 1.785;
+    color: var(--standard-black);
+    font-family: var(--standard-font);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .textarea {
+    min-height: 150px;
+  }
+  
+  .input {
+    /* height: 18px; */
+    font-family: var(--standard-font);
+    letter-spacing: 0.4px;
+  }
+  
+  .formField input::placeholder {
+    color: var(--grey-placeholder);
+    font-size: 14px;
+  }
+  
+  .input.fieldRequired {
+    border: 1px solid var(--filter-red) !important;
+  }
+  
+  .textarea.fieldRequired {
+    border: 1px solid var(--filter-red) !important;
+  }
+  
+  .note {
+    font-size: 0.75rem;
+    color: var(--grey-close-icon);
+  }
+
+  .iconContainer {
+      position: absolute;
+      top: 50%;
+      transform: translate(0%, -50%);
+      right: 18px;
+      font-size: 24px;
+  }
+
+  .conditionalIconPadding {
+      padding-right: 38px !important;
+  }
+  
+  @media screen and (max-width: 550px) {
+    .formField {
+      margin-bottom: 15px;
+    }
+  }
+  

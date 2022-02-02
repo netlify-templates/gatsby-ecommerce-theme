@@ -1,5 +1,5 @@
 # ProductCard Component
-component that describes the product
+Card component that describes the product
 
 ## Options
 No options available for this component
