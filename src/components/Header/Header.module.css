@@ -6,7 +6,7 @@
     z-index: 50;
 }
 
-.content {
+.header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -26,7 +26,7 @@
     display: flex;
 }
 
-.root .navLink {
+.navLink {
     margin-right: 40px;
     text-transform: uppercase;
     color: var(--standard-black);
@@ -37,13 +37,18 @@
     width: 100%;
 }
 
-.root .navLink:hover {
+/* .root .navLink:hover {
+    border-bottom: 2px solid var(--standard-black);
+} */
+
+.activeLink {
     border-bottom: 2px solid var(--standard-black);
 }
 
 .brandContainer {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .brandContainer h4 {
@@ -55,13 +60,20 @@
     flex-direction: row-reverse;
 }
 
-.actionContainers > svg {
+.actionContainers > div {
     margin-right: 32px;
     cursor: pointer;
 }
 
-.actionContainers > svg:first-child {
+.actionContainers svg:first-child {
     margin-right: 0px;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .menuContainer {
@@ -76,6 +88,66 @@
 }
 
 .show {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-height: 500px !important;
+}
+
+.hide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    max-height: 0px !important;
+}
+
+.searchContainer {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 51;
+}
+
+.searchForm {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.searchForm input{
+    width: 95% !important;
+    border-bottom: 1px solid var(--standard-black) !important;
+}
+
+.suggestionContianer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.suggestion {
+    padding: 14px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--standard-black);
+    border: 1px solid var(--bg-light-gray);
+    text-transform: capitalize;
+    transition: all ;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    transition: all 0.3s ease-in-out;
+    color: var(--standard-white);
+    background-color: var(--standard-gold);
+    border: 1px solid transparent;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: -1;
 }

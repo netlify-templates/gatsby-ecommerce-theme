@@ -54,5 +54,27 @@ module.exports = (plop) => {
         },
       ],
     });
+    plop.setGenerator('page', {
+      description: 'Create a page',
+      prompts: [
+        {
+          type: 'input',
+          name: 'name',
+          message: 'What is your page name?',
+        },
+      ],
+      actions: [
+        {
+          type: 'add',
+          path: './../pages/{{camelCase name}}.js',
+          templateFile: 'base.page.hbs',
+        },
+        {
+          type: 'add',
+          path: './../pages/{{camelCase name}}.module.css',
+          templateFile: 'base.module.css.hbs',
+        },
+      ],
+    });
   };
   

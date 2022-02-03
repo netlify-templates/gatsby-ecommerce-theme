@@ -1,32 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import React, { useState, useEffect, useRef, createRef } from 'react';
+import { Link, navigate } from 'gatsby';
 
 import Icon from '../Icons/Icon';
 import Container from '../Container';
 import HeaderData from './header.json';
 import ExpandedMenu from '../ExpandedMenu';
+import FormInputField from '../FormInputField/FormInputField';
 import * as styles from './Header.module.css';
 
 const Header = (prop) => {
   
   const [showMenu, setShowMenu] = useState(true);
   const [menu, setMenu] = useState();
-  const bannerMessage = 'Free shipping worldwide';
+  const [activeMenu, setActiveMenu] = useState();
 
-  // hide menu onscroll
-  useEffect(() => {
-      const onScroll = () => setShowMenu(false);
-      window.removeEventListener('scroll', onScroll);
-      window.addEventListener('scroll', onScroll, { passive: true });
-      return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  const [showSearch, setShowSearch] = useState(false);
+  const [search, setSearch] = useState('');
+  
+  const searchRef = createRef();
+  const bannerMessage = 'Free shipping worldwide';
+  const searchSuggestions = ['Oversize sweaters', 'Lama Pajamas', 'Candles Cinnamon'];
 
   const handleHover = (navObject) => {
     if(navObject.category) {
       setShowMenu(true);
       setMenu(navObject.category);
+      setShowSearch(false);
+    } else {
+      setMenu(undefined);
     }
+    setActiveMenu(navObject.menuLabel);
   }
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${search}`);
+    setShowSearch(false);
+  }
+
+  // disable active menu when show menu is hidden
+  useEffect(() => {
+    if(showMenu === false) setActiveMenu(false);
+  }, [showMenu])
+
+  // hide menu onscroll
+  useEffect(() => {
+    const onScroll = () => {
+      setShowMenu(false);
+      setShowSearch(false);
+      setActiveMenu(undefined);
+    }
+    window.removeEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  //listen for show search and delay trigger of focus due to CSS visiblity property
+  useEffect(() => {
+    if(showSearch === true){
+      setTimeout(() => {
+        searchRef.current.focus();
+      }, 250)
+    }
+  },[showSearch])
 
   return (
     <div className={styles.root} >
@@ -34,28 +70,60 @@ const Header = (prop) => {
         <span>{bannerMessage}</span>
       </div>
       <Container size={'large'} spacing={'min'}>
-        <div className={styles.content}>
-          <div className={styles.linkContainers}>
-            <nav>
-              {HeaderData.map((navObject) => 
-                <Link
-                  key={navObject.menuLink}
-                  onMouseLeave={() => setShowMenu(false)} onMouseEnter={() => handleHover(navObject)} 
-                  className={styles.navLink} to={navObject.menuLink}>
-                  {navObject.menuLabel}
-                </Link>)}
-            </nav>
+          <div className={styles.header}>
+            <div className={styles.linkContainers}>
+              <nav onMouseLeave={() => {setShowMenu(false)}}>
+                {HeaderData.map((navObject) => 
+                  <Link
+                    key={navObject.menuLink}
+                    onMouseEnter={() => handleHover(navObject)}
+                    className={`${styles.navLink} ${activeMenu === navObject.menuLabel ? styles.activeLink : ''}`} 
+                    to={navObject.menuLink}>
+                    {navObject.menuLabel}
+                  </Link>)}
+              </nav>
+            </div>
+            <div className={styles.brandContainer} role={'presentation'} onClick={() => navigate('/')}>
+              <h4>GENEVA</h4>
+            </div>
+            <div className={styles.actionContainers}>
+              <div className={styles.iconContainer} onClick={()=> {
+                searchRef.current.focus();
+              }}><Icon symbol={'bag'}></Icon></div>
+              <div className={styles.iconContainer}><Icon symbol={'user'}></Icon></div>
+              <div className={styles.iconContainer}><Icon symbol={'heart'}></Icon></div>
+              <div className={styles.iconContainer} role={'presentation'} onClick={() => {
+                  setShowSearch(!showSearch);
+                }}>
+                <Icon symbol={'search'}></Icon>
+              </div>
+            </div>
           </div>
-          <div className={styles.brandContainer}>
-            <h4>GENEVA</h4>
+          {/* search container */}
+          <div className={`${styles.searchContainer} ${showSearch === true ? styles.show : styles.hide}`}>
+            <h4>What are you looking for?</h4>
+            <form className={styles.searchForm} onSubmit={(e) => handleSearch(e)}>
+              <FormInputField
+                ref={searchRef}
+                icon={'arrow'}
+                id={'searchInput'}
+                value={search}
+                placeholder={''}
+                type={'text'}
+                handleChange={(_, e) => setSearch(e)}
+              />
+              </form>
+              <div className={styles.suggestionContianer}>
+                {searchSuggestions.map((suggestion) => 
+                  <p className={styles.suggestion}>
+                    {suggestion}
+                  </p>)}
+              </div>
+              <div onClick={(e)=> {
+                e.stopPropagation();
+                setShowSearch(false);
+                }} className={styles.backdrop}></div>
           </div>
-          <div className={styles.actionContainers}>
-            <Icon symbol={'bag'}></Icon>
-            <Icon symbol={'user'}></Icon>
-            <Icon symbol={'heart'}></Icon>
-            <Icon symbol={'search'}></Icon>
-          </div>
-        </div>
         </Container>
         <div
           role={'presentation'}

@@ -10,8 +10,8 @@ const ProductCard = (props) => {
   return (
     <div className={styles.root}>
       <img src={image} alt={imageAlt}></img>
-      <div>
-        <span>{name}</span>
+      <div className={styles.detailsContainer}>
+        <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>
           <span className={`${originalPrice !== undefined ? styles.salePrice: ''}`}>
             <CurrencyFormatter amount={price}></CurrencyFormatter>

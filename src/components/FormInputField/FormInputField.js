@@ -3,8 +3,8 @@ import React from 'react';
 import Icon from '../Icons/Icon';
 import * as styles from './FormInputField.module.css';
 
-const FormInputField = ({
-  id,
+const FormInputField = React.forwardRef((props, ref) => {
+  const { id,
   type = 'text',
   labelName,
   value,
@@ -16,8 +16,8 @@ const FormInputField = ({
   disabled,
   note,
   error,
-  icon,
-}) => {
+  icon } = props;
+
   return (
     <div className={`formField ${styles.formField}`}>
       {labelName !== undefined && 
@@ -35,6 +35,7 @@ const FormInputField = ({
           className={`${styles.input} ${ icon ? styles.conditionalIconPadding : ''} ${error && error ? styles.fieldRequired : ''}`}
           onChange={e => handleChange(id, e.target.value)}
           disabled={disabled}
+          ref={ref}
         />
       )}
       {(type === 'number') && (
@@ -102,6 +103,6 @@ const FormInputField = ({
       )}
     </div>
   );
-};
+});
 
 export default FormInputField;

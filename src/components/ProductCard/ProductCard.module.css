@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.detailsContainer {
+    margin-top: 16px;
+}
+
 .root img {
     display: block;
     width: 440px;
@@ -10,19 +14,39 @@
     border-radius: 1px;
 }
 
-/* to be implemented global colors */
+.productName {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--standard-black);
+}
+
+.prices {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.prices span {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
 .salePrice {
     color: var(--sale);
 }
 
 .originalPrice {
     text-decoration: line-through;
+    color: var(--grey-placeholder);
 }
 
 .meta {
-
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--grey-placeholder);
 }
 
-.prices {
-    
+.prices > span:first-child {
+    margin-right: 16px;
 }
