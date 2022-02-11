@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Classic T-Shirt",
+        "price": 75,
+        "alt": "classic t-shirt 1",
+        "image": "/static/products/shirt1.jpg",
+        "tags": ["shirt", "men"]
+    },
+    {
+        "name": "Classic T-Shirt",
+        "price": 75,
+        "alt": "classic t-shirt 2",
+        "image": "/static/products/shirt2.jpg",
+        "tags": ["shirt", "men"]
+    },
+    {
+        "name": "Classic T-Shirt",
+        "price": 75,
+        "alt": "classic t-shirt 3",
+        "image": "/static/products/shirt3.jpg",
+        "tags": ["shirt", "men"]
+    }
+  ]

@@ -1,0 +1,119 @@
+.root {
+
+}
+
+.heroContainer {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    color: var(--standard-white);
+    position: relative;
+}
+
+.heroContainer h2 {
+    font-size: 72px;
+    line-height: 86px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.heroContainer span {
+    margin: 40px 0px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.ctaButton {
+    width: 180px;
+}
+
+.messageContainer {
+    text-align: center;
+    padding: 60px 0px;
+    margin: 0px 30px;
+}
+
+.messageContainer p {
+    text-transform: uppercase;
+}
+
+.gold {
+    color: var(--standard-gold);
+}
+
+.contentTitle{
+    text-align: center;
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 16px;
+}
+
+.contentTitleContainer {
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.newArrivalsContainer {
+    margin-top: 64px;
+}
+
+.contentTitleContainer a{
+    text-transform: uppercase;
+    color: var(--standard-black);
+    padding-bottom: 2px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid var(--standard-black);
+    transition: all 0.3s ease-in-out;
+}
+
+.contentTitleContainer a:hover {
+    color: var(--standard-gold);
+    border-bottom: 1px solid var(--standard-gold);
+}
+
+.contentTitleContainer span {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.highlightContainer {
+    margin: 88px 0px;
+}
+
+.linkContainers {
+    display: flex;
+    position: absolute;
+    bottom: 64px;
+    gap: 72px;
+}
+
+.linkContainers a {
+    color: var(--standard-white);
+    border-bottom: 1px solid var(--standard-white);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.linkContainers a:hover {
+    color: var(--standard-gold);
+    border-bottom: 1px solid var(--standard-gold);
+}
+
+.blogsContainer {
+    margin-top: 96px;
+}
+
+.sustainableContainer {
+    margin-top: 96px;
+}

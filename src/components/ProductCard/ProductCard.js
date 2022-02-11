@@ -1,15 +1,24 @@
 import React from 'react';
 import * as styles from './ProductCard.module.css';
 
+import Icon from '../Icons/Icon';
 import CurrencyFormatter from '../CurrencyFormatter';
 
 const ProductCard = (props) => {
 
-  const { image, imageAlt, name, price, originalPrice, meta } = props;
+  const { image, imageAlt, name, price, originalPrice, meta, height=580 } = props;
 
   return (
     <div className={styles.root}>
-      <img src={image} alt={imageAlt}></img>
+      <div className={styles.imageContainer}>
+        <img style={{height:`${height}px`}} src={image} alt={imageAlt}></img>
+        <div className={styles.bagContainer}>
+          <Icon symbol={'bagPlus'} />
+        </div>
+        <div className={styles.heartContainer}>
+          <Icon symbol={'heart'} />
+        </div>
+      </div>
       <div className={styles.detailsContainer}>
         <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>

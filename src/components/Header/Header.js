@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, createRef } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { Link, navigate } from 'gatsby';
 
 import Icon from '../Icons/Icon';
@@ -62,6 +62,7 @@ const Header = (prop) => {
         searchRef.current.focus();
       }, 250)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[showSearch])
 
   return (

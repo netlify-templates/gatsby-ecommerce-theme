@@ -1,0 +1,26 @@
+[
+    {
+        "title": "The new standard of Opening and Closing",
+        "category": "design",
+        "alt": "blog new standard of closing",
+        "image": "/static/blogs/blog1.png",
+        "link": "/blog/sample",
+        "excerpt": "London-based floral designer Flora Fricker champions seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
+    },
+    {
+        "title": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "category": "design",
+        "alt": "blog new standard of closing",
+        "image": "/static/blogs/blog2.png",
+        "link": "/blog/sample",
+        "excerpt": "London-based floral designer Flora Fricker champions seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
+    },
+    {
+        "title": "It is a long established fact that a reader by the readable",
+        "category": "design",
+        "alt": "blog new standard of closing",
+        "image": "/static/blogs/blog3.png",
+        "link": "/blog/sample",
+        "excerpt": "London-based floral designer Flora Fricker champions seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths."
+    }
+  ]

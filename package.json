@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "My Gatsby Site",
-  "author": "Dom",
+  "author": "Matter Design",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
     "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "start": "gatsby develop -p 5000",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"

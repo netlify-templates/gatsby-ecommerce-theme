@@ -9,6 +9,7 @@ import React from 'react'
 // Alphabetical order please
 import Arrow from './Arrow';
 import Bag from './Bag';
+import BagPlus from './BagPlus';
 import Caret from './Caret';
 import Facebook from './Facebook';
 import Heart from './Heart';
@@ -24,6 +25,8 @@ function Icon(props) {
         return <Arrow />;
     case 'bag':
         return <Bag />;
+    case 'bagPlus':
+        return <BagPlus />;
     case 'caret':
         return <Caret />;
     case 'facebook':

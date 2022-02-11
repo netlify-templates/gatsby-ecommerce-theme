@@ -1,9 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import Image1 from '../../images/headerPic1.png';
-import Image2 from '../../images/headerPic2.png';
-
 import * as styles from './ExpandedMenu.module.css';
 
 const ExpandedMenu = (props) => {
@@ -34,8 +31,8 @@ const ExpandedMenu = (props) => {
         })}
       </div>
       <div className={styles.imageContainer}>
-        <img src={Image1} alt={'header 1'}></img>
-        <img src={Image2} alt={'header 2'}></img>
+        <img src={'/static/headerPic1.png'} alt={'header 1'}></img>
+        <img src={'/static/headerPic2.png'} alt={'header 2'}></img>
       </div>
     </div>
   );

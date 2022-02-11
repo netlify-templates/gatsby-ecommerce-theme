@@ -1,15 +1,19 @@
 .root {
     cursor: pointer;
+    width: 100%;
 }
 
 .detailsContainer {
     margin-top: 16px;
 }
 
+.imageContainer {
+    position: relative;
+}
+
 .root img {
     display: block;
-    width: 440px;
-    height: 580px;
+    width: 100%;
     object-fit: cover;
     border-radius: 1px;
 }
@@ -49,4 +53,42 @@
 
 .prices > span:first-child {
     margin-right: 16px;
+}
+
+.bagContainer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+
+    width: 70px;
+    height: 70px;
+    background-color: var(--standard-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.root:hover .bagContainer {
+    opacity: 1;
+    visibility: visible;
+}
+
+.heartContainer {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.root:hover .heartContainer {
+    opacity: 1;
+    visibility: visible;
 }

@@ -1,0 +1,25 @@
+.root {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.root span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 72px;
+}
+
+.root p {
+    font-family: var(--standard-header);
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 52px;
+    text-align: center;
+    max-width: 720px;
+}

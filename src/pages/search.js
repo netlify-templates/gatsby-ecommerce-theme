@@ -4,17 +4,17 @@ import { parse } from "query-string";
 import Breadcrumbs from '../components/Breadcrumbs';
 import Layout from "../components/Layout/Layout";
 import Container from '../components/Container/Container';
-import ProductCard from '../components/ProductCard';
+import ProductCardGrid from "../components/ProductCardGrid";
 
-import image1 from '../images/products/product1.jpeg';
-import image2 from '../images/products/product2.jpeg';
-import image3 from '../images/products/product3.jpeg';
+import { generateMockProductData } from "../helpers/mock";
 
 import * as styles from './search.module.css';
 
 const SearchPage = (props) => {
     const params = parse(props.location.search);
     const searchQuery = params.q ? params.q : '';
+
+    const sampleData = generateMockProductData();
 
   return (
     <Layout>
@@ -25,25 +25,7 @@ const SearchPage = (props) => {
                     <h4>Search results for '{searchQuery}'</h4>
                     <span>3 results</span>
                 </div>
-                <div className={styles.searchResultsContainer}>
-                    <ProductCard 
-                        price={32} 
-                        name={'Relaxed-fit graphic T-Shirt'} 
-                        image={image1}
-                    />
-                    <ProductCard 
-                        price={32} 
-                        name={'Black sweater'} 
-                        image={image2}
-                        originalPrice={50}
-                    />
-                    <ProductCard 
-                        price={32} 
-                        name={'Black cardigan'} 
-                        image={image3}
-                        meta={'+ 2 colors'}
-                    />
-                </div>
+                <ProductCardGrid height={580} columns={3} data={sampleData} />
             </Container>
         </div>
     </Layout>

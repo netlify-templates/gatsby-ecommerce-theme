@@ -8,10 +8,6 @@ import Icon from '../Icons/Icon';
 import FooterData from './footer.json';
 import * as styles from './Footer.module.css';
 
-import MasterCard from '../../images/master.png';
-import Amex from '../../images/amex.png';
-import Visa from '../../images/visa.png';
-
 const Footer = (prop) => {
 
   const [email, setEmail] = useState('');
@@ -90,9 +86,9 @@ const Footer = (prop) => {
               </div>
               <div className={styles.copyrightContainer}>
                 <div className={styles.creditCardContainer}>
-                  <img className={styles.amexSize} src={Amex} alt={'amex'}></img>
-                  <img className={styles.masterSize} src={MasterCard} alt={'mastercard'}></img>
-                  <img className={styles.visaSize} src={Visa} alt={'visa'}></img>
+                  <img className={styles.amexSize} src={'/static/amex.png'} alt={'amex'}></img>
+                  <img className={styles.masterSize} src={'/static/master.png'} alt={'mastercard'}></img>
+                  <img className={styles.visaSize} src={'/static/visa.png'} alt={'visa'}></img>
                 </div>
                 <span>2021 (c) . Built by Matter. Powered by JAMM</span>
               </div>

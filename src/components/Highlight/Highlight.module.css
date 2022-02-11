@@ -1,0 +1,53 @@
+.root {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.highlightImage {
+    width: 600px;
+    height: 730px;
+    object-fit: cover;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.miniImage {
+    height: 300px;
+    width: 250px;
+}
+
+.contentContainer h3 {
+    margin-bottom: 24px;
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: normal;
+}
+
+.contentContainer p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.contentContainer a {
+    margin: 40px 0px;
+    font-weight: 500;
+    color: var(--standard-black);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--standard-black);
+    transition: all 0.3s ease-in-out;
+}
+
+.contentContainer a:hover {
+    color: var(--standard-gold);
+    border-bottom: 1px solid var(--standard-gold);
+}
