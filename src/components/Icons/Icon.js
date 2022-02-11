@@ -1,16 +1,13 @@
 import React from 'react'
 
-//a b c d e f
-//g h i j k l
-//m n o p r s
-//t u v w x y
-//z
-
 // Alphabetical order please
 import Arrow from './Arrow';
 import Bag from './Bag';
 import BagPlus from './BagPlus';
 import Caret from './Caret';
+import CreditCard from './CreditCard';
+import Cycle from './Cycle';
+import Delivery from './Delivery';
 import Facebook from './Facebook';
 import Heart from './Heart';
 import Instagram from './Instagram';
@@ -29,6 +26,12 @@ function Icon(props) {
         return <BagPlus />;
     case 'caret':
         return <Caret />;
+    case 'creditcard':
+        return <CreditCard />;
+    case 'cycle':
+        return <Cycle />;
+    case 'delivery':
+        return <Delivery />;
     case 'facebook':
         return <Facebook />;
     case 'heart':

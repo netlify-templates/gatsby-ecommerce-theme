@@ -1,5 +1,6 @@
 import * as React from "react"
 
+import AttributeGrid from '../components/AttributeGrid';
 import Container from "../components/Container";
 import Banner from '../components/Banner';
 import BlogPreviewGrid from '../components/BlogPreviewGrid';
@@ -24,7 +25,7 @@ const IndexPage = () => {
       <Layout>
 
         {/* Hero Container */}
-        <Banner image={'/static/banner1.png'}>
+        <Banner image={'/banner1.png'}>
           <div className={styles.heroContainer}>
             <h2 style={{maxWidth: "500px"}}>Essentials for a cold winter</h2>
             <span> Discover Autumn Winter 2021 </span>
@@ -63,9 +64,9 @@ const IndexPage = () => {
         <div className={styles.highlightContainer}>
           <Container size={'large'}>
             <Highlight 
-              image={'/static/highlight.png'}
+              image={'/highlight.png'}
               altImage={'highlight image'}
-              miniImage={'/static/highlightmin.png'}
+              miniImage={'/highlightmin.png'}
               miniImageAlt={'mini highlight image'}
               title={'Luxury Knitwear'}
               description={`This soft lambswool jumper is knitted in Scotland, using yarn from one of the world's oldest spinners based in Fife`}
@@ -76,7 +77,7 @@ const IndexPage = () => {
         </div>
 
         {/* Promotion */}
-        <Banner image={'/static/banner2.png'}>
+        <Banner image={'/banner2.png'}>
           <div className={styles.heroContainer}>
             <h2>-50% off All Essentials</h2>
             <div className={styles.linkContainers}>
@@ -106,17 +107,32 @@ const IndexPage = () => {
 
         {/* Promotion */}
         <div className={styles.sustainableContainer}>
-          <Container size={'large'}>
-            <Banner image={'/static/banner3.png'}>
+            <Banner image={'/banner3.png'}>
               <div className={styles.heroContainer}>
                 <h2>We are Sustainable</h2>
                 <span> From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.</span>
                 <Button className={styles.ctaButton} level={'primary'}>READ MORE</Button>
               </div>
             </Banner>
-          </Container>
         </div>
 
+        {/* Social Media */}
+        <div className={styles.socialContainer}>
+          <div className={styles.contentTitleContainer}>
+            <h2 className={styles.contentTitle}>Styled by You</h2>
+            <span>Tag @geneva to be featured.</span>
+          </div>
+          <div className={styles.socialContentGrid}>
+            <img src={`/social/socialMedia1.png`} alt={'social media 1'}  />
+            <img src={`/social/socialMedia2.png`} alt={'social media 2'}  />
+            <img src={`/social/socialMedia3.png`} alt={'social media 3'}  />
+            <img src={`/social/socialMedia4.png`} alt={'social media 4'}  />
+          </div>
+        </div>
+
+        <div className={styles.attributeContainer}>
+          <AttributeGrid />
+        </div>
       </Layout>
   )
 }

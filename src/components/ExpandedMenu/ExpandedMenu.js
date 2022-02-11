@@ -31,8 +31,8 @@ const ExpandedMenu = (props) => {
         })}
       </div>
       <div className={styles.imageContainer}>
-        <img src={'/static/headerPic1.png'} alt={'header 1'}></img>
-        <img src={'/static/headerPic2.png'} alt={'header 2'}></img>
+        <img src={'/headerPic1.png'} alt={'header 1'}></img>
+        <img src={'/headerPic2.png'} alt={'header 2'}></img>
       </div>
     </div>
   );

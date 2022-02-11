@@ -11,6 +11,10 @@
     
     color: var(--standard-white);
     position: relative;
+
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .collectionContainer {
@@ -119,5 +123,24 @@
 }
 
 .sustainableContainer {
-    margin-top: 96px;
+    margin: 96px 40px 0px 40px;
+}
+
+.socialContainer {
+    margin-top: 64px;
+}
+
+.socialContentGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.socialContentGrid img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* offset layout padding */
+.attributeContainer {
+    margin-bottom: -150px;
 }
