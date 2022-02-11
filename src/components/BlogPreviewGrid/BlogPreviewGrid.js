@@ -5,12 +5,12 @@ import BlogPreview from '../BlogPreview';
 
 const BlogPreviewGrid = (props) => {
   const { data } = props;
-  console.log(data);
   return (
     <div className={styles.root}>
-      {data && data.map((blog) => {
+      {data && data.map((blog, index) => {
         return(
           <BlogPreview 
+            key={index}
             image={blog.image}
             altImage={blog.alt}
             title={blog.title}
@@ -19,13 +19,6 @@ const BlogPreviewGrid = (props) => {
           />
         )
       })}
-      {/* <BlogPreview 
-        image={'/static/banner2.png'}
-        category={'design'}
-        title={'The new standard of Closing'}
-        textLink={'read more'}
-        link={'/'}
-      /> */}
     </div>
   );
 };

@@ -73,7 +73,7 @@ const Header = (prop) => {
       <Container size={'large'} spacing={'min'}>
           <div className={styles.header}>
             <div className={styles.linkContainers}>
-              <nav onMouseLeave={() => {setShowMenu(false)}}>
+              <nav role={'presentation'} onMouseLeave={() => {setShowMenu(false)}}>
                 {HeaderData.map((navObject) => 
                   <Link
                     key={navObject.menuLink}
@@ -88,7 +88,7 @@ const Header = (prop) => {
               <h4>GENEVA</h4>
             </div>
             <div className={styles.actionContainers}>
-              <div className={styles.iconContainer} onClick={()=> {
+              <div className={styles.iconContainer} role={'presentation'} onClick={()=> {
                 searchRef.current.focus();
               }}><Icon symbol={'bag'}></Icon></div>
               <div className={styles.iconContainer}><Icon symbol={'user'}></Icon></div>
@@ -115,12 +115,12 @@ const Header = (prop) => {
               />
               </form>
               <div className={styles.suggestionContianer}>
-                {searchSuggestions.map((suggestion) => 
-                  <p className={styles.suggestion}>
+                {searchSuggestions.map((suggestion, index) => 
+                  <p key={index} className={styles.suggestion}>
                     {suggestion}
                   </p>)}
               </div>
-              <div onClick={(e)=> {
+              <div role={'presentation'} onClick={(e)=> {
                 e.stopPropagation();
                 setShowSearch(false);
                 }} className={styles.backdrop}></div>

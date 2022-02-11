@@ -13,6 +13,10 @@
     position: relative;
 }
 
+.collectionContainer {
+    margin-top: 8px;
+}
+
 .heroContainer h2 {
     font-size: 72px;
     line-height: 86px;

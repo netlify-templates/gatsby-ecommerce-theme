@@ -12,9 +12,10 @@ const ProductCardGrid = (props) => {
 
   return (
     <div className={styles.root} style={columnCount}>
-      {data && data.map((product) => {
+      {data && data.map((product, index) => {
         return(
           <ProductCard
+            key={index}
             height={height}
             price={product.price}
             imageAlt={product.alt}
