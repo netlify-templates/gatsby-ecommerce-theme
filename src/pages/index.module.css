@@ -2,42 +2,14 @@
 
 }
 
-.heroContainer {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    color: var(--standard-white);
-    position: relative;
-
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .collectionContainer {
     margin-top: 8px;
 }
 
-.heroContainer h2 {
-    font-size: 72px;
-    line-height: 86px;
-    font-weight: normal;
-    text-align: center;
+.promotionContainer {
+    position: relative;
 }
 
-.heroContainer span {
-    margin: 40px 0px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-}
-
-.ctaButton {
-    width: 180px;
-}
 
 .messageContainer {
     text-align: center;
@@ -61,35 +33,8 @@
     margin-bottom: 16px;
 }
 
-.contentTitleContainer {
-    margin-bottom: 42px;
-    text-align: center;
-}
-
 .newArrivalsContainer {
     margin-top: 64px;
-}
-
-.contentTitleContainer a{
-    text-transform: uppercase;
-    color: var(--standard-black);
-    padding-bottom: 2px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    border-bottom: 1px solid var(--standard-black);
-    transition: all 0.3s ease-in-out;
-}
-
-.contentTitleContainer a:hover {
-    color: var(--standard-gold);
-    border-bottom: 1px solid var(--standard-gold);
-}
-
-.contentTitleContainer span {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
 }
 
 .highlightContainer {
@@ -99,8 +44,14 @@
 .linkContainers {
     display: flex;
     position: absolute;
+    transform: translate(-50%, 0%);
     bottom: 64px;
+    left: 50%;
     gap: 72px;
+}
+
+.ctaCustomButton {
+    margin-top: 50px;
 }
 
 .linkContainers a {

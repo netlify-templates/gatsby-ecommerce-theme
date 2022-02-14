@@ -1,0 +1,34 @@
+.root {
+    margin-bottom: 42px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 50px;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 8px;
+
+}
+
+.link {
+    margin-top: 8px;
+    color: var(--standard-black);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--standard-black);
+    transition: all ease-in-out 0.3s;
+}
+
+.link:hover {
+    color: var(--standard-gold);
+    border-bottom: 1px solid var(--standard-gold);
+}

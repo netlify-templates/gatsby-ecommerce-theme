@@ -3,7 +3,7 @@ import { Link, navigate } from 'gatsby';
 
 import Icon from '../Icons/Icon';
 import Container from '../Container';
-import HeaderData from './header.json';
+import Config from '../../config.json';
 import ExpandedMenu from '../ExpandedMenu';
 import FormInputField from '../FormInputField/FormInputField';
 import * as styles from './Header.module.css';
@@ -74,7 +74,7 @@ const Header = (prop) => {
           <div className={styles.header}>
             <div className={styles.linkContainers}>
               <nav role={'presentation'} onMouseLeave={() => {setShowMenu(false)}}>
-                {HeaderData.map((navObject) => 
+                {Config.headerLinks.map((navObject) => 
                   <Link
                     key={navObject.menuLink}
                     onMouseEnter={() => handleHover(navObject)}

@@ -4,34 +4,39 @@ import AttributeGrid from '../components/AttributeGrid';
 import Container from "../components/Container";
 import Banner from '../components/Banner';
 import BlogPreviewGrid from '../components/BlogPreviewGrid';
-import Button from '../components/Button';
 import Highlight from '../components/Highlight';
 import Layout from "../components/Layout/Layout";
 import ProductCollectionGrid from '../components/ProductCollectionGrid';
 import ProductCardGrid from '../components/ProductCardGrid';
 import Quote from '../components/Quote';
+import Title from '../components/Title';
 
 import { generateMockBlogData, generateMockProductData } from "../helpers/mock";
 
 import * as styles from './index.module.css';
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 
 const IndexPage = () => {
 
   const newArrivals = generateMockProductData();
   const blogData = generateMockBlogData();
 
+  const goToShop = () => {
+    navigate('/shop');
+  }
+
   return (
       <Layout>
 
         {/* Hero Container */}
-        <Banner image={'/banner1.png'}>
-          <div className={styles.heroContainer}>
-            <h2 style={{maxWidth: "500px"}}>Essentials for a cold winter</h2>
-            <span> Discover Autumn Winter 2021 </span>
-            <Button className={styles.ctaButton} level={'primary'}>SHOP NOW</Button>
-          </div>
-        </Banner>
+        <Banner 
+          maxWidth={'500px'}
+          image={'/banner1.png'} 
+          title={'Essentials for a cold winter'} 
+          subtitle={'Discover Autumn Winter 2021'}
+          ctaText={'shop now'}
+          ctaAction={goToShop}
+        />
 
         {/* Message Container */}
         <div className={styles.messageContainer}>
@@ -42,9 +47,7 @@ const IndexPage = () => {
         {/* Collection Container */}
         <div className={styles.collectionContainer}>
           <Container size={'large'}>
-            <div className={styles.contentTitleContainer}>
-              <h2 className={styles.contentTitle}>New Collection</h2>
-            </div>
+            <Title name={'New Collection'} />
             <ProductCollectionGrid />
           </Container>
         </div>
@@ -52,10 +55,7 @@ const IndexPage = () => {
         {/* New Arrivals */}
         <div className={styles.newArrivalsContainer}>
           <Container>
-            <div className={styles.contentTitleContainer}>
-              <h2 className={styles.contentTitle}>New Arrivals</h2>
-              <Link to={'/shop'}>view all</Link>
-            </div>
+            <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'}/>
             <ProductCardGrid height={480} columns={3} data={newArrivals} />
           </Container>
         </div>
@@ -77,15 +77,13 @@ const IndexPage = () => {
         </div>
 
         {/* Promotion */}
-        <Banner image={'/banner2.png'}>
-          <div className={styles.heroContainer}>
-            <h2>-50% off All Essentials</h2>
-            <div className={styles.linkContainers}>
-              <Link to={'/shop'}>WOMAN</Link>
-              <Link to={'/shop'}>MAN</Link>
-            </div>
+        <div className={styles.promotionContainer}>
+          <Banner image={'/banner2.png'} title={`-50% off \n All Essentials`} />
+          <div className={styles.linkContainers}>
+                <Link to={'/shop'}>WOMAN</Link>
+                <Link to={'/shop'}>MAN</Link>
           </div>
-        </Banner>
+        </div>
 
         {/* Quote */}
         <Quote 
@@ -97,31 +95,25 @@ const IndexPage = () => {
         {/* Blog Grid */}
         <div className={styles.blogsContainer}>
           <Container size={'large'}>
-            <div className={styles.contentTitleContainer}>
-              <h2 className={styles.contentTitle}>Journal</h2>
-              <span>Notes on life and style</span>
-            </div>
+            <Title name={'Journal'} subtitle={'Notes on life and style'}/>
             <BlogPreviewGrid data={blogData}/>
           </Container>
         </div>
 
         {/* Promotion */}
         <div className={styles.sustainableContainer}>
-            <Banner image={'/banner3.png'}>
-              <div className={styles.heroContainer}>
-                <h2>We are Sustainable</h2>
-                <span> From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.</span>
-                <Button className={styles.ctaButton} level={'primary'}>READ MORE</Button>
-              </div>
-            </Banner>
+            <Banner 
+              image={'/banner3.png'} title={'We are Sustainable'}
+              subtitle={'From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.'}
+              ctaText={'read more'}
+              maxWidth={'660px'}
+              ctaStyle={styles.ctaCustomButton}
+            />
         </div>
 
         {/* Social Media */}
         <div className={styles.socialContainer}>
-          <div className={styles.contentTitleContainer}>
-            <h2 className={styles.contentTitle}>Styled by You</h2>
-            <span>Tag @geneva to be featured.</span>
-          </div>
+          <Title name={'Styled by You'} subtitle={'Tag @geneva to be featured.'}/>
           <div className={styles.socialContentGrid}>
             <img src={`/social/socialMedia1.png`} alt={'social media 1'}  />
             <img src={`/social/socialMedia2.png`} alt={'social media 2'}  />

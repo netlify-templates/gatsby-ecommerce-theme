@@ -10,16 +10,16 @@ const ExpandedMenu = (props) => {
   return (    
     <div className={styles.root}>
       <div className={styles.linkContainers}>
-        {menu?.map((item) => {
+        {menu?.map((item, index) => {
           return(
-            <div className={styles.categoryContainer}>
+            <div key={index} className={styles.categoryContainer}>
               <span className={styles.categoryName}>
                 {item.categoryLabel}
               </span>
               <ul>
-                {item.submenu.map((link) => {
+                {item.submenu.map((link, linkIndex) => {
                   return(
-                  <li>
+                  <li key={linkIndex}>
                     <Link className={styles.menuLink} to={link.menuLink}>
                       {link.menuLabel}
                     </Link>

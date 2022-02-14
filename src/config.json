@@ -1,0 +1,192 @@
+{
+    "currencyList": [
+            {"value": "AUS", "label": "Australia (AUS $)"},
+            {"value": "CAD", "label": "Canada (CAD $)"},
+            {"value": "USD", "label": "United States (US $)"},
+            {"value": "EUR", "label": "Germany (EUR €)"},
+            {"value": "HKD", "label": "Hong Kong (HKD $)"}
+        ],
+    "languageList": [
+        {"value": "english", "label": "English"},
+        {"value": "german", "label": "Deutsch"},
+        {"value": "mandarin", "label": "普通话"}
+    ],
+    "social": {
+        "facebook": "https://www.facebook.com/MatterDesign/",
+        "instagram": "https://www.instagram.com/p/CVwMlChIWmW",
+        "twitter": "https://twitter.com/hellomatter",
+        "youtube": "https://www.youtube.com/channel/UCEOu94Haa--QmltsSawflXg"
+    },
+    "paymentOptions": {
+        "visa": true,
+        "mastercard": true,
+        "amex": true
+    },
+    "footerLinks":[
+        {
+            "subTitle": "Info",
+            "links": [{
+                "text": "About Us",
+                "link": "/"
+            },{
+                "text": "Journal",
+                "link": "/"
+            },{
+                "text": "Blog",
+                "link": "/"
+            },{
+                "text": "Privacy Policy",
+                "link": "/"
+            }]
+        },
+        {
+            "subTitle": "Support",
+            "links": [{
+                "text": "FAQ",
+                "link": "/"
+            },{
+                "text": "Contact Us",
+                "link": "/"
+            },{
+                "text": "Shipping & Returns",
+                "link": "/"
+            }]
+        }
+    ],
+    "headerLinks": [
+        {
+          "menuLabel": "Shop",
+          "menuLink": "/shop",
+          "category": [
+            {
+                "categoryLabel": "woman",
+                "submenu": [
+                  {
+                      "menuLabel": "All clothing",
+                      "menuLink": "#"
+                  },
+                  {
+                      "menuLabel": "sweatshirts & hoodies",
+                      "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "jackets",
+                    "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "trousers",
+                    "menuLink": "#"
+                  }
+                ]
+            },
+            {
+                "categoryLabel": "men",
+                "submenu": [
+                  {
+                      "menuLabel": "All clothing",
+                      "menuLink": "#"
+                  },
+                  {
+                      "menuLabel": "sweatshirts & hoodies",
+                      "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "jackets",
+                    "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "trousers",
+                    "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "pants",
+                    "menuLink": "#"
+                  }
+                ]
+            },
+            {
+                "categoryLabel": "accessories",
+                "submenu": [
+                  {
+                      "menuLabel": "caps & scarves",
+                      "menuLink": "#"
+                  },
+                  {
+                      "menuLabel": "bags",
+                      "menuLink": "#"
+                  }
+                ]
+            }
+          ]
+        },
+        {
+          "menuLabel": "journal",
+          "menuLink": "/journal",
+          "target": false,
+          "category": [
+            {
+                "categoryLabel": "Life & Beyond",
+                "submenu": [
+                  {
+                      "menuLabel": "15 Outfits for Your Summer",
+                      "menuLink": "#"
+                  },
+                  {
+                      "menuLabel": "Keeping it Real",
+                      "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "Top Best Sellers Winter Collection",
+                    "menuLink": "#"
+                  }
+                ]
+            },
+            {
+                "categoryLabel": "Fashion Trends",
+                "submenu": [
+                  {
+                      "menuLabel": "Winter Collection",
+                      "menuLink": "#"
+                  },
+                  {
+                      "menuLabel": "Sports Collection",
+                      "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "Season of Giving",
+                    "menuLink": "#"
+                  },
+                  {
+                    "menuLabel": "Test 1",
+                    "menuLink": "#"
+                  }
+                ]
+            },
+            {
+              "categoryLabel": "Another Category Name",
+              "submenu": [
+                {
+                    "menuLabel": "Lorem ipsum",
+                    "menuLink": "#"
+                },
+                {
+                    "menuLabel": "Interesting Link",
+                    "menuLink": "#"
+                },
+                {
+                  "menuLabel": "Top Best Sellers Winter Collection",
+                  "menuLink": "#"
+                }
+              ]
+          }
+          ]
+        },
+        {
+          "menuLabel": "About",
+          "menuLink": "/about",
+          "category": null
+        }
+    ]
+}
+
+

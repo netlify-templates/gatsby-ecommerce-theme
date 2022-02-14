@@ -53,7 +53,7 @@ const Button = ({ children, href, target, level, type, size, disabled, onClick, 
     // }
     return (
         <>
-          <button className={classOutput} type={type === 'buttonSubmit' ? "submit" : ""}>{children}</button>
+          <button className={classOutput} onClick={onClick} type={type === 'buttonSubmit' ? "submit" : ""}>{children}</button>
             {/* {(type === 'inputButton' || type === 'inputSubmit') && (
                 <input className={classOutput} type={type === 'inputSubmit' ? "submit" : "button"} name={name} value={value} {...(onClick ? {onClick} : {onClick: scrollToHash})} />
             )}

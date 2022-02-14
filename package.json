@@ -12,11 +12,15 @@
     "start": "gatsby develop -p 5000",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "plop": "plop"
   },
   "dependencies": {
     "gatsby": "^4.5.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "plop": "^3.0.5"
   }
 }

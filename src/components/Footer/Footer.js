@@ -5,7 +5,7 @@ import Container from '../Container';
 import Dropdown from '../Dropdown/Dropdown';
 import FormInputField from '../FormInputField/FormInputField';
 import Icon from '../Icons/Icon';
-import FooterData from './footer.json';
+import Config from '../../config.json';
 import * as styles from './Footer.module.css';
 
 const Footer = (prop) => {
@@ -18,8 +18,8 @@ const Footer = (prop) => {
     console.log('Subscribe this email: ', email);
   }
 
-  const handleSocialClick = () => {
-    console.log('Handle social media');
+  const handleSocialClick = (platform) => {
+    window.open(Config.social[platform]);
   }
 
   return (
@@ -27,23 +27,19 @@ const Footer = (prop) => {
       <Container size={'large'} spacing={'min'}>
         <div className={styles.content}>
           <div className={styles.contentTop}>
-            <div className={styles.infoLinksContainer}>
-              <span className={styles.linkTitle}>Info</span>
-              <ul className={styles.linkList}>
-                <li><Link className={`${styles.link} fancy`} to={'#'}>About Us</Link></li>
-                <li><Link className={styles.link} to={'#'}>Journal</Link></li>
-                <li><Link className={styles.link} to={'#'}>Blog</Link></li>
-                <li><Link className={styles.link} to={'#'}>Privacy Policy</Link></li>
-              </ul>
-            </div>
-            <div>
-              <span className={styles.linkTitle}>Support</span>
-              <ul className={styles.linkList}>
-                <li><Link className={styles.link} to={'#'}>FAQ</Link></li>
-                <li><Link className={styles.link} to={'#'}>Contact Us</Link></li>
-                <li><Link className={styles.link} to={'#'}>Shipping & Returns</Link></li>
-              </ul>
-            </div>
+            {Config.footerLinks.map((linkCollection) => {
+              return(
+              <div>
+                <span className={styles.linkTitle}>{linkCollection.subTitle}</span>
+                <ul className={styles.linkList}>
+                  {linkCollection.links.map((link) => {
+                    return(<li>
+                      <Link className={`${styles.link} fancy`} to={link.link}>{link.text}</Link>
+                    </li>)
+                  })}
+                </ul>
+              </div>)
+            })}
             <div className={styles.newsLetter}>
               <div className={styles.newsLetterContent}>
                 <span className={styles.linkTitle}>Newsletter</span>
@@ -58,18 +54,26 @@ const Footer = (prop) => {
                 />
                 </form>
                 <div className={styles.socialContainer}>
-                  <div onClick={handleSocialClick} role={'presentation'} className={styles.socialIconContainer}>
+                  {Config.social.youtube && 
+                  <div onClick={() => handleSocialClick('youtube')} role={'presentation'} className={styles.socialIconContainer}>
                     <Icon symbol={'youtube'}></Icon>
-                  </div>
-                  <div onClick={handleSocialClick} role={'presentation'} className={styles.socialIconContainer}>
-                    <Icon symbol={'instagram'}></Icon>
-                  </div>
-                  <div onClick={handleSocialClick} role={'presentation'} className={styles.socialIconContainer}>
-                    <Icon symbol={'facebook'}></Icon>
-                  </div>
-                  <div onClick={handleSocialClick} role={'presentation'} className={styles.socialIconContainer}>
-                    <Icon symbol={'twitter'}></Icon>
-                  </div>
+                  </div>}
+
+                  {Config.social.instagram && 
+                    <div onClick={() => handleSocialClick('instagram')} role={'presentation'} className={styles.socialIconContainer}>
+                      <Icon symbol={'instagram'}></Icon>
+                    </div>}
+
+                  {Config.social.facebook && 
+                    <div onClick={() => handleSocialClick('facebook')} role={'presentation'} className={styles.socialIconContainer}>
+                      <Icon symbol={'facebook'}></Icon>
+                    </div>}
+
+                  {Config.social.twitter && 
+                    <div onClick={() => handleSocialClick('twitter')} role={'presentation'} className={styles.socialIconContainer}>
+                      <Icon symbol={'twitter'}></Icon>
+                    </div>}
+
                 </div>
               </div>
             </div>
@@ -81,14 +85,14 @@ const Footer = (prop) => {
           <Container size={'large'} spacing={'min'}>
             <div className={styles.contentBottom}>
               <div className={styles.settings}>
-                <Dropdown label={'Country/Region'} optionList={FooterData.currencyList}/>
-                <Dropdown label={'Language'} optionList={FooterData.languageList}/>
+                <Dropdown label={'Country/Region'} optionList={Config.currencyList}/>
+                <Dropdown label={'Language'} optionList={Config.languageList}/>
               </div>
               <div className={styles.copyrightContainer}>
                 <div className={styles.creditCardContainer}>
-                  <img className={styles.amexSize} src={'/static/amex.png'} alt={'amex'}></img>
-                  <img className={styles.masterSize} src={'/static/master.png'} alt={'mastercard'}></img>
-                  <img className={styles.visaSize} src={'/static/visa.png'} alt={'visa'}></img>
+                  {Config.paymentOptions.amex && <img className={styles.amexSize} src={'/amex.png'} alt={'amex'}></img>}
+                  {Config.paymentOptions.mastercard && <img className={styles.masterSize} src={'/master.png'} alt={'mastercard'}></img>}
+                  {Config.paymentOptions.visa && <img className={styles.visaSize} src={'/visa.png'} alt={'visa'}></img>}
                 </div>
                 <span>2021 (c) . Built by Matter. Powered by JAMM</span>
               </div>
