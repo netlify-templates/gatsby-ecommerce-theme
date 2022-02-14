@@ -4,13 +4,13 @@ import * as styles from './Title.module.css';
 
 const Title = (props) => {
 
-  const {name, subtitle, link, textLink} = props;
+  const {name, subtitle, link, textLink, maxWidth} = props;
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={{maxWidth: maxWidth}}>
       <h2 className={styles.title}>{name}</h2>
       { subtitle && 
-        <span className={styles.subtitle}>
+        <span className={`${styles.subtitle}`}>
           {subtitle}
         </span>}
       { link && textLink && 

@@ -1,0 +1,22 @@
+.root {
+    background-color: var(--grey-chip);
+    padding: 8px 24px;
+    display: inline-flex;
+    gap: 16px;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s;
+    margin-top: 8px;
+}
+
+.root span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.root:hover {
+    background-color: var(--standard-grey);
+}

@@ -4,9 +4,10 @@ import blogJson from './blog.json';
 
 */
 function generateMockProductData(count, tag) {
-    return productJson;
-    //const x = JSON.parse(jsonData);
-    // console.log(x);
+
+    const products = productJson;
+    const filtered = products.filter((item) => item.tags.includes(tag));
+    return filtered.slice(0,count);
 }
 
 function generateMockBlogData() {

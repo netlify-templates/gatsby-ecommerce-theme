@@ -1,3 +1,84 @@
 .root {
-
+    margin-top: 16px;
 }
+
+.bannerContainer {
+    background-color: var(--standard-light-grey);
+    padding: 50px 0px;
+    margin-bottom: 64px;
+}
+
+.bannerContainer h2 {
+    margin-bottom: 24px;
+}
+
+.subtitleStyle {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 32px;
+}
+
+.metaContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.itemCount {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.chipsContainer {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.controllersContainer {
+    display: flex;
+    gap: 48px;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.iconContainer span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.iconContainer:last-child svg {
+    width: 8px;
+    height: 8px;
+}
+
+.productContainer {
+    margin-top: 32px;
+}
+
+.loadMoreContainer {
+    margin-top: 80px;
+    width: 160px;
+    margin: 96px auto 0px auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.loadMoreContainer span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+

@@ -6,9 +6,11 @@ import Bag from './Bag';
 import BagPlus from './BagPlus';
 import Caret from './Caret';
 import CreditCard from './CreditCard';
+import Cross from './Cross';
 import Cycle from './Cycle';
 import Delivery from './Delivery';
 import Facebook from './Facebook';
+import Filter from './Filter';
 import Heart from './Heart';
 import Instagram from './Instagram';
 import Search from './Search';
@@ -28,12 +30,16 @@ function Icon(props) {
         return <Caret />;
     case 'creditcard':
         return <CreditCard />;
+    case 'cross':
+        return <Cross />;
     case 'cycle':
         return <Cycle />;
     case 'delivery':
         return <Delivery />;
     case 'facebook':
         return <Facebook />;
+    case 'filter':
+        return <Filter />;
     case 'heart':
         return <Heart />
     case 'instagram':

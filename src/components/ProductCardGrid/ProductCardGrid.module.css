@@ -2,6 +2,6 @@
     width: 100%;
     margin: 0 auto;
     display: grid;
-    gap: 32px;
+    gap: 56px 32px;
     overflow: hidden;
 }
