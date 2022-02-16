@@ -196,6 +196,7 @@
             {"name": "Grey", "value": false},
             {"name": "Red", "value": false}
         ]},
+        
         {"category": "size", "items": [
             {"name": "XXS", "value": false},
             {"name": "XS", "value": false},

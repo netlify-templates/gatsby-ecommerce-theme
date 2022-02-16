@@ -2,7 +2,7 @@ import * as React from "react"
 
 import AttributeGrid from '../components/AttributeGrid';
 import Container from "../components/Container";
-import Banner from '../components/Banner';
+import Hero from '../components/Hero';
 import BlogPreviewGrid from '../components/BlogPreviewGrid';
 import Highlight from '../components/Highlight';
 import Layout from "../components/Layout/Layout";
@@ -29,7 +29,7 @@ const IndexPage = () => {
       <Layout>
 
         {/* Hero Container */}
-        <Banner 
+        <Hero 
           maxWidth={'500px'}
           image={'/banner1.png'} 
           title={'Essentials for a cold winter'} 
@@ -78,7 +78,7 @@ const IndexPage = () => {
 
         {/* Promotion */}
         <div className={styles.promotionContainer}>
-          <Banner image={'/banner2.png'} title={`-50% off \n All Essentials`} />
+          <Hero image={'/banner2.png'} title={`-50% off \n All Essentials`} />
           <div className={styles.linkContainers}>
                 <Link to={'/shop'}>WOMAN</Link>
                 <Link to={'/shop'}>MAN</Link>
@@ -102,7 +102,7 @@ const IndexPage = () => {
 
         {/* Promotion */}
         <div className={styles.sustainableContainer}>
-            <Banner 
+            <Hero 
               image={'/banner3.png'} title={'We are Sustainable'}
               subtitle={'From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.'}
               ctaText={'read more'}

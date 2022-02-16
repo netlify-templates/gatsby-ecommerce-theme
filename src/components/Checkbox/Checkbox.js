@@ -3,7 +3,7 @@ import Icon from '../Icons/Icon';
 import * as styles from './Checkbox.module.css';
 
 const Checkbox = (props) => {
-  const { value, label, id, name, action, isChecked } = props;
+  const { value, label, id, name, action, isChecked, size='md' } = props;
   return (
       <div className={styles.checkboxWrapper}>
           <div className={styles.inputWrapper}>
@@ -15,7 +15,7 @@ const Checkbox = (props) => {
                 onChange={(e) => action(e)}
                 checked={isChecked}
               />
-              <span className={styles.box} role="presentation">
+              <span className={`${styles.box} ${styles[size]}`} role="presentation" style={{width: `${size}px`, height: `${size}px`}}>
                 <Icon symbol="check" />
               </span>
           </div>

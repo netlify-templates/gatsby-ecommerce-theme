@@ -24,7 +24,7 @@ const CardController = (props) => {
             // if number of filter per category is less than 4 maintain single layout
             const colNum = filter.items.length >= 4 ? 2 : 1;
             return(
-              <div className={styles.categoryContainer} key={`category-${categoryIndex}`}>
+              <div key={`category-${categoryIndex}`}>
                 <span className={styles.category}>{filter.category}</span>
                 <div className={styles.nameContainers} style={{gridTemplateColumns: `repeat(${colNum}, 1fr)`}}>
                   {filter.items && filter.items.map((item, itemIndex) => 

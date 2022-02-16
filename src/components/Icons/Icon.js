@@ -14,6 +14,7 @@ import Facebook from './Facebook';
 import Filter from './Filter';
 import Heart from './Heart';
 import Instagram from './Instagram';
+import List from './List';
 import Search from './Search';
 import Twitter from './Twitter';
 import User from './User';
@@ -47,6 +48,8 @@ function Icon(props) {
         return <Heart />
     case 'instagram':
         return <Instagram />
+    case 'list':
+        return <List />;
     case 'search':
       return <Search />
     case 'twitter':

@@ -2,12 +2,6 @@
     margin-top: 16px;
 }
 
-.bannerContainer {
-    background-color: var(--standard-light-grey);
-    padding: 50px 0px;
-    margin-bottom: 64px;
-}
-
 .bannerContainer h2 {
     margin-bottom: 24px;
 }
@@ -48,6 +42,7 @@
 .chipsContainer {
     display: flex;
     gap: 8px;
+    margin-top: 8px;
 }
 
 .productContainer {
@@ -70,4 +65,3 @@
     font-size: 14px;
     line-height: 17px;
 }
-

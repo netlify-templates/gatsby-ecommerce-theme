@@ -32,12 +32,8 @@
     padding-bottom: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0px 24px;
-    
-}
-
-.categoryContainer {
-    margin: 0 auto;
+    gap: 24px; 
+    justify-items: center;
 }
 
 .nameContainers {
@@ -66,7 +62,7 @@
 .show {
     opacity: 1 !important;
     visibility: visible !important;
-    max-height: 800px !important;
+    max-height: 1000px !important;
 }
 
 .hide {

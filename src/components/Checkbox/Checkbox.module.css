@@ -23,27 +23,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+ 
     border: 1px solid var(--standard-black);
     background: var(--standard-white);
     transition: all 0.3s ease-in-out;
 }
 
 .checkboxWrapper .box svg {
-    height: 12px;
-    width: 12px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
 
-.checkboxWrapper .inputWrapper:hover .box {
-    border-color: var(--filter-alt-grey);
+.md {
+    width: 24px;
+    height: 24px;
 }
 
-.checkboxWrapper .inputWrapper:hover .input:checked + .box {
-    border-color: var(--filter-light-blue);
+.md svg {
+    height: 12px;
+    width: 12px; 
+}
+
+.sm {
+    width: 18px;
+    height: 18px;
+}
+
+.sm svg {
+    height: 9px;
+    width: 9px; 
+}
+
+.checkboxWrapper .inputWrapper:hover .box {
+    border-color: var(--filter-alt-grey);
 }
 
 .checkboxWrapper .input:checked + .box {

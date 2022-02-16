@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import * as styles from './shop.module.css';
 
+import Banner from '../components/Banner';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CardController from '../components/CardController';
 import Container from '../components/Container';
 import Chip from '../components/Chip';
 import Icon from '../components/Icons/Icon';
-import Title from '../components/Title';
 import Layout from "../components/Layout";
+import LayoutOption from '../components/LayoutOption';
 import ProductCardGrid from '../components/ProductCardGrid';
-
 import { generateMockProductData } from '../helpers/mock';
 import Button from '../components/Button';
 import Config from '../config.json';
@@ -35,13 +35,11 @@ const ShopPage = (props) => {
         <Container size={'large'} spacing={'min'}>
           <Breadcrumbs crumbs={[{link: '/', label:'Home'}, {link: '/', label:'Woman'}, {label:'Sweaters'}]} />
         </Container>
-        <div className={styles.bannerContainer}>
-          <Title 
-            maxWidth={'650px'}
-            name={`Woman's Sweaters`} 
-            subtitle={'Look to our women’s sweaters for modern takes on one-and-done dressing. From midis in bold prints to dramatic floor-sweeping styles and easy all-in-ones, our edit covers every mood.'} 
-            />
-        </div>
+        <Banner 
+          maxWidth={'650px'}
+          name={`Woman's Sweaters`} 
+          subtitle={'Look to our women’s sweaters for modern takes on one-and-done dressing. From midis in bold prints to dramatic floor-sweeping styles and easy all-in-ones, our edit covers every mood.'} 
+          />
         <Container size={'large'} spacing={'min'}>
           <div className={styles.metaContainer}>
             <span className={styles.itemCount}>476 items</span>
@@ -70,6 +68,8 @@ const ShopPage = (props) => {
           </div>
         </Container>
       </div>
+
+      <LayoutOption />
     </Layout>
   );
 };

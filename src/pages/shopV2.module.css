@@ -1,0 +1,63 @@
+.root {
+    margin-top: 16px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    gap: 32px;
+}
+
+.categoryContainer {
+    margin-bottom: 16px;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    
+    position: sticky;
+    top: 190px; 
+    align-self: start;
+}
+
+.filters {
+    margin-bottom: 8px;
+}
+
+.filters label{
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--grey-crumb);
+}
+
+.accordionTitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.loadMoreContainer {
+    margin-top: 80px;
+    width: 160px;
+    margin: 96px auto 0px auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.loadMoreContainer span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.metaContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}

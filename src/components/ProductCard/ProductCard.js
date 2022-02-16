@@ -6,13 +6,13 @@ import CurrencyFormatter from '../CurrencyFormatter';
 
 const ProductCard = (props) => {
 
-  const { image, imageAlt, name, price, originalPrice, meta, height=580 } = props;
+  const { image, imageAlt, name, price, originalPrice, meta, showQuickView, height=580 } = props;
 
   return (
     <div className={styles.root}>
       <div className={styles.imageContainer}>
         <img style={{height:`${height}px`}} src={image} alt={imageAlt}></img>
-        <div className={styles.bagContainer}>
+        <div className={styles.bagContainer} role={'presentation'} onClick={showQuickView}>
           <Icon symbol={'bagPlus'} />
         </div>
         <div className={styles.heartContainer}>
