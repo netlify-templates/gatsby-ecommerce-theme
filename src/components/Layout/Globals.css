@@ -707,3 +707,9 @@ p:first-of-type {
   user-select: none;
   cursor: not-allowed;
 }
+
+.standardSpan {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}

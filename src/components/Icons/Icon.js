@@ -5,6 +5,7 @@ import Arrow from './Arrow';
 import Bag from './Bag';
 import BagPlus from './BagPlus';
 import Caret from './Caret';
+import Check from './Check';
 import CreditCard from './CreditCard';
 import Cross from './Cross';
 import Cycle from './Cycle';
@@ -28,6 +29,8 @@ function Icon(props) {
         return <BagPlus />;
     case 'caret':
         return <Caret />;
+    case 'check':
+        return <Check />;
     case 'creditcard':
         return <CreditCard />;
     case 'cross':

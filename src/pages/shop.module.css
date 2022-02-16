@@ -23,21 +23,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
-.itemCount {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-.chipsContainer {
-    margin-top: 8px;
-    display: flex;
-    gap: 8px;
-}
-
-.controllersContainer {
+.controllerContainer {
     display: flex;
     gap: 48px;
 }
@@ -50,15 +39,15 @@
     cursor: pointer;
 }
 
-.iconContainer span {
+.itemCount {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
 }
 
-.iconContainer:last-child svg {
-    width: 8px;
-    height: 8px;
+.chipsContainer {
+    display: flex;
+    gap: 8px;
 }
 
 .productContainer {

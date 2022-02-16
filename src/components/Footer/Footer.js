@@ -27,13 +27,13 @@ const Footer = (prop) => {
       <Container size={'large'} spacing={'min'}>
         <div className={styles.content}>
           <div className={styles.contentTop}>
-            {Config.footerLinks.map((linkCollection) => {
+            {Config.footerLinks.map((linkCollection, indexLink) => {
               return(
-              <div>
+              <div key={indexLink}>
                 <span className={styles.linkTitle}>{linkCollection.subTitle}</span>
                 <ul className={styles.linkList}>
-                  {linkCollection.links.map((link) => {
-                    return(<li>
+                  {linkCollection.links.map((link, index) => {
+                    return(<li key={index}>
                       <Link className={`${styles.link} fancy`} to={link.link}>{link.text}</Link>
                     </li>)
                   })}
