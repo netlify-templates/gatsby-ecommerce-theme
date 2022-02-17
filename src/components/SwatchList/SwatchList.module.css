@@ -1,0 +1,15 @@
+.root {
+    display: block;
+}
+
+.label {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.swatchSelection {
+    margin-top: 16px;
+    display: flex;
+    gap: 24px;
+}

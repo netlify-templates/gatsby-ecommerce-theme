@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 
 import Icon from '../Icons/Icon';
 import * as styles from './Drawer.module.css';
 
-const Drawer = ({children, visible, closeQuickView}) => {
+const Drawer = ({children, visible, close}) => {
 
   useEffect(() => {
     window.addEventListener('keydown', escapeHandler);
@@ -12,7 +13,7 @@ const Drawer = ({children, visible, closeQuickView}) => {
 
   const escapeHandler = (e) => {
     if(e?.keyCode === undefined) return;
-    if(e.keyCode === 27) closeQuickView();
+    if(e.keyCode === 27) close();
   }
   
   return (
@@ -20,7 +21,7 @@ const Drawer = ({children, visible, closeQuickView}) => {
       <div 
         className={`${styles.overlay} ${visible === true ? styles.showOverlay : styles.hide}`}
         role={'presentation'}
-        onClick={closeQuickView}
+        onClick={close}
       >
         <div className={styles.iconContainer}>
           <Icon symbol={'cross'}></Icon>

@@ -1,0 +1,33 @@
+.root {
+    display: block;
+}
+
+.sizeLabelContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sizeSelection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sizeSelection > div {
+    flex-grow: 1;
+}
+
+.guide {
+    cursor: pointer;
+    border-bottom: 1px solid var(--standard-black);
+    font-weight: 500;
+}
+
+.label {
+    
+    font-size: 14px;
+    line-height: 17px;
+}

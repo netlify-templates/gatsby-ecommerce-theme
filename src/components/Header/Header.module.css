@@ -76,6 +76,11 @@
     cursor: pointer;
 }
 
+.iconContainer svg {
+    width: 20px;
+    height: 20px;
+}
+
 .menuContainer {
     position: absolute;
     background-color: var(--standard-white);

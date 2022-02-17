@@ -1,9 +1,9 @@
 .button {
     display: inline-block;
     font-family: var(--standard-font);
-    font-size: 13px;
-    line-height: 16px;
-    padding: 20px 20px 22px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 16px 20px 15px;
     margin: 0;
     min-width: 150px;
     height: auto !important;
@@ -20,8 +20,8 @@
     color: var(--standard-white);
     background-color: var(--standard-black);;
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-weight: 500;
+    
 }
 
 @media (hover: hover) {

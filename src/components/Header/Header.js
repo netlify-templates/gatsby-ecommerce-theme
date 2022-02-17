@@ -92,7 +92,7 @@ const Header = (prop) => {
                 searchRef.current.focus();
               }}><Icon symbol={'bag'}></Icon></div>
               <div className={styles.iconContainer}><Icon symbol={'user'}></Icon></div>
-              <div className={styles.iconContainer}><Icon symbol={'heart'}></Icon></div>
+              <div className={`${styles.iconContainer}`}><Icon symbol={'heart'}></Icon></div>
               <div className={styles.iconContainer} role={'presentation'} onClick={() => {
                   setShowSearch(!showSearch);
                 }}>

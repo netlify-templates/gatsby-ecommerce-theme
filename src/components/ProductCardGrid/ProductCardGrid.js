@@ -3,6 +3,7 @@ import * as styles from './ProductCardGrid.module.css';
 
 import Drawer from '../Drawer';
 import ProductCard from '../ProductCard';
+import QuickView from '../QuickView';
 
 const ProductCardGrid = (props) => {
 
@@ -29,8 +30,8 @@ const ProductCardGrid = (props) => {
             showQuickView={() => setShowQuickView(true)}
           />);
       })}
-      <Drawer visible={showQuickView} closeQuickView={() => setShowQuickView(false)}>
-        A
+      <Drawer visible={showQuickView} close={() => setShowQuickView(false)}>
+        <QuickView close={() => setShowQuickView(false)}/>
       </Drawer>
     </div>
   );

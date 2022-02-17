@@ -9,6 +9,8 @@ const Accordion = (props) => {
 
   const combinedStyling = {...styles, ...customStyle}
 
+  const icon = type === 'caret' ? <Icon symbol={'caret'}></Icon> : <Icon symbol={`${open === true ? 'minus': 'plus'}`}></Icon>;
+
   return (
     <div className={combinedStyling.accordionRoot}>
       <div 
@@ -17,10 +19,9 @@ const Accordion = (props) => {
         <span className={`${combinedStyling.accordionTitle} ${combinedStyling.uppercase}`}>
           {title}
         </span>
-        {type === 'caret' &&
         <div className={`${styles.iconContainer} ${open === true ? styles.rotate : ''}`}>
-          <Icon symbol={'caret'}></Icon>
-        </div>}
+          {icon}
+        </div>
       </div>
       <div className={`${styles.accordionContent} ${open === true ? styles.show : styles.hide}`}>
         {children}

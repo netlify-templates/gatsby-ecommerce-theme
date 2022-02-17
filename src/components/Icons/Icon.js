@@ -13,8 +13,11 @@ import Delivery from './Delivery';
 import Facebook from './Facebook';
 import Filter from './Filter';
 import Heart from './Heart';
+import HeartFill from './HeartFill';
 import Instagram from './Instagram';
 import List from './List';
+import Minus from './Minus';
+import Plus from './Plus';
 import Search from './Search';
 import Twitter from './Twitter';
 import User from './User';
@@ -46,10 +49,16 @@ function Icon(props) {
         return <Filter />;
     case 'heart':
         return <Heart />
+    case 'heartFill':
+        return <HeartFill />;
     case 'instagram':
         return <Instagram />
     case 'list':
         return <List />;
+    case 'minus':
+        return <Minus />;
+    case 'plus':
+        return <Plus />;
     case 'search':
       return <Search />
     case 'twitter':

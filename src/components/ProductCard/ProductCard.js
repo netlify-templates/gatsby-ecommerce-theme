@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import * as styles from './ProductCard.module.css';
 
 import Icon from '../Icons/Icon';
@@ -8,11 +9,20 @@ const ProductCard = (props) => {
 
   const { image, imageAlt, name, price, originalPrice, meta, showQuickView, height=580 } = props;
 
+  const handleRouteToProduct = () => {
+    navigate('/product/sample');
+  }
+
+  const handleQuickView = (e) => {
+    e.stopPropagation();
+    showQuickView();
+  }
+
   return (
     <div className={styles.root}>
-      <div className={styles.imageContainer}>
+      <div className={styles.imageContainer} onClick={() => handleRouteToProduct()} role={'presentation'}>
         <img style={{height:`${height}px`}} src={image} alt={imageAlt}></img>
-        <div className={styles.bagContainer} role={'presentation'} onClick={showQuickView}>
+        <div className={styles.bagContainer} role={'presentation'} onClick={(e) => handleQuickView(e)}>
           <Icon symbol={'bagPlus'} />
         </div>
         <div className={styles.heartContainer}>

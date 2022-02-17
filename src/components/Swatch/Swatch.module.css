@@ -1,0 +1,23 @@
+.root {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--bg-light-gray);
+    transition: all ease-in-out 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor:pointer;
+}
+
+.circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.root:hover, .isActive {
+    border: 1px solid var(--standard-black);
+}

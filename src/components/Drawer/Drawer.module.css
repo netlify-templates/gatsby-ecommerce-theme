@@ -6,11 +6,11 @@
     z-index: 60;
     width: 100%;
     transition: all ease-in-out 0.3s;
+    height: 100vh;
 }
 
 .overlay {
-    width: 100%;
-    height: 100vh;
+    width: calc(100% - 540px);
     background-color: var(--standard-black);
     transition: all ease-in-out 0.3s;
     position: relative;
@@ -20,9 +20,9 @@
 .content {
     position: relative;
     background-color: var(--standard-white);
-    padding: 32px 4px 0px 4px;
     width: 540px;
     transition: right ease-in-out 0.3s;
+    overflow-y: auto;
 }
 
 .iconContainer {

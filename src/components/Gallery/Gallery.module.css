@@ -1,0 +1,16 @@
+.root {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 520px;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

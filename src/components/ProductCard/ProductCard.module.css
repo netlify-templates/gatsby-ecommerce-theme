@@ -1,5 +1,4 @@
 .root {
-    cursor: pointer;
     width: 100%;
 }
 
@@ -9,6 +8,7 @@
 
 .imageContainer {
     position: relative;
+    cursor: pointer;
 }
 
 .root img {
