@@ -1,15 +1,19 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { Link, navigate } from 'gatsby';
 
-import Icon from '../Icons/Icon';
+import AddNotification from '../AddNotification';
 import Container from '../Container';
 import Config from '../../config.json';
+import Drawer from '../Drawer';
 import ExpandedMenu from '../ExpandedMenu';
 import FormInputField from '../FormInputField/FormInputField';
+import Icon from '../Icons/Icon';
+import MiniCart from '../MiniCart';
 import * as styles from './Header.module.css';
 
 const Header = (prop) => {
   
+  const [showMiniCart, setShowMiniCart] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const [menu, setMenu] = useState();
   const [activeMenu, setActiveMenu] = useState();
@@ -89,8 +93,13 @@ const Header = (prop) => {
             </div>
             <div className={styles.actionContainers}>
               <div className={styles.iconContainer} role={'presentation'} onClick={()=> {
-                searchRef.current.focus();
-              }}><Icon symbol={'bag'}></Icon></div>
+                setShowMiniCart(true);
+              }}>
+                <Icon symbol={'bag'}></Icon>
+                <div className={styles.notificationContainer}>
+                  <AddNotification />
+                </div>
+              </div>
               <div className={styles.iconContainer}><Icon symbol={'user'}></Icon></div>
               <div className={`${styles.iconContainer}`}><Icon symbol={'heart'}></Icon></div>
               <div className={styles.iconContainer} role={'presentation'} onClick={() => {
@@ -135,6 +144,9 @@ const Header = (prop) => {
             <ExpandedMenu menu={menu} />   
           </Container>  
         </div>
+        <Drawer visible={showMiniCart} close={() => setShowMiniCart(false)}>
+          <MiniCart />
+        </Drawer>
     </div>
   );
 };

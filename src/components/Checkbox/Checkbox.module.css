@@ -41,8 +41,8 @@
 }
 
 .md svg {
-    height: 12px;
-    width: 12px; 
+    height: 14px;
+    width: 14px; 
 }
 
 .sm {
@@ -51,8 +51,8 @@
 }
 
 .sm svg {
-    height: 9px;
-    width: 9px; 
+    height: 11px;
+    width: 11px; 
 }
 
 .checkboxWrapper .inputWrapper:hover .box {

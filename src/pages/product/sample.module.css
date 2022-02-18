@@ -147,6 +147,12 @@
     margin-bottom: 48px;
 }
 
+/* offset layout padding */
+.attributeContainer {
+    margin-top: 96px;
+    margin-bottom: -150px;
+}
+
 .show {
     visibility: visible;
     opacity: 1;

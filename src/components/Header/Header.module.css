@@ -156,3 +156,7 @@
     background-color: transparent;
     z-index: -1;
 }
+
+.notificationContainer {
+    position: relative;
+}
