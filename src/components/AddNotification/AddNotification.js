@@ -20,7 +20,7 @@ const AddNotification = (props) => {
   };
 
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
-  const showNotif = ctxAddItemNotification.state.open;
+  const showNotif = ctxAddItemNotification.state?.open;
 
   return (
     <div className={`${styles.root} ${showNotif === true ? styles.show : styles.hide}`}>
