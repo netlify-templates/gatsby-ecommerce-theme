@@ -5,6 +5,7 @@ import * as styles from './AdjustItem.module.css';
 
 const AdjustItem = (props) => {
 
+  const {isTransparent} = props;
   const [qty, setQty] = useState(1);
 
   const handleOnChange = (e) => {
@@ -13,7 +14,7 @@ const AdjustItem = (props) => {
   }
   
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${isTransparent === true ? styles.transparentBorder : ''}`}>
       <div className={styles.iconContainer} role={'presentation'} onClick={() => {
         if(qty <= 1) return;
         setQty(qty-1);
@@ -21,7 +22,7 @@ const AdjustItem = (props) => {
         <Icon symbol={'minus'}></Icon>
       </div>
       <div className={styles.inputContainer}>
-        <input onChange={(e) => handleOnChange(e)} type={'number'} value={qty}></input>
+        <input className={`${isTransparent === true ? styles.transparentInput : ''}`} onChange={(e) => handleOnChange(e)} type={'number'} value={qty}></input>
       </div>
       <div role={'presentation'} onClick={() => setQty(qty+1)} className={styles.iconContainer}>
         <Icon symbol={'plus'}></Icon>

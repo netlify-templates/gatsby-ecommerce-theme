@@ -48,3 +48,11 @@
     font-size: 14px;
     text-align: center;
 }
+
+.transparentBorder {
+    border: 1px solid transparent;
+}
+
+.transparentInput {
+    background-color: transparent;
+}

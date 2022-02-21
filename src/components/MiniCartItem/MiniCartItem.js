@@ -3,7 +3,7 @@ import React from 'react';
 import { navigate } from 'gatsby';
 import AdjustItem from '../AdjustItem';
 import CurrencyFormatter from '../CurrencyFormatter';
-import Icon from '../Icons/Icon';
+import RemoveItem from '../RemoveItem';
 
 import * as styles from './MiniCartItem.module.css';
 
@@ -36,7 +36,7 @@ const MiniCartItem = (props) => {
         <AdjustItem></AdjustItem>
       </div>
       <div className={styles.closeContainer}>
-        <Icon symbol={'cross'}></Icon>
+        <RemoveItem />
       </div>
     </div>
   );

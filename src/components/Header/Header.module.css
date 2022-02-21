@@ -22,6 +22,13 @@
     justify-content: center;
 }
 
+.headerMessageContainer span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--grey-crumb);
+}
+
 .root .linkContainers {
     display: flex;
 }
@@ -37,22 +44,8 @@
     width: 100%;
 }
 
-/* .root .navLink:hover {
-    border-bottom: 2px solid var(--standard-black);
-} */
-
 .activeLink {
     border-bottom: 2px solid var(--standard-black);
-}
-
-.brandContainer {
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.brandContainer h4 {
-    font-family: var(--brand-font);
 }
 
 .actionContainers {

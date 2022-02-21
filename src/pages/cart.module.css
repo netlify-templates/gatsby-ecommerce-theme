@@ -1,3 +1,84 @@
-.root {
+.headerContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
+.contentContainer {
+    width: 100%;
+    min-height: 70vh;
+    background-color: var(--standard-light-grey);
+    padding-top: 32px;
+    padding-bottom: 88px;
+}
+
+.summaryContainer {
+    margin-top: 72px;
+}
+
+.summaryContainer h3{
+    text-align: center;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 62px;
+}
+
+.cartContainer {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    margin-top: 72px;
+}
+
+.cartItemsContainer {
+    margin-right: 40px;
+}
+
+.cartItemsContainer > div {
+    margin-bottom: 40px;
+}
+
+.shoppingContainer {
+    display: flex;
+    align-items: center;
+}
+
+.shopLink {
+    transition: all ease-in-out 0.3s;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    display: flex;
+    align-items: center;
+    color: var(--standard-black);
+}
+
+.shopLink:hover {
+    color: var(--standard-gold);
+}
+
+.shopLink svg {
+    transform: rotate(-180deg);
+    margin-right: 8px;
+    width: 15px;
+    height: 15px;
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.loginContainer a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--standard-black);
+    transition: color ease-in-out 0.3s;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.loginContainer a:hover {
+    color: var(--standard-gold);
 }

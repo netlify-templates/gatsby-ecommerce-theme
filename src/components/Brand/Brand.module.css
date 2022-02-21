@@ -1,0 +1,9 @@
+.root {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.brandContainer h4 {
+    font-family: var(--brand-font);
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, createRef } from 'react';
 import { Link, navigate } from 'gatsby';
 
 import AddNotification from '../AddNotification';
+import Brand from '../Brand';
 import Container from '../Container';
 import Config from '../../config.json';
 import Drawer from '../Drawer';
@@ -88,9 +89,10 @@ const Header = (prop) => {
                   </Link>)}
               </nav>
             </div>
-            <div className={styles.brandContainer} role={'presentation'} onClick={() => navigate('/')}>
+            <Brand />
+            {/* <div className={styles.brandContainer} role={'presentation'} onClick={() => navigate('/')}>
               <h4>GENEVA</h4>
-            </div>
+            </div> */}
             <div className={styles.actionContainers}>
               <div className={styles.iconContainer} role={'presentation'} onClick={()=> {
                 setShowMiniCart(true);
