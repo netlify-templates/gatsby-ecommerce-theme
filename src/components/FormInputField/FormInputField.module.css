@@ -4,12 +4,14 @@
 }
 
 .label {
+    font-weight: 500;
     font-size: 14px;
-    line-height: 1.785;
-    color: var(--standard-black);
-    font-family: var(--standard-font);
-    font-weight: 700;
-    margin-bottom: 6px;
+    line-height: 17px;
+    margin-bottom: 8px;
+  }
+
+  .label span {
+    color: var(--sale);
   }
   
   .textarea {
@@ -46,6 +48,10 @@
       transform: translate(0%, -50%);
       right: 18px;
       font-size: 24px;
+  }
+
+  .offsetIcon {
+    top: calc(50% + 16px);
   }
 
   .conditionalIconPadding {

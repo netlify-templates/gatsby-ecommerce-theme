@@ -1,0 +1,17 @@
+.link {
+    color: var(--standard-black);
+    text-transform: uppercase;
+    transition: all ease-in-out 0.3s;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px; 
+
+    padding: 32px 0px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.link:hover, .active {
+    border-bottom: 2px solid var(--standard-black); 
+}

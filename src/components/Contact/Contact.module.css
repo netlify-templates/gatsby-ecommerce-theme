@@ -1,0 +1,47 @@
+.root {
+
+}
+
+.section {
+    margin-top: 48px;
+}
+
+.section h4 {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 26px;
+    margin-bottom: 32px;
+}
+
+.section p {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px
+}
+
+.contactForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px 24px;
+}
+
+.contactForm input {
+    border: 1px solid var(--bg-light-gray) !important;
+}
+
+.contactForm textarea {
+    border: 1px solid var(--bg-light-gray) !important;
+}
+
+.commentInput {
+    margin-top: 32px;
+    grid-column: 1 / span 2;
+}
+
+.customButton {
+    width: 220px;
+}
+
+.contactContainer {
+    margin-top: 32px;
+}

@@ -1,0 +1,43 @@
+.root {
+
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid var(--bg-light-gray);
+    position: sticky;
+    top: 164px;
+    background-color: var(--standard-white);
+
+    /* offset banner margin */
+    margin-top: -64px;
+    margin-bottom: 80px;
+    z-index: 1;
+}
+
+.navContainer > a {
+    margin-right: 48px;
+}
+
+.navContainer > a:last-child {
+    margin-right: 0px;
+}
+
+.content {
+    transition: all ease-in-out 0.3s;
+    overflow: auto;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+}

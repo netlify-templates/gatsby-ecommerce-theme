@@ -294,41 +294,8 @@ ul {
 }
 
 ol {
-  list-style: none;
-  counter-reset: ol-counter;
-  margin: 0
-}
-
-ol li {
-  counter-increment: ol-counter;
-  position: relative;
-  padding-left: 75px;
-  margin-top: 30px;
-}
-
-ol li:before {
-  content: '';
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: 3px;
-  left: 0;
-  background-color: currentColor;
-}
-
-ol li:after {
-  content: counter(ol-counter);
-  border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  font-family: var(--standard-number-bold);
-  position: absolute;
-  top: 3px;
-  left: 0;
-  filter: invert(1);
-  text-align: center;
-  line-height: 32px;
+  margin: 0;
+  padding-left: 1.8em;
 }
 
 p:first-of-type {

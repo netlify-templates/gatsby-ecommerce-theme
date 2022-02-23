@@ -38,7 +38,7 @@
     text-transform: uppercase;
     color: var(--standard-black);
     font-weight: 500;
-    padding-bottom: 48px;
+    padding-bottom: 55px;
     border-bottom: 2px solid transparent;
     transition: border 0.3s ease-in-out;
     width: 100%;

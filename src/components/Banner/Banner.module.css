@@ -1,4 +1,10 @@
 .root {
     padding: 50px 0px;
     margin-bottom: 64px;
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+
+    display: flex;
+    align-items: center;
 }

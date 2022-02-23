@@ -46,10 +46,10 @@
                 "link": "/"
             },{
                 "text": "Contact Us",
-                "link": "/"
+                "link": "/support#contact"
             },{
                 "text": "Shipping & Returns",
-                "link": "/"
+                "link": "/support#returns"
             }]
         }
     ],
