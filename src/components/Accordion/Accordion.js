@@ -19,7 +19,7 @@ const Accordion = (props) => {
         <span className={`${combinedStyling.accordionTitle} ${combinedStyling.uppercase}`}>
           {title}
         </span>
-        <div className={`${styles.iconContainer} ${open === true ? styles.rotate : ''}`}>
+        <div className={`${combinedStyling.iconContainer} ${open === true ? styles.rotate : ''}`}>
           {icon}
         </div>
       </div>

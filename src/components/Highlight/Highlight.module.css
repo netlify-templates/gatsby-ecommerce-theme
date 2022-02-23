@@ -1,6 +1,7 @@
 .root {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
 .highlightImage {
@@ -50,4 +51,23 @@
 .contentContainer a:hover {
     color: var(--standard-gold);
     border-bottom: 1px solid var(--standard-gold);
+}
+
+@media (max-width: 1100px) {
+    .highlightImage {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .contentContainer {
+        padding: 0px 40px;
+    }
+
+    .root {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }

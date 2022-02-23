@@ -1,6 +1,29 @@
 .root {
+
+}
+
+.cardGrid {
     width: 100%;
     margin: 0 auto;
     display: grid;
     gap: 56px 32px;
 }
+
+.mobileSlider {
+    display: none;
+}
+
+.show {
+    display: grid !important;
+}
+
+@media (max-width: 800px) {
+    .mobileSlider {
+        display: block;
+    }
+
+    .cardGrid {
+        display: none;
+    }
+}
+

@@ -56,13 +56,13 @@ const IndexPage = () => {
         <div className={styles.newArrivalsContainer}>
           <Container>
             <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'}/>
-            <ProductCardGrid height={480} columns={3} data={newArrivals} />
+            <ProductCardGrid showSlider height={480} columns={3} data={newArrivals} />
           </Container>
         </div>
 
         {/* Highlight  */}
         <div className={styles.highlightContainer}>
-          <Container size={'large'}>
+          <Container size={'large'} fullMobile>
             <Highlight 
               image={'/highlight.png'}
               altImage={'highlight image'}

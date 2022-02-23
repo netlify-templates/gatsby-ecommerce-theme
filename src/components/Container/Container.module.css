@@ -20,3 +20,10 @@
 .container.none {
     width: 100%;
 }
+
+@media (max-width: 800px) {
+    .fullMobile {
+        width: 100%;
+    }
+}
+

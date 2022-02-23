@@ -39,3 +39,20 @@
 .ctaButton {
     width: 180px;
 }
+
+@media (max-width: 800px) {
+    .root {
+        min-height: 50vh;
+    }
+
+    .title {
+        font-size: 42px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        padding: 0px 32px;
+    }
+}

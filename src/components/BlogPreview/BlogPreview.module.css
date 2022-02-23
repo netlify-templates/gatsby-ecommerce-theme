@@ -40,3 +40,9 @@
     color: var(--standard-gold);
     border-bottom: 1px solid var(--standard-gold);
 }
+
+@media (max-width: 800px) {
+    .root {
+       margin-bottom: 16px;
+    }
+}

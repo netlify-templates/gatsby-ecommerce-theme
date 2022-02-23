@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 
+import Accordion from '../Accordion';
 import Container from '../Container';
 import Dropdown from '../Dropdown/Dropdown';
 import FormInputField from '../FormInputField/FormInputField';
@@ -22,6 +23,18 @@ const Footer = (prop) => {
     window.open(Config.social[platform]);
   }
 
+  const renderLinks = (linkCollection) => {
+    return(
+      <ul className={styles.linkList}>
+      {linkCollection.links.map((link, index) => {
+        return(<li key={index}>
+          <Link className={`${styles.link} fancy`} to={link.link}>{link.text}</Link>
+        </li>)
+      })}
+    </ul>
+    )
+  }
+
   return (
     <div className={styles.root}>
       <Container size={'large'} spacing={'min'}>
@@ -29,16 +42,20 @@ const Footer = (prop) => {
           <div className={styles.contentTop}>
             {Config.footerLinks.map((linkCollection, indexLink) => {
               return(
-              <div key={indexLink}>
-                <span className={styles.linkTitle}>{linkCollection.subTitle}</span>
-                <ul className={styles.linkList}>
-                  {linkCollection.links.map((link, index) => {
-                    return(<li key={index}>
-                      <Link className={`${styles.link} fancy`} to={link.link}>{link.text}</Link>
-                    </li>)
-                  })}
-                </ul>
-              </div>)
+              <div className={styles.footerLinkContainer} key={indexLink}>
+                {/* for web version */}
+                <div className={styles.footerLinks}>
+                  <span className={styles.linkTitle}>{linkCollection.subTitle}</span>
+                  {renderLinks(linkCollection)}
+                </div>
+                {/* for mobile version */}
+                <div className={styles.mobileFooterLinks}>
+                    <Accordion customStyle={styles} type={'add'} title={linkCollection.subTitle}>
+                      {renderLinks(linkCollection)}
+                    </Accordion>
+                </div>
+              </div>
+              )
             })}
             <div className={styles.newsLetter}>
               <div className={styles.newsLetterContent}>

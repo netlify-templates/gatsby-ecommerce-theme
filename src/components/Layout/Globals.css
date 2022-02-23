@@ -681,3 +681,7 @@ p:first-of-type {
   font-size: 14px;
   line-height: 17px;
 }
+
+/* React Slick Custom Settings */
+.slick-list {margin: 0 -5px;}
+.slick-slide>div {padding: 0 5px;}

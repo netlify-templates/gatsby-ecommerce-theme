@@ -19,6 +19,10 @@
 
 .messageContainer p {
     text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
 }
 
 .gold {
@@ -94,4 +98,18 @@
 /* offset layout padding */
 .attributeContainer {
     margin-bottom: -150px;
+}
+
+@media (max-width: 800px) {
+    .sustainableContainer {
+        margin: 96px 0px 0px 0px;
+    }
+
+    .socialContentGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .highlightContainer {
+        margin: 88px 0px 40px 0px;
+    }
 }

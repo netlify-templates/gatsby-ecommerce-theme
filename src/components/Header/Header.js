@@ -15,7 +15,11 @@ import * as styles from './Header.module.css';
 const Header = (prop) => {
   
   const [showMiniCart, setShowMiniCart] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
+  
+  // const [subMenu, setSubMenu] = useState();
   const [menu, setMenu] = useState();
   const [activeMenu, setActiveMenu] = useState();
 
@@ -76,8 +80,9 @@ const Header = (prop) => {
         <span>{bannerMessage}</span>
       </div>
       <Container size={'large'} spacing={'min'}>
+          {/* header container */}
           <div className={styles.header}>
-            <div className={styles.linkContainers}>
+            <div className={styles.linkContainer}>
               <nav role={'presentation'} onMouseLeave={() => {setShowMenu(false)}}>
                 {Config.headerLinks.map((navObject) => 
                   <Link
@@ -89,10 +94,10 @@ const Header = (prop) => {
                   </Link>)}
               </nav>
             </div>
-            <Brand />
-            {/* <div className={styles.brandContainer} role={'presentation'} onClick={() => navigate('/')}>
-              <h4>GENEVA</h4>
-            </div> */}
+            <div role={'presentation'} onClick={() => setMobileMenu(!mobileMenu)} className={styles.burgerIcon}>
+                <Icon symbol={`${mobileMenu === true ? 'cross' : 'burger'}`}></Icon>
+            </div>
+            <Brand/>
             <div className={styles.actionContainers}>
               <div className={styles.iconContainer} role={'presentation'} onClick={()=> {
                 setShowMiniCart(true);
@@ -102,8 +107,8 @@ const Header = (prop) => {
                   <AddNotification />
                 </div>
               </div>
-              <div className={styles.iconContainer}><Icon symbol={'user'}></Icon></div>
-              <div className={`${styles.iconContainer}`}><Icon symbol={'heart'}></Icon></div>
+              <div className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
+              <div className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>
               <div className={styles.iconContainer} role={'presentation'} onClick={() => {
                   setShowSearch(!showSearch);
                 }}>
@@ -111,6 +116,7 @@ const Header = (prop) => {
               </div>
             </div>
           </div>
+
           {/* search container */}
           <div className={`${styles.searchContainer} ${showSearch === true ? styles.show : styles.hide}`}>
             <h4>What are you looking for?</h4>
@@ -137,6 +143,8 @@ const Header = (prop) => {
                 }} className={styles.backdrop}></div>
           </div>
         </Container>
+
+        {/* menu container */}
         <div
           role={'presentation'}
           onMouseLeave={() => setShowMenu(false)} 
@@ -146,9 +154,58 @@ const Header = (prop) => {
             <ExpandedMenu menu={menu} />   
           </Container>  
         </div>
+
+        {/* minicart container */}
         <Drawer visible={showMiniCart} close={() => setShowMiniCart(false)}>
           <MiniCart />
         </Drawer>
+
+        {/* mobile menu */}
+        <Drawer 
+          top={'105px'} 
+          isReverse 
+          visible={mobileMenu} 
+          close={() => setMobileMenu(false)}
+          disableOverlay
+        >
+          <nav>
+            <div className={styles.authLinkContainer}>
+              <Link to={'/signup'}>Sign Up</Link>
+              <Link to={'/login'}>Login</Link>
+            </div>
+            <div className={styles.mobileNavContainer}>
+            {Config.headerLinks.map((navObject) => {
+              const hasSubmenu = navObject.category?.length !== undefined ? true : false;
+              return(
+              <Link
+                key={navObject.menuLink}
+                onMouseEnter={() => handleHover(navObject)}
+                className={`${styles.mobileLink}`} 
+                to={hasSubmenu === true ? '' : '/'}
+                onClick={() => {
+                  // setSubMenu(navObject.category);
+                  setShowSubMenu(true)
+                }}
+              >
+                {navObject.menuLabel}
+                { hasSubmenu && <Icon symbol={'caret'}></Icon>}
+              </Link>
+              )})}
+            </div>
+          </nav>
+        </Drawer>
+
+        <Drawer
+          top={'105px'} 
+          isReverse 
+          visible={showSubMenu} 
+          close={() => setShowSubMenu(false)}
+          disableOverlay
+        >
+            <span>WIP</span>
+        </Drawer>
+
+
     </div>
   );
 };

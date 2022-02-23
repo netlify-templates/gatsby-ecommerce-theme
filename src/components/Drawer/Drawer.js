@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Icon from '../Icons/Icon';
 import * as styles from './Drawer.module.css';
 
-const Drawer = ({children, visible, close}) => {
+const Drawer = ({children, visible, close, top = '0px', isReverse = false, disableOverlay = false,}) => {
 
   useEffect(() => {
     window.addEventListener('keydown', escapeHandler);
@@ -15,9 +15,17 @@ const Drawer = ({children, visible, close}) => {
     if(e?.keyCode === undefined) return;
     if(e.keyCode === 27) close();
   }
+
+  const showStyle = isReverse === true ? styles.showReverse : styles.showContent;
+  const hideStyle = isReverse === true ? styles.hideReverse: styles.hideContent;
   
   return (
-    <div className={`${styles.root} ${visible === true ? styles.show : styles.hide}`}>
+    <div style={{top: top}} className={`
+      ${styles.root} 
+      ${visible === true ? styles.show : styles.hide}
+      ${isReverse === true ? styles.isReverse : ''}
+    `}>
+      {disableOverlay === false && 
       <div 
         className={`${styles.overlay} ${visible === true ? styles.showOverlay : styles.hide}`}
         role={'presentation'}
@@ -26,8 +34,9 @@ const Drawer = ({children, visible, close}) => {
         <div className={styles.iconContainer}>
           <Icon symbol={'cross'}></Icon>
         </div>
-      </div>
-      <div className={`${styles.content} ${visible === true ? styles.showContent : styles.hideContent}`}>
+      </div>}
+
+      <div className={`${styles.content} ${visible === true ? showStyle : hideStyle}`}>
         {children}
       </div>
     </div>

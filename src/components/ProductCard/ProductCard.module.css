@@ -92,3 +92,9 @@
     opacity: 1;
     visibility: visible;
 }
+
+@media (max-width: 800px) {
+    /* .root {
+        width: 90%;
+    } */
+}

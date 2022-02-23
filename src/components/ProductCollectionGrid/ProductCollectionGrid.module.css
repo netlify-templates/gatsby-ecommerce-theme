@@ -6,3 +6,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
 }
+
+@media (max-width: 800px) {
+    .root {
+        grid-template-columns: 1fr;
+    }
+}

@@ -4,6 +4,9 @@
     cursor: pointer;
 }
 
-.brandContainer h4 {
-    font-family: var(--brand-font);
+@media (max-width: 800px) {
+    .root svg {
+        width: 90px;
+        height: 16.67px;
+    }
 }

@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0px 32px;
 }
 
 .root span {
@@ -22,4 +23,16 @@
     line-height: 52px;
     text-align: center;
     max-width: 720px;
+}
+
+@media (max-width: 600px) {
+
+    .root {
+        min-height: 35vh;
+    }
+
+    .root p {
+        font-size: 22px;
+        line-height: 32px;
+    }
 }

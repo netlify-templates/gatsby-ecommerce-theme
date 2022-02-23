@@ -1,0 +1,23 @@
+.root {
+
+}
+
+.customDots {
+    margin: 16px 0px 0px 0px;
+    list-style-type: none;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mobilePagination {
+    width: 36px;
+    height: 12px;
+    border-bottom: 2px solid var(--grey-passthough);
+    margin-right: 16px;
+}
+
+.customDots :global(.slick-active) > .mobilePagination{
+    border-bottom: 2px solid var(--standard-black);
+  }

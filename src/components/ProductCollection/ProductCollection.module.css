@@ -14,9 +14,6 @@
     transition: color 0.3s ease-in-out;
 }
 
-/* .root:hover span {
-    color: var(--standard-gold);
-} */
 
 .content {
     position: absolute;
@@ -31,7 +28,8 @@
     font-size: 42px;
     line-height: 50px;
     font-family: var(--standard-header);
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+    padding-right: 16px;
     display: block;
 }
 
@@ -62,4 +60,19 @@
 .root:hover .overlay {
     opacity: 0.4;
     visibility: visible;
+}
+
+@media (max-width: 800px) {
+    .root {
+        min-height: 330px;
+    }
+
+    .content {
+        bottom: 50px;
+        left: 30px;
+    }
+
+    .title {
+        margin-bottom:16px;
+    }
 }

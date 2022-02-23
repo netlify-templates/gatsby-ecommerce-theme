@@ -1,5 +1,5 @@
  import React from "react"
-//  import Helmet from "react-helmet"
+ import Helmet from "react-helmet"
  import PropTypes from "prop-types"
   
  import Header from "../Header"
@@ -12,9 +12,12 @@
  const Layout = ({props, children}) => { 
    return (
      <>
-       {/* <Helmet>
-         Add any sitewide scripts here
-       </Helmet> */}
+       <Helmet>
+         {/* Add any sitewide scripts here */}
+         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/>
+         <link rel="stylesheet" type="text/css" charset="UTF-8"href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
+       </Helmet>
+
        <Header/>
         <main className={styles.main}>
           {children}

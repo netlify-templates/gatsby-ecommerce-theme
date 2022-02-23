@@ -21,7 +21,7 @@
     position: relative;
     background-color: var(--standard-white);
     width: 540px;
-    transition: right ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
     overflow-y: auto;
 }
 
@@ -71,4 +71,32 @@
 
 .hideContent {
     right: -540px;
+}
+
+.showReverse {
+    left: 0px;
+}
+
+.hideReverse {
+    left: -540px;
+}
+
+.isReverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 800px) {
+    .content {
+        width: 100%;
+    }
+
+    .overlay {
+        width: 10%;
+    }
+
+    .iconContainer {
+        top: 16px;
+        right: 50%;
+        transform: translate(50%, 0%);
+    }
 }

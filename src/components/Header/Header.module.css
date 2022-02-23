@@ -38,7 +38,7 @@
     text-transform: uppercase;
     color: var(--standard-black);
     font-weight: 500;
-    padding-bottom: 55px;
+    padding-bottom: 50px;
     border-bottom: 2px solid transparent;
     transition: border 0.3s ease-in-out;
     width: 100%;
@@ -83,6 +83,7 @@
     visibility: hidden;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 1px;
 }
 
 .show {
@@ -105,6 +106,12 @@
     z-index: 51;
 }
 
+.searchContainer h4 {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+}
+
 .searchForm {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -117,6 +124,8 @@
 
 .suggestionContianer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 40px;
 }
@@ -152,4 +161,91 @@
 
 .notificationContainer {
     position: relative;
+}
+
+.burgerIcon {
+    display: none;
+}
+
+.authLinkContainer {
+    background-color: var(--standard-light-grey);
+    padding: 16px;
+}
+
+.authLinkContainer a{
+    color: var(--standard-gold);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.authLinkContainer a:first-child{
+    margin-right: 24px;
+    padding-right: 24px;
+    border-right: 1px solid var(--standard-gold);
+}
+
+.mobileNavContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobileLink {
+    padding: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: var(--standard-black);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobileLink svg {
+    transform: rotate(-90deg);
+}
+
+@media (max-width: 800px) {
+    .linkContainer {
+      display: none;
+    }
+
+    .burgerIcon {
+        display: block;
+    }
+
+    .burgerIcon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hideOnMobile {
+        display: none;
+    }
+
+    .actionContainers > div {
+        margin-right: 16px;
+        cursor: pointer;
+    }
+
+    .actionContainers > div:first-child {
+        margin-right: 0px;
+    }
+
+    .header {
+        padding: 24px 8px 24px 8px;
+        margin: 0px 8px;
+    }
+
+    .searchContainer {
+        width: auto;
+        padding: 0px 32px;
+    }
+
+    .searchContainer h4 {
+        font-size: 32px;
+        line-height: 42px;
+    }    
 }

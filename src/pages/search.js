@@ -15,7 +15,7 @@ const SearchPage = (props) => {
     const searchQuery = params.q ? params.q : '';
 
     const sampleData = generateMockProductData(3, 'woman');
-    console.log(sampleData);
+    
   return (
     <Layout>
         <div className={styles.root}>

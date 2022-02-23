@@ -34,3 +34,9 @@
     line-height: 17px;
     color: var(--grey-crumb);
 }
+
+@media (max-width: 800px) {
+    .root {
+        margin-bottom: 40px;
+    }
+}
