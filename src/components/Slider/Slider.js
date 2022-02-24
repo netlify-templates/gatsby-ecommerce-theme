@@ -18,14 +18,7 @@ const Slider = (props) => {
     slidesToScroll: 1,
     arrows: false,
     dotsClass: `${styles.customDots}`,
-    customPaging: customPaging,
-    responsive: [
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 1,
-        }
-      }]
+    customPaging: customPaging
   };
 
   return (

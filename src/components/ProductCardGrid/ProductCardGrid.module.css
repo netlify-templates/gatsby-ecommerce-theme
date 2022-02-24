@@ -28,6 +28,7 @@
 
     .show {
         grid-template-columns: 1fr 1fr !important;
+        gap: 24px 12px;
     }
 }
 

@@ -93,8 +93,25 @@
     visibility: visible;
 }
 
-@media (max-width: 800px) {
-    /* .root {
-        width: 90%;
-    } */
+@media (max-width: 600px) {
+    .imageContainer img{
+        height: 300px !important;
+    }
+
+    .productName {
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .prices span {
+        font-size: 13px;
+        line-height: 16px;
+    }    
+}
+
+@media (max-width: 400px) {
+    .imageContainer img{
+        height: 220px !important;
+    }
 }
