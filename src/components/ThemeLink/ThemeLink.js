@@ -3,10 +3,12 @@ import { Link } from 'gatsby';
 
 import * as styles from './ThemeLink.module.css';
 
-const ThemeLink = ({children, to, onClick, isActive}) => {
+const ThemeLink = ({children, to, onClick, isActive, themeRef}) => {
 
   return (
-      <Link onClick={onClick} className={`${styles.link} ${isActive === true ? styles.active: ''}`} to={to}>{children}</Link>
+    <div className={`${styles.root} ${isActive === true ? styles.active: ''}`} ref={themeRef}>
+      <Link onClick={onClick} className={`${styles.link}`} to={to}>{children}</Link>
+    </div>
   );
 };
 

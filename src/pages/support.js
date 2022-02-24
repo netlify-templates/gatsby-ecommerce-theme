@@ -22,7 +22,7 @@ const SupportPage = (props) => {
   const [current, setCurrent] = useState(subpages[4]);
 
   const renderElement = (key) => {
-    let tempElement = <React.Fragment />;
+    let tempElement = <React.Fragment />
 
     switch(key) {
       case 'contact':
@@ -49,6 +49,7 @@ const SupportPage = (props) => {
         setCurrent(tempCurrent);
       }
     }
+
   // eslint-disable-next-line react-hooks/exhaustive-deps  
   }, [props.location]);
 
@@ -65,7 +66,7 @@ const SupportPage = (props) => {
         />
 
         <div className={styles.navContainer}>
-          {subpages.map((details) => {
+          {subpages.map((details, index) => {
             return(
             <ThemeLink
               key={details.key}

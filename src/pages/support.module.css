@@ -9,26 +9,29 @@
 
     border-bottom: 1px solid var(--bg-light-gray);
     position: sticky;
-    top: 164px;
+    top: 150px;
     background-color: var(--standard-white);
 
     /* offset banner margin */
     margin-top: -64px;
     margin-bottom: 80px;
     z-index: 1;
+
+    overflow-y: scroll;
 }
 
-.navContainer > a {
+.navContainer > div {
     margin-right: 48px;
 }
 
-.navContainer > a:last-child {
+.navContainer > div:last-child {
     margin-right: 0px;
 }
 
 .content {
     transition: all ease-in-out 0.3s;
     overflow: auto;
+    margin: 0px 8px;
 }
 
 .show {
@@ -40,4 +43,29 @@
     opacity: 0;
     visibility: hidden;
     max-height: 0px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.navContainer::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.navContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@media (max-width: 800px) {
+    .navContainer {
+        padding-left: 32px;
+        padding-right: 32px;
+        justify-content: flex-start;
+        top: 105px;
+        margin-bottom: 48px;
+    }
+
+    .navContainer > a {
+        margin-right: 32px;
+    }
 }

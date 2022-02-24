@@ -25,5 +25,9 @@
     .cardGrid {
         display: none;
     }
+
+    .show {
+        grid-template-columns: 1fr 1fr !important;
+    }
 }
 

@@ -27,7 +27,7 @@
             "subTitle": "Info",
             "links": [{
                 "text": "About Us",
-                "link": "/"
+                "link": "/about"
             },{
                 "text": "Journal",
                 "link": "/"

@@ -25,7 +25,7 @@ const SearchPage = (props) => {
                     <h4>Search results for '{searchQuery}'</h4>
                     <span>3 results</span>
                 </div>
-                <ProductCardGrid height={580} columns={3} data={sampleData} />
+                <ProductCardGrid showSlider={false} height={580} columns={3} data={sampleData} />
             </Container>
         </div>
     </Layout>

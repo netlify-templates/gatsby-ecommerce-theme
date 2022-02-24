@@ -64,3 +64,14 @@
 .meta:last-child {
     margin-bottom: 0px;
 }
+
+@media (max-width: 500px) {
+    .imageContainer {
+        width: 80px;
+        height: 110px;
+    }
+
+    .adjustItemContainer {
+        margin-top: 16px;
+    }
+}

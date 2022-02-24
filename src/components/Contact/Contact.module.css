@@ -1,5 +1,8 @@
 .root {
+}
 
+.section:first-child {
+    margin-top: 0px;
 }
 
 .section {
@@ -44,4 +47,22 @@
 
 .contactContainer {
     margin-top: 32px;
+}
+
+@media (max-width: 800px) {
+    .contactForm {
+        grid-template-columns: 1fr;
+    }
+
+    .commentInput {
+        grid-column: 1; 
+    }
+
+    .customButton {
+        width: 100%;
+    }
+
+    .commentInput {
+        margin-top: 0px;
+    }
 }
