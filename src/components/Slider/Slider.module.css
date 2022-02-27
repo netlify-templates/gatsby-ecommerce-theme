@@ -21,3 +21,11 @@
 .customDots :global(.slick-active) > .mobilePagination{
     border-bottom: 2px solid var(--standard-black);
   }
+
+.spacing :global(.slick-list) {
+    margin: 0 -5px;
+}
+
+.spacing :global(.slick-slide) > div {
+    padding: 0 5px;
+}

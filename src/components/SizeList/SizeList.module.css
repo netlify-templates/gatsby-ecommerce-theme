@@ -18,6 +18,7 @@
 
 .sizeSelection > div {
     flex-grow: 1;
+    flex-basis: 0;
 }
 
 .guide {
@@ -30,4 +31,31 @@
     
     font-size: 14px;
     line-height: 17px;
+}
+
+@media (max-width: 1000px) {
+    .sizeSelection {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .sizeSelection {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+    .sizeSelection {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .sizeSelection {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

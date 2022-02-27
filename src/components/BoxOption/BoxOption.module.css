@@ -17,5 +17,6 @@
 }
 
 .root:hover, .isActive {
-    border: 1px solid var(--standard-black);
+    color: var(--standard-white);
+    background-color: var(--standard-gold);
 }

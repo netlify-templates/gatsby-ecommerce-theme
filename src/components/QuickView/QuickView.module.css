@@ -55,3 +55,9 @@
 .sectionContainer {
     margin-bottom: 32px;
 }
+
+@media (max-width: 800px) {
+    .contentContainer {
+        padding: 16px;
+    }
+}

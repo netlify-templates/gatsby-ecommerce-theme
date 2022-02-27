@@ -4,13 +4,13 @@ import Slick from "react-slick";
 
 const Slider = (props) => {
 
-  const { children } = props;
+  const { children, settings, spacing } = props;
 
   const customPaging = () => {
     return(<div className={styles.mobilePagination}></div>)
   }
 
-  const settings = {
+  const defaultSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -22,8 +22,8 @@ const Slider = (props) => {
   };
 
   return (
-    <div className={styles.root}>
-        <Slick {...settings}>
+    <div className={`${styles.root} ${spacing === true ? styles.spacing : ''}`}>
+        <Slick {...defaultSettings} {...settings}>
           {children}
         </Slick>
     </div>

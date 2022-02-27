@@ -56,7 +56,7 @@ const IndexPage = () => {
         <div className={styles.newArrivalsContainer}>
           <Container>
             <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'}/>
-            <ProductCardGrid showSlider height={480} columns={3} data={newArrivals} />
+            <ProductCardGrid spacing={true} showSlider height={480} columns={3} data={newArrivals} />
           </Container>
         </div>
 

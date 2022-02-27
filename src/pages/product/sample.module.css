@@ -162,3 +162,37 @@
     visibility: hidden;
     opacity: 0;
 }
+
+@media (max-width: 1000px) {
+    .details {
+        max-width: 350px;
+    }
+
+    .gallery {
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .content {
+        display: block;
+    }
+
+    .details {
+        max-width: unset;
+    }
+
+    .gallery {    
+        position: static;
+        margin-right: 0px;
+    }
+
+    .suggestionContainer h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .wishlistActionContainer {
+        margin-left: 8px;
+    }
+}

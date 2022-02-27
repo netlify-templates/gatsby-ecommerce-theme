@@ -161,6 +161,7 @@ const Header = (prop) => {
         </Drawer>
 
         {/* mobile menu */}
+        {/* {console.log()} */}
         <Drawer 
           top={'105px'} 
           isReverse 
@@ -202,6 +203,7 @@ const Header = (prop) => {
           close={() => setShowSubMenu(false)}
           disableOverlay
         >
+
             <span>WIP</span>
         </Drawer>
 

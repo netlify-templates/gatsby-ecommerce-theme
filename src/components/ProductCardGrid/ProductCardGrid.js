@@ -9,7 +9,7 @@ import Slider from '../Slider';
 const ProductCardGrid = (props) => {
 
   const [showQuickView, setShowQuickView] = useState(false);
-  const {height, columns = 3, data, showSlider = false} = props;
+  const {height, columns = 3, data, spacing, showSlider = false} = props;
   const columnCount = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`
   }
@@ -42,7 +42,7 @@ const ProductCardGrid = (props) => {
 
       {showSlider === true &&
       <div className={styles.mobileSlider}>
-        <Slider>
+        <Slider spacing={spacing}>
           {data && renderCards()}
         </Slider>
       </div>}

@@ -93,6 +93,13 @@
     visibility: visible;
 }
 
+@media (max-width: 800px) {
+    .bagContainer {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 @media (max-width: 600px) {
     .imageContainer img{
         height: 300px !important;
@@ -107,11 +114,21 @@
     .prices span {
         font-size: 13px;
         line-height: 16px;
-    }    
+    }
 }
 
 @media (max-width: 400px) {
     .imageContainer img{
         height: 220px !important;
+    }
+
+    .bagContainer {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bagContainer svg {
+        width: 20px;
+        height: 20px;
     }
 }

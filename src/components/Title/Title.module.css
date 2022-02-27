@@ -33,3 +33,10 @@
     color: var(--standard-gold);
     border-bottom: 1px solid var(--standard-gold);
 }
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+}

@@ -73,6 +73,10 @@
     text-align: center;
     color: var(--standard-black);
     transition: all ease-in-out 0.3s;
+
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
 }
 
 .linkContainer a:hover {
@@ -89,4 +93,11 @@
 .cartItemsContainer {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+@media (max-width: 500px) {
+    .totalContainer span {
+        font-size: 18px;
+        line-height: 22px;
+    }    
 }

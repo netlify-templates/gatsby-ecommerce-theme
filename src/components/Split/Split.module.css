@@ -38,3 +38,27 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media (max-width: 800px) {
+    .root {
+        grid-template-columns: 1fr;
+    }
+
+    .imageContainer {
+        height: 40vh;
+    }
+
+    .contentContainer {
+        padding: 56px 16px;
+    }
+
+    .contentContainer h4 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .contentContainer p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
