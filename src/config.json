@@ -63,7 +63,7 @@
                 "submenu": [
                   {
                       "menuLabel": "All clothing",
-                      "menuLink": "#"
+                      "menuLink": "/shop"
                   },
                   {
                       "menuLabel": "sweatshirts & hoodies",

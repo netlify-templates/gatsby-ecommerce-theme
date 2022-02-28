@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Icon from '../Icons/Icon';
 import * as styles from './Drawer.module.css';
 
-const Drawer = ({children, visible, close, top = '0px', isReverse = false, disableOverlay = false,}) => {
+const Drawer = ({children, visible, close, top = '0px', isReverse = false, hideCross = false}) => {
 
   useEffect(() => {
     window.addEventListener('keydown', escapeHandler);
@@ -25,16 +25,15 @@ const Drawer = ({children, visible, close, top = '0px', isReverse = false, disab
       ${visible === true ? styles.show : styles.hide}
       ${isReverse === true ? styles.isReverse : ''}
     `}>
-      {disableOverlay === false && 
       <div 
         className={`${styles.overlay} ${visible === true ? styles.showOverlay : styles.hide}`}
         role={'presentation'}
         onClick={close}
       >
-        <div className={styles.iconContainer}>
+        <div className={`${styles.iconContainer} ${hideCross === true ? styles.hide : ''}`}>
           <Icon symbol={'cross'}></Icon>
         </div>
-      </div>}
+      </div>
 
       <div className={`${styles.content} ${visible === true ? showStyle : hideStyle}`}>
         {children}

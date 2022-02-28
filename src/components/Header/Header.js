@@ -10,16 +10,15 @@ import ExpandedMenu from '../ExpandedMenu';
 import FormInputField from '../FormInputField/FormInputField';
 import Icon from '../Icons/Icon';
 import MiniCart from '../MiniCart';
+import MobileNavigation from '../MobileNavigation';
 import * as styles from './Header.module.css';
 
 const Header = (prop) => {
   
   const [showMiniCart, setShowMiniCart] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [showSubMenu, setShowSubMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   
-  // const [subMenu, setSubMenu] = useState();
   const [menu, setMenu] = useState();
   const [activeMenu, setActiveMenu] = useState();
 
@@ -94,7 +93,10 @@ const Header = (prop) => {
                   </Link>)}
               </nav>
             </div>
-            <div role={'presentation'} onClick={() => setMobileMenu(!mobileMenu)} className={styles.burgerIcon}>
+            <div role={'presentation'} onClick={() => {
+              setMobileMenu(!mobileMenu);
+              // setDepth(0);
+              }} className={styles.burgerIcon}>
                 <Icon symbol={`${mobileMenu === true ? 'cross' : 'burger'}`}></Icon>
             </div>
             <Brand/>
@@ -161,53 +163,21 @@ const Header = (prop) => {
         </Drawer>
 
         {/* mobile menu */}
-        {/* {console.log()} */}
-        <Drawer 
-          top={'105px'} 
+        <Drawer
+          hideCross
+          top={'98px'} 
           isReverse 
           visible={mobileMenu} 
           close={() => setMobileMenu(false)}
-          disableOverlay
         >
-          <nav>
-            <div className={styles.authLinkContainer}>
-              <Link to={'/signup'}>Sign Up</Link>
-              <Link to={'/login'}>Login</Link>
-            </div>
-            <div className={styles.mobileNavContainer}>
-            {Config.headerLinks.map((navObject) => {
-              const hasSubmenu = navObject.category?.length !== undefined ? true : false;
-              return(
-              <Link
-                key={navObject.menuLink}
-                onMouseEnter={() => handleHover(navObject)}
-                className={`${styles.mobileLink}`} 
-                to={hasSubmenu === true ? '' : '/'}
-                onClick={() => {
-                  // setSubMenu(navObject.category);
-                  setShowSubMenu(true)
-                }}
-              >
-                {navObject.menuLabel}
-                { hasSubmenu && <Icon symbol={'caret'}></Icon>}
-              </Link>
-              )})}
-            </div>
-          </nav>
+          <MobileNavigation />
+          <div className={styles.navFooter}>
+            <Link to={'/favorites'}>
+              <Icon symbol={'heart'} />
+              Favorites (0)
+            </Link>
+          </div>
         </Drawer>
-
-        <Drawer
-          top={'105px'} 
-          isReverse 
-          visible={showSubMenu} 
-          close={() => setShowSubMenu(false)}
-          disableOverlay
-        >
-
-            <span>WIP</span>
-        </Drawer>
-
-
     </div>
   );
 };
