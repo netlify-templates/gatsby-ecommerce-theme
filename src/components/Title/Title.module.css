@@ -6,7 +6,6 @@
 
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 32px;
 }
 
 .title {
@@ -48,5 +47,9 @@
     .subtitle {
         font-size: 14px;
         line-height: 17px;
+    }
+
+    .hideSubtitleOnMobile .subtitle {
+        display: none !important;
     }
 }

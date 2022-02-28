@@ -29,10 +29,11 @@
     transition: all 0.3s ease-in-out;
 }
 
-.checkboxWrapper .box svg {
+.innerBox{
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+    background-color: transparent;
 }
 
 .md {
@@ -40,9 +41,9 @@
     height: 24px;
 }
 
-.md svg {
-    height: 14px;
-    width: 14px; 
+.md .innerBox {
+    width: 16px;
+    height: 16px;
 }
 
 .sm {
@@ -50,7 +51,7 @@
     height: 18px;
 }
 
-.sm svg {
+.sm .innerBox {
     height: 11px;
     width: 11px; 
 }
@@ -63,10 +64,10 @@
     background-color: var(--standard-white);
 }
 
-.checkboxWrapper .input:checked + .box svg {
-    color: var(--standard-black);
+.checkboxWrapper .input:checked + .box .innerBox {
     opacity: 1;
     visibility: visible;
+    background-color: var(--standard-black);
 }
 
 .checkboxWrapper .label {

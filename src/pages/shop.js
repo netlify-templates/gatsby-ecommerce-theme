@@ -33,9 +33,11 @@ const ShopPage = (props) => {
     <Layout>
       <div className={styles.root}>
         <Container size={'large'} spacing={'min'}>
-          <Breadcrumbs crumbs={[{link: '/', label:'Home'}, {link: '/', label:'Woman'}, {label:'Sweaters'}]} />
+          <div className={styles.breadcrumbContainer}>
+            <Breadcrumbs crumbs={[{link: '/', label:'Home'}, {link: '/', label:'Woman'}, {label:'Sweaters'}]} />
+          </div>
         </Container>
-        <Banner 
+        <Banner
           maxWidth={'650px'}
           name={`Woman's Sweaters`} 
           subtitle={'Look to our women’s sweaters for modern takes on one-and-done dressing. From midis in bold prints to dramatic floor-sweeping styles and easy all-in-ones, our edit covers every mood.'} 
@@ -48,18 +50,23 @@ const ShopPage = (props) => {
                 <Icon symbol={'filter'} />
                 <span>Filters</span>
               </div>
-              <div className={styles.iconContainer}>
+              <div className={`${styles.iconContainer} ${styles.sortContainer}`}>
                 <span>Sort by</span>
                 <Icon symbol={'caret'} />
               </div>
             </div>
           </div>
-          <CardController closeFilter={()=>setShowFilter(false)} visible={showFilter} filters={Config.filters} />
+          <CardController 
+            closeFilter={()=>setShowFilter(false)} 
+            visible={showFilter} 
+            filters={Config.filters} 
+          />
           <div className={styles.chipsContainer}>
             <Chip name={'XS'} />
             <Chip name={'S'} />
           </div>
           <div className={styles.productContainer}>
+            <span className={styles.mobileItemCount}>476 items</span>
             <ProductCardGrid data={data}></ProductCardGrid>
           </div>
           <div className={styles.loadMoreContainer}>

@@ -1,4 +1,4 @@
-.root {
+.webRoot {
     z-index: 5;
     position: absolute;
     left: 0px;
@@ -69,4 +69,123 @@
     opacity: 0 !important;
     visibility: hidden !important;
     max-height: 0px !important;
+}
+
+.mobileRoot {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .webRoot {
+        display: none;
+    }
+
+    .mobileRoot {
+        display: block;
+    }
+
+    .mobileFilterTitle {
+        font-size: 22px;
+        line-height: 16px;
+        font-weight: normal;
+        padding: 32px 0px;
+        text-align: center;
+    }
+
+    .filterItemContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 0px;
+        border-bottom: 1px solid var(--bg-light-gray);
+    }
+
+    .filterItemContainer:first-child {
+        border-top: 1px solid var(--bg-light-gray);
+    }
+
+    .mobileFilterContainer {
+        margin: 0px 16px;
+        position: relative;
+        height: 100vh;
+    }
+
+    .filterName {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 16px;
+        text-transform: capitalize;
+    }
+
+    .mobileButtonContainer {
+        position: absolute;
+        width: 100%;
+        bottom: 24px;
+        left: 0px;
+    }
+
+    .mobileFilters {
+        overflow-y: auto;
+        max-height: calc(100vh - 200px);
+    }
+
+    .filterItemContainer svg{
+        width: 15px;
+        height: 15px;
+    }
+
+    .mobileHeader {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        padding: 24px 0px;
+    }
+
+    .mobileHeader svg {
+        transform: rotate(-180deg);
+        width: 15px;
+        height: 15px;
+    }
+
+    .mobileCategory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 16px;
+    }
+
+    .mobileCategoryContainer {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .mobileCategoryContainer > div {
+        padding: 24px 0px;
+        border-bottom: 1px solid var(--bg-light-gray);
+    }
+
+    .mobileCategoryContainer > div:first-child {
+        padding: 24px 0px;
+        border-top: 1px solid var(--bg-light-gray);
+    }
+
+    .clearFilterContainer {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .clearFilter {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--standard-black);
+        padding-bottom: 1px;
+    }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from '../Icons/Icon';
 import * as styles from './Checkbox.module.css';
 
 const Checkbox = (props) => {
@@ -16,7 +15,7 @@ const Checkbox = (props) => {
                 checked={isChecked}
               />
               <span className={`${styles.box} ${styles[size]}`} role="presentation" style={{width: `${size}px`, height: `${size}px`}}>
-                <Icon symbol="check" />
+                <span className={styles.innerBox}></span>
               </span>
           </div>
           <label className={styles.label} forhtml={id}>{label}</label>

@@ -4,7 +4,7 @@ import Title from '../Title';
 
 const Banner = (props) => {
   
-  const {maxWidth, name, subtitle, color, bgImage, height, bgColor='var(--standard-light-grey)'} = props;
+  const {maxWidth, name, subtitle, color, bgImage, height, bgColor='var(--standard-light-grey)', hideSubtitleOnMobile = true} = props;
 
   const customStyling = {
     backgroundColor: bgColor,
@@ -19,6 +19,8 @@ const Banner = (props) => {
         name={name}
         subtitle={subtitle}
         color={color}
+        hideSubtitleOnMobile={hideSubtitleOnMobile}
+        marginBottom={'0px'}
       />
     </div>
   );
