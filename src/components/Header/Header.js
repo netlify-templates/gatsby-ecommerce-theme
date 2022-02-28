@@ -171,12 +171,6 @@ const Header = (prop) => {
           close={() => setMobileMenu(false)}
         >
           <MobileNavigation />
-          <div className={styles.navFooter}>
-            <Link to={'/favorites'}>
-              <Icon symbol={'heart'} />
-              Favorites (0)
-            </Link>
-          </div>
         </Drawer>
     </div>
   );

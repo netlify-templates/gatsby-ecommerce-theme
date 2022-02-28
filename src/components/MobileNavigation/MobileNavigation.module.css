@@ -87,3 +87,25 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.navFooter {
+    border-top: 1px solid var(--bg-light-gray);
+    padding-top: 16px;
+    margin: 16px 16px 0px 16px;
+}
+
+.navFooter a {
+    display: flex;
+    align-items: center;
+    color: var(--standard-black);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.navFooter svg {
+    margin-right: 24px;
+    width: 20px;
+    height: 20px;
+}
+
