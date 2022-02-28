@@ -75,4 +75,8 @@
     .title {
         margin-bottom:16px;
     }
+
+    .overlay {
+        min-height: 100%;
+    }
 }

@@ -45,4 +45,13 @@
     .root {
        margin-bottom: 16px;
     }
+
+    .title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .blogPreviewImage {
+        margin-bottom: 16px;
+    }
 }

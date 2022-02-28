@@ -49,6 +49,11 @@
         font-size: 42px;
         line-height: 50px;
     }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }
 
 @media (max-width: 500px) {

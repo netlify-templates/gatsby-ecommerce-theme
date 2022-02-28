@@ -10,6 +10,11 @@
     position: relative;
 }
 
+.promotionContainer h2 {
+    font-size: 52px;
+    line-height: 62px;
+}
+
 
 .messageContainer {
     text-align: center;

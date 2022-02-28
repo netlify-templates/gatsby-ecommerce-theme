@@ -39,4 +39,9 @@
     .root {
         margin-bottom: 40px;
     }
+
+    .title {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }

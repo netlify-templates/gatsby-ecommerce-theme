@@ -41,11 +41,14 @@
 
 .contentContainer a {
     margin: 40px 0px;
-    font-weight: 500;
     color: var(--standard-black);
     text-transform: uppercase;
     border-bottom: 1px solid var(--standard-black);
     transition: all 0.3s ease-in-out;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .contentContainer a:hover {
@@ -64,6 +67,28 @@
 
     .contentContainer {
         padding: 0px 40px;
+    }
+
+    .root {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contentContainer h3 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .contentContainer p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .contentContainer {
+        padding: 0px 24px;
     }
 
     .root {

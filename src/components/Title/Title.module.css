@@ -16,8 +16,9 @@
 }
 
 .subtitle {
-    font-size: 14px;
-    line-height: 17px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
     margin-top: 8px;
 }
 
@@ -27,6 +28,10 @@
     text-transform: uppercase;
     border-bottom: 1px solid var(--standard-black);
     transition: all ease-in-out 0.3s;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .link:hover {
@@ -38,5 +43,10 @@
     .title {
         font-size: 32px;
         line-height: 38px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 17px;
     }
 }
