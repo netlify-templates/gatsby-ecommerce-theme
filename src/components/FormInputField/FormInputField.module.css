@@ -19,7 +19,6 @@
   }
   
   .input {
-    /* height: 18px; */
     font-family: var(--standard-font);
     letter-spacing: 0.4px;
   }
@@ -30,11 +29,11 @@
   }
   
   .input.fieldRequired {
-    border: 1px solid var(--filter-red) !important;
+    border: 1px solid var(--error) !important;
   }
   
   .textarea.fieldRequired {
-    border: 1px solid var(--filter-red) !important;
+    border: 1px solid var(--error) !important;
   }
   
   .note {

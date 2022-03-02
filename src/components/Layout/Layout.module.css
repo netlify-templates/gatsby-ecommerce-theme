@@ -4,6 +4,10 @@
     padding-bottom: 150px;
 }
 
+.disablePaddingBottom {
+    padding-bottom: 0px !important;
+}
+
 @media (max-width: 800px) {
     .main {
         padding-top: 100px;

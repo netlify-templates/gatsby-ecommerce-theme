@@ -103,13 +103,14 @@ const Header = (prop) => {
             <div className={styles.actionContainers}>
               <div className={styles.iconContainer} role={'presentation'} onClick={()=> {
                 setShowMiniCart(true);
+                setMobileMenu(false);
               }}>
                 <Icon symbol={'bag'}></Icon>
                 <div className={styles.notificationContainer}>
                   <AddNotification />
                 </div>
               </div>
-              <div className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
+              <div role={'presentation'} onClick={() => navigate('/login')} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
               <div className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>
               <div className={styles.iconContainer} role={'presentation'} onClick={() => {
                   setShowSearch(!showSearch);
@@ -163,15 +164,17 @@ const Header = (prop) => {
         </Drawer>
 
         {/* mobile menu */}
-        <Drawer
-          hideCross
-          top={'98px'} 
-          isReverse 
-          visible={mobileMenu} 
-          close={() => setMobileMenu(false)}
-        >
-          <MobileNavigation />
-        </Drawer>
+        <div className={styles.mobileMenuContainer}>
+          <Drawer
+            hideCross
+            top={'98px'} 
+            isReverse 
+            visible={mobileMenu} 
+            close={() => setMobileMenu(false)}
+          >
+            <MobileNavigation />
+          </Drawer>
+        </div>
     </div>
   );
 };

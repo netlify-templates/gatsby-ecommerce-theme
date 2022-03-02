@@ -100,11 +100,6 @@
     object-fit: cover;
 }
 
-/* offset layout padding */
-.attributeContainer {
-    margin-bottom: -150px;
-}
-
 @media (max-width: 800px) {
     .sustainableContainer {
         margin: 96px 0px 0px 0px;

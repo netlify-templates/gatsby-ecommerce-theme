@@ -26,7 +26,7 @@ const IndexPage = () => {
   }
 
   return (
-      <Layout>
+      <Layout disablePaddingBottom>
 
         {/* Hero Container */}
         <Hero 
@@ -121,10 +121,7 @@ const IndexPage = () => {
             <img src={`/social/socialMedia4.png`} alt={'social media 4'}  />
           </div>
         </div>
-
-        <div className={styles.attributeContainer}>
-          <AttributeGrid />
-        </div>
+        <AttributeGrid />
       </Layout>
   )
 }

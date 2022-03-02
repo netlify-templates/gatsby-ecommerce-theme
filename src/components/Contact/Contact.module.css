@@ -28,14 +28,6 @@
     gap: 0px 24px;
 }
 
-.contactForm input {
-    border: 1px solid var(--bg-light-gray) !important;
-}
-
-.contactForm textarea {
-    border: 1px solid var(--bg-light-gray) !important;
-}
-
 .commentInput {
     margin-top: 32px;
     grid-column: 1 / span 2;

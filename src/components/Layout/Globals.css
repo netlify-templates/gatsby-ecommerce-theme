@@ -48,6 +48,7 @@
   --bg-light-gray: #e5e5e5;
   --standard-gold: #B59F66;
   --sale: #902F15;
+  --error: #9A3515;
 
   /* not sure if we are to maintain existing color palletes. better if we keep it lightweight? */
   /* --standard-grey-darker: #393939;
@@ -269,6 +270,8 @@ input:focus {
 
 a {
   text-decoration: none;
+  color: var(--standard-black);
+  transition: all ease-in-out 0.3s;
 }
 
 .uppercase {
@@ -510,9 +513,9 @@ p:first-of-type {
 .formField textarea,
 .formField select {
   width: 100%;
-  border: 1px solid transparent;
+  border: 1px solid var(--bg-light-gray);
   font-size: 14px;
-  padding: 12px 20px;
+  padding: 12px 20px 12px 12px;
   line-height: 1;
   box-sizing: border-box;
 }
@@ -552,13 +555,15 @@ p:first-of-type {
   /* position: absolute; */
   /* bottom: -2px; */
   /* right: 5px; */
-  color: #f00;
-  font-size: 10px;
+  color: var(--error);
+  font-size: 12px;
+  line-height: 15px;
 }
 
 .genericError {
-  color: #f00;
-  font-size: 10px;
+  color: var(--error);
+  font-size: 12px;
+  line-height: 15px;
 }
 
 /* DataTables */

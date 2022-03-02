@@ -9,7 +9,7 @@
  // CSS not modular here to provide global styles
  import "./Globals.css"
  
- const Layout = ({props, children}) => { 
+ const Layout = ({props, children, disablePaddingBottom = false}) => { 
    return (
      <>
        <Helmet>
@@ -19,7 +19,7 @@
        </Helmet>
 
        <Header/>
-        <main className={styles.main}>
+        <main className={`${styles.main} ${disablePaddingBottom === true ? styles.disablePaddingBottom : ''}`}>
           {children}
         </main>
        <Footer />

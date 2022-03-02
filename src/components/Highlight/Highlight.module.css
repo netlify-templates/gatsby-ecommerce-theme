@@ -1,7 +1,6 @@
 .root {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
 }
 
 .highlightImage {
@@ -66,6 +65,7 @@
 @media (max-width: 800px) {
 
     .contentContainer {
+        margin-bottom: 56px;
         padding: 0px 40px;
     }
 
