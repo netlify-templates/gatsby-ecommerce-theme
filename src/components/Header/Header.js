@@ -1,6 +1,8 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { Link, navigate } from 'gatsby';
 
+import { isAuth } from '../../helpers/general'; 
+
 import AddNotification from '../AddNotification';
 import Brand from '../Brand';
 import Container from '../Container';
@@ -110,7 +112,13 @@ const Header = (prop) => {
                   <AddNotification />
                 </div>
               </div>
-              <div role={'presentation'} onClick={() => navigate('/login')} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
+              <div role={'presentation'} onClick={() => {
+                if(isAuth() === false) {
+                  navigate('/login')
+                } else {
+                  navigate('/account/orders');
+                }
+              }} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
               <div className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>
               <div className={styles.iconContainer} role={'presentation'} onClick={() => {
                   setShowSearch(!showSearch);
@@ -172,7 +180,7 @@ const Header = (prop) => {
             visible={mobileMenu} 
             close={() => setMobileMenu(false)}
           >
-            <MobileNavigation />
+            <MobileNavigation close={() => setMobileMenu(false)} />
           </Drawer>
         </div>
     </div>

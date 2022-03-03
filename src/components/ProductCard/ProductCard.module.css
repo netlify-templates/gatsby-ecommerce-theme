@@ -73,7 +73,7 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.root:hover .bagContainer {
+.imageContainer:hover .bagContainer {
     opacity: 1;
     visibility: visible;
 }
@@ -86,6 +86,26 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
+}
+
+.actionContainer {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.actionContainer span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid var(--standard-black);
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.actionContainer span:hover {
+    border-bottom: 1px solid var(--standard-gold);
+    color: var(--standard-gold);
 }
 
 .root:hover .heartContainer {

@@ -17,6 +17,7 @@ import Heart from './Heart';
 import HeartFill from './HeartFill';
 import Instagram from './Instagram';
 import List from './List';
+import Logout from './Logout';
 import Minus from './Minus';
 import Plus from './Plus';
 import Search from './Search';
@@ -58,6 +59,8 @@ function Icon(props) {
         return <Instagram />
     case 'list':
         return <List />;
+    case 'logout':
+        return <Logout />;
     case 'minus':
         return <Minus />;
     case 'plus':

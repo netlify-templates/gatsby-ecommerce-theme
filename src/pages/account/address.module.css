@@ -1,0 +1,55 @@
+.addressListContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+    gap: 16px;
+}
+
+.addCard {
+    background-color: var(--bg-grey);
+    min-height: 180px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.addCard svg {
+    width: 70px;
+    height: 70px;
+    stroke-width: 0.2px;
+}
+
+.addCard span {
+    display: block;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-top: 24px;
+}
+
+.addCard:hover {
+    background-color: var(--standard-gold);
+    color: var(--standard-white);
+}
+
+@media (max-width: 1100px) {
+    .addressListContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .addressListContainer {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+
+
+}

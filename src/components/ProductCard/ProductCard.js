@@ -7,7 +7,7 @@ import CurrencyFormatter from '../CurrencyFormatter';
 
 const ProductCard = (props) => {
 
-  const { image, imageAlt, name, price, originalPrice, meta, showQuickView, height=580 } = props;
+  const { image, imageAlt, name, price, originalPrice, meta, showQuickView, height=580, enableActions = false } = props;
 
   const handleRouteToProduct = () => {
     navigate('/product/sample');
@@ -41,6 +41,11 @@ const ProductCard = (props) => {
         </div>
         <span className={styles.meta}>{meta}</span>
       </div>
+      {enableActions &&  <div className={styles.actionContainer}>
+        <span>Edit</span>
+        <span>Remove</span>
+      </div>}
+
     </div>
   );
 };

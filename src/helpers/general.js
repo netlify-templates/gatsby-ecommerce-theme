@@ -58,10 +58,25 @@ function validateEmail(email) {
       return true;
     }
 
+  /**
+ * Checks if user is authenticated
+ * 
+ * 
+ * 
+    import { isAuth } from '../helpers/general'
+
+    isAuth()
+ */
+function isAuth() {
+  const token = localStorage.getItem('key');
+  if(token) return true;
+  else return false;
+}
 
 export {
   isNumeric,
   validateEmail,
   validateStrongPassword,
   isEmpty,
+  isAuth,
 };

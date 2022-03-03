@@ -1,29 +1,61 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import Config from '../../config.json';
 import Icon from '../Icons/Icon';
+import { isAuth } from '../../helpers/general';
 
 //TO DO: refactor this to handle multiple nested links to avoid hardcoding 'depth'
 // have to restructure config.json
+// refactor this
 
 import * as styles from './MobileNavigation.module.css';
 
 const MobileNavigation = (props) => {
 
+  const {close} = props;
+
   const [subMenu, setSubMenu] = useState();
   const [category, setCategory] = useState();
   const [depth, setDepth] = useState(0);
+
+  const handleLogout = () => {
+    localStorage.removeItem('key');
+    navigate('/');
+    close();
+  }
 
   return (
     <div className={styles.root}>
       <nav>
         <div className={styles.headerAuth}>
           {depth === 0 &&
+          isAuth() === false &&
           <div className={styles.authLinkContainer}>
             <Link to={'/signup'}>Sign Up</Link>
             <Link to={'/login'}>Login</Link>
+          </div>
+          }
+
+          {depth === 0 &&
+          isAuth() === true &&
+          <div className={styles.welcomeContainer} role={'presentation'} onClick={()=>setDepth(-1)}>
+            <span className={styles.welcomeMessage}>Welcome, John</span>
+            <Icon symbol={'caret'}></Icon>
           </div>}
+
+          {depth === -1 &&
+          isAuth() === true &&
+          <div 
+            className={styles.previousLinkContainer} 
+            onClick={()=>setDepth(0)} 
+            role={'presentation'}>
+            <div className={styles.previousIcon}>
+              <Icon symbol={'caret'}></Icon>
+            </div>
+            <span>my account</span>
+          </div>
+          }
 
           {depth === 1 && 
             <div 
@@ -103,6 +135,22 @@ const MobileNavigation = (props) => {
                   </Link>
                 )
               })
+            }
+
+            {depth === -1 && 
+              <>
+                <div>
+                  <Link to={'/account/orders'} className={styles.mobileLink}>Orders</Link>
+                  <Link  to={'/account/address'} className={styles.mobileLink}>Addresses</Link>
+                  <Link  to={'/account/settings'} className={styles.mobileLink}>Settings</Link>
+                </div>
+                <div className={styles.navFooter}>
+                  <div className={styles.logoutContainer} role={'presentation'} onClick={handleLogout}>
+                    <Icon symbol={'logout'} />
+                    <span>Sign out </span>
+                  </div>
+                </div>
+              </>
             }
         </div>
       </nav>

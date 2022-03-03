@@ -4,7 +4,7 @@
 
 .headerAuth {
     background-color: var(--standard-light-grey);
-    padding: 16px;
+    padding: 16px 24px;
     margin-bottom: 8px;
 }
 
@@ -14,6 +14,26 @@
     font-size: 14px;
     line-height: 17px;
 }
+
+.welcomeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcomeContainer svg {
+    transform: rotate(-90deg);
+    width: 12px;
+    height: 12px;
+    color: var(--standard-gold);
+}
+
+.welcomeMessage {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--standard-gold);
+} 
 
 .authLinkContainer a:first-child{
     margin-right: 24px;
@@ -94,7 +114,7 @@
     margin: 16px 16px 0px 16px;
 }
 
-.navFooter a {
+.navFooter a, .logoutContainer {
     display: flex;
     align-items: center;
     color: var(--standard-black);
@@ -103,7 +123,7 @@
     line-height: 15px;
 }
 
-.navFooter svg {
+.navFooter svg, .logoutContainer svg {
     margin-right: 24px;
     width: 20px;
     height: 20px;

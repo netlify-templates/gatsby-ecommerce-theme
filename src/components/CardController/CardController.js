@@ -108,7 +108,7 @@ const CardController = (props) => {
               {category === undefined && <Button fullWidth level={'primary'}>show results: 1234</Button>}
               {category !== undefined && 
                 <div>
-                  <Button fullWidth level={'primary'}>Apply</Button>
+                  <Button onClick={closeFilter} fullWidth level={'primary'}>Apply</Button>
                   <div className={styles.clearFilterContainer} role={'presentation'} onClick={() => resetFilter()}>
                     <span className={styles.clearFilter}>clear filters</span>
                   </div>

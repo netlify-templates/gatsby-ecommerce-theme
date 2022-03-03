@@ -50,8 +50,11 @@ const LoginPage = (props) => {
 
     if(validForm === true) {
       setErrorForm(errorState);
-      if(loginForm.email === 'user@example.com') {
 
+      //mock login
+      if(loginForm.email !== 'error@example.com') {
+        navigate('/account');
+        localStorage.setItem('key', 'sampleToken');
       } else {
         window.scrollTo(0, 0);
         setErrorMessage('There is no such account associated with this email address');
