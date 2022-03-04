@@ -2,6 +2,11 @@
     width: 100%;
 }
 
+/* special case with the image */
+.root > div {
+    background-position: right;
+}
+
 .navContainer {
     display: flex;
     align-items: center;
@@ -9,22 +14,17 @@
 
     border-bottom: 1px solid var(--bg-light-gray);
     position: sticky;
-    top: 164px;
+    gap: 48px;
+    top: 150px;
+    left: 0px;
     background-color: var(--standard-white);
-}
-
-.navContainer > a {
-    margin-right: 48px;
-}
-
-.navContainer > a:last-child {
-    margin-right: 0px;
+    overflow: auto;
 }
 
 .detailContainer {
     margin-left: auto;
     max-width: 800px;
-    margin-top: 64px;
+    margin-top: 164px;
 }
 
 .detailContainer p{
@@ -46,7 +46,7 @@
 
 .content {
     display: grid;
-    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-columns: 2fr 3fr;
     gap: 80px 0px;
 }
 
@@ -80,4 +80,68 @@
     font-weight: normal;
     font-size: 32px;
     line-height: 52px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.navContainer::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.navContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+@media (max-width:1050px) {
+    .content img {
+        width: 100%;
+    }
+
+    .content h3{
+        margin-right: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 24px 0px;
+    }
+
+    .content h3{ 
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .content li {
+        font-size: 22px;
+        line-height: 42px;
+    }
+
+    .detailContainer p{
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .imageContainer {
+        min-height: unset;
+        margin: 24px 16px;
+        height: 240px;
+    }
+
+    .imageContainer img {
+        height: 100%;
+    }
+
+    .detailContainer {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 800px) {
+    .navContainer {
+        top: 90px;
+    }
 }
