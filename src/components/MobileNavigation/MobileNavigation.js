@@ -20,7 +20,7 @@ const MobileNavigation = (props) => {
   const [depth, setDepth] = useState(0);
 
   const handleLogout = () => {
-    localStorage.removeItem('key');
+    window.localStorage.removeItem('key');
     navigate('/');
     close();
   }

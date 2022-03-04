@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { navigate } from 'gatsby';
 
 const OrderIndexPage = (props) => {
-  navigate('/account/orders');
+  useEffect(() => {
+    navigate('/account/orders');
+  }, [])
+  
   return (
     <React.Fragment />
   );

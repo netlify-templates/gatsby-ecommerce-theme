@@ -5,7 +5,7 @@ import * as styles from './AccountNav.module.css';
 const AccountNav = (props) => {
 
   const handleLogout = () => {
-    localStorage.removeItem('key');
+    window.localStorage.removeItem('key');
     navigate('/');
   }
 

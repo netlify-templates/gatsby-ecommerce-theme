@@ -58,7 +58,7 @@ function validateEmail(email) {
       return true;
     }
 
-  /**
+/**
  * Checks if user is authenticated
  * 
  * 
@@ -68,9 +68,14 @@ function validateEmail(email) {
     isAuth()
  */
 function isAuth() {
-  const token = localStorage.getItem('key');
-  if(token) return true;
-  else return false;
+  const isBrowser = typeof window !== "undefined"
+  if(isBrowser) {
+    const token = window.localStorage.getItem('key');
+    if(token) return true;
+    else return false;
+  } else {
+    return true;
+  }
 }
 
 export {
