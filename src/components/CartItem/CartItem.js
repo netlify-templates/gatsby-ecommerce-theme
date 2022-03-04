@@ -30,12 +30,12 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={styles.adjustItemContainer}>
-        <AdjustItem isTransparent />
+        <AdjustItem/>
       </div>
       <div className={styles.priceContainer}>
         <CurrencyFormatter amount={price} appendZero />
       </div>
-      <div>
+      <div className={styles.removeContainer}>
         <RemoveItem />
       </div>
       <Drawer visible={showQuickView} close={() => setShowQuickView(false)}>

@@ -1,3 +1,7 @@
+.root {
+    width: 100%;
+}
+
 .orderSummary {
     border: 1px solid var(--standard-gold);
     background-color: var(--standard-white);
@@ -37,24 +41,23 @@
 .couponContainer {
     padding-top: 40px;
     border-top: 1px solid var(--bg-light-gray);
-}
-
-.inputContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
+    gap: 16px 16px;
 }
 
-.inputContainer > div {
+.couponContainer > div {
     margin-bottom: 0px;
     border: 1px solid var(--bg-light-gray);
 }
 
-.inputContainer > span {
+.couponContainer > span {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
+    display:block;
+    flex-shrink: 0;
 }
 
 .totalContainer {
@@ -97,3 +100,9 @@
     color: var(--standard-gold);
     border-bottom: 1px solid var(--standard-gold);
 }
+
+/* @media (max-width: 900px) {
+    .couponContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+} */

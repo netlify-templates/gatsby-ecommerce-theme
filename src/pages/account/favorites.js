@@ -3,21 +3,32 @@ import * as styles from './favorites.module.css';
 
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Container from '../../components/Container';
+import FavoriteCard from '../../components/FavoriteCard/FavoriteCard';
 import Layout from "../../components/Layout/Layout";
-import ProductCardGrid from '../../components/ProductCardGrid';
-
-import { generateMockProductData } from '../../helpers/mock';
 
 const FavoritesPage = (props) => {
-  const sampleData = generateMockProductData(3, 'shirt');
+  
+  const sampleFavorite1 = {
+    color: 'Anthracite Melange',
+    size: 'XS',
+    img: "/products/shirt1.jpg",
+    alt: 'favorite 1',
+  };
 
-  console.log(sampleData);
+  const sampleFavorite2 = {
+    color: 'Purple Pale',
+    size: 'XS',
+    img: "/products/shirt2.jpg",
+    alt: 'favorite 2',
+  };
 
-  const sampleFavorite = [{
-    name: 'Color: Anthracite Melange',
-    meta: 'XS',
-    img: "/products/shirt1.png",
-  }]
+  const sampleFavorite3 = {
+    color: 'Moss Green',
+    size: 'S',
+    img: "/products/shirt3.jpg",
+    alt: 'favorite 3',
+  };
+
 
   return (
     <Layout>
@@ -25,7 +36,12 @@ const FavoritesPage = (props) => {
         <Container size={'large'}>
           <Breadcrumbs crumbs={[{link: '/', label:'Home'}, {link: '/account/favorites', label:'Favorites'}]} />
           <h1>Favorites</h1>
-          <ProductCardGrid showSlider={false} height={580} columns={3} data={sampleFavorite} enableActions={true} />
+          <div className={styles.favoriteListContainer}>
+            <FavoriteCard {...sampleFavorite1} />
+            <FavoriteCard {...sampleFavorite2} />
+            <FavoriteCard {...sampleFavorite3} />
+            <FavoriteCard {...sampleFavorite2} />
+          </div>
         </Container>
       </div>
     </Layout>

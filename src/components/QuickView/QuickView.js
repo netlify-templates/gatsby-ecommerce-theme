@@ -13,7 +13,7 @@ import * as styles from './QuickView.module.css';
 
 const QuickView = (props) => {
 
-  const {close} = props; 
+  const {close, buttonTitle = 'Add to Bag'} = props; 
   const sampleProduct = generateMockProductData(1, 'sample')[0];
 
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
@@ -58,7 +58,7 @@ const QuickView = (props) => {
           />
         </div>
 
-        <Button onClick={()=>handleAddToBag()} fullWidth level={'primary'}>Add to Bag</Button>
+        <Button onClick={()=>handleAddToBag()} fullWidth level={'primary'}>{buttonTitle}</Button>
       </div>
     </div>
   );

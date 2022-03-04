@@ -13,7 +13,7 @@ const OrderSummary = (props) => {
   const [giftCard, setGiftCard] = useState('');
 
   return (
-  <div>
+  <div className={styles.root}>
     <div className={styles.orderSummary}>
       <span className={styles.title}>order summary</span>
       <div className={styles.calculationContainer}>
@@ -31,22 +31,18 @@ const OrderSummary = (props) => {
         </div>
       </div>
       <div className={styles.couponContainer}>
-        <div className={styles.inputContainer}>
-          <span>Coupon Code</span>
-          <FormInputField
-            value={coupon}
-            handleChange={(_, coupon) => setCoupon(coupon)}
-            id={'couponInput'} 
-            icon={'arrow'}/>
-        </div>
-        <div className={styles.inputContainer}>
-          <span>Gift Card</span>
-          <FormInputField
-            value={giftCard}
-            handleChange={(_, giftCard) => setGiftCard(giftCard)}
-            id={'couponInput'} 
-            icon={'arrow'}/>
-        </div>
+        <span>Coupon Code</span>
+        <FormInputField
+          value={coupon}
+          handleChange={(_, coupon) => setCoupon(coupon)}
+          id={'couponInput'} 
+          icon={'arrow'}/>
+        <span>Gift Card</span>
+        <FormInputField
+          value={giftCard}
+          handleChange={(_, giftCard) => setGiftCard(giftCard)}
+          id={'couponInput'} 
+          icon={'arrow'}/>
       </div>
       <div className={styles.totalContainer}>
         <span>Total: </span>

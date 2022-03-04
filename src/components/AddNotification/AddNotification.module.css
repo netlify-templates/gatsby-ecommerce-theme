@@ -98,3 +98,23 @@
     visibility: hidden;
     opacity: 0;
 }
+
+@media (max-width: 550px) {
+    .root {
+        padding: 16px;
+        position: fixed;
+        top: 90px;
+        left: 50%;
+        width: 80%;
+        transform: translate(-50%, 0%);
+    }
+    
+    .actionContainer {
+        margin-top: 8px;
+        min-width: unset;
+    }
+
+    .header {
+        margin-bottom: 16px;
+    }
+}

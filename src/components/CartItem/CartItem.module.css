@@ -31,6 +31,12 @@
     margin-right: 32px;
 }
 
+.priceContainer span {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
 .name {
     font-weight: 500;
     font-size: 16px;
@@ -62,3 +68,68 @@
     line-height: 17px;
 }
 
+@media (max-width: 600px) {
+    .name {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .root {
+        display: grid;
+        grid-template-columns: 100px 1fr 0.1fr;
+        grid-template-areas: 
+            'image name remove'
+            'image name meta'
+            'image qty price'
+        ;
+    }
+
+    .imageContainer {
+        grid-area: image;
+    }
+
+    .itemContainer {
+        grid-area: name;
+    }
+
+    .removeContainer {
+        grid-area: remove;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .adjustItemContainer {
+        grid-area: qty;
+        margin: 16px 0px 0px 0px;
+    }
+
+    .imageContainer {
+        width: 80px;
+        height: 100px;
+        margin-right: 12px;
+    }
+
+    .priceContainer {
+        grid-area: price;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 16px;
+        width: 100%;
+    }
+
+    .metaContainer span {
+        font-size: 13px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .imageContainer {
+        margin-right: 4px;
+    }
+
+    .adjustItemContainer {
+        margin-left: -30px;
+    }
+}

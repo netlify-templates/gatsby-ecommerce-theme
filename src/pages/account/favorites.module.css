@@ -10,10 +10,20 @@
     margin-bottom: 48px;
 }
 
+.favoriteListContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 16px;
+}
+
 @media (max-width: 800px) {
     .root h1 {
         font-size: 32px;
         line-height: 38px;
         margin-bottom: 24px;
+    }
+
+    .favoriteListContainer {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

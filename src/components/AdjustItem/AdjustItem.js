@@ -14,7 +14,7 @@ const AdjustItem = (props) => {
   }
   
   return (
-    <div className={`${styles.root} ${isTransparent === true ? styles.transparentBorder : ''}`}>
+    <div className={`${styles.root} ${isTransparent === true ? styles.transparent : ''}`}>
       <div className={styles.iconContainer} role={'presentation'} onClick={() => {
         if(qty <= 1) return;
         setQty(qty-1);

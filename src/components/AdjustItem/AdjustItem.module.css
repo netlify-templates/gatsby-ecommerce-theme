@@ -4,6 +4,7 @@
     border: 1px solid var(--bg-light-gray);
     width: 99px;
     padding: 12px;
+    background-color: var(--standard-white);
 }
 
 .iconContainer {
@@ -49,8 +50,9 @@
     text-align: center;
 }
 
-.transparentBorder {
+.transparent {
     border: 1px solid transparent;
+    background-color: transparent;
 }
 
 .transparentInput {
