@@ -1,13 +1,14 @@
 .root {
     display: flex;
     flex-direction: column;
+    gap: 32px;
 }
 
 .blogPreviewImage {
     width: 100%;
     object-fit: cover;
     height: 320px;
-    margin-bottom: 40px;
+    cursor: pointer;
 }
 
 .category {
@@ -16,13 +17,6 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
-}
-
-.title {
-    font-size: 32px;
-    line-height: 38px;
-    margin: 16px 0px;
-    font-weight: normal;
 }
 
 .link {
@@ -41,6 +35,28 @@
     border-bottom: 1px solid var(--standard-gold);
 }
 
+.title {
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: normal;
+    flex-grow: 1;
+}
+
+.excerpt {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    height: 120px;
+}
+
+.hideReadMoreOnWeb {
+    display: none;
+}
+
 @media (max-width: 800px) {
     .root {
        margin-bottom: 16px;
@@ -49,9 +65,18 @@
     .title {
         font-size: 22px;
         line-height: 26px;
+        flex-grow: 0;
     }
 
     .blogPreviewImage {
         margin-bottom: 16px;
+    }
+
+    .excerpt {
+        display: none;
+    }
+
+    .hideReadMoreOnWeb {
+        display: block;
     }
 }

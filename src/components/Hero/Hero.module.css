@@ -18,6 +18,7 @@
     justify-content: center;
     color: var(--standard-white);
     max-width: 500px;
+    gap: 40px;
 }
 
 .title {
@@ -29,7 +30,7 @@
 }
 
 .subtitle {
-    margin: 40px 0px;
+    
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -38,6 +39,26 @@
 
 .ctaButton {
     width: 180px;
+    
+}
+
+.ctaLink {
+    
+    text-transform: uppercase;
+    color: var(--standard-white);
+    border-bottom: 1px solid var(--standard-white);
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.header {
+    color: var(--standard-white);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
 }
 
 @media (max-width: 800px) {

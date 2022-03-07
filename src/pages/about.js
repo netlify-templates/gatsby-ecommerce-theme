@@ -22,13 +22,13 @@ const AboutPage = (props) => {
   }
 
   return (
-    <Layout>
+    <Layout disablePaddingBottom>
       <div className={styles.root}>
         {/* Hero Container */}
         <Hero 
           maxWidth={'900px'}
           image={'/about.png'} 
-          title={`Geneva \n A British brand since 1860`} 
+          title={`Geneva \n A British brand since 1860`}
         />
 
         <div className={styles.navContainer}>

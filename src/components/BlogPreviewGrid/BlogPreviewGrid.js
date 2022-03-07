@@ -4,7 +4,7 @@ import * as styles from './BlogPreviewGrid.module.css';
 import BlogPreview from '../BlogPreview';
 
 const BlogPreviewGrid = (props) => {
-  const { data } = props;
+  const { data, hideReadMoreOnWeb, showExcerpt } = props;
   return (
     <div className={styles.root}>
       {data && data.map((blog, index) => {
@@ -16,6 +16,9 @@ const BlogPreviewGrid = (props) => {
             title={blog.title}
             link={blog.link}
             category={blog.category}
+            excerpt={blog.excerpt}
+            hideReadMoreOnWeb={hideReadMoreOnWeb}
+            showExcerpt={showExcerpt}
           />
         )
       })}

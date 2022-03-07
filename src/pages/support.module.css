@@ -1,11 +1,10 @@
 .root {
-
+    
 }
 
 .navContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
 
     border-bottom: 1px solid var(--bg-light-gray);
     position: sticky;
@@ -16,16 +15,17 @@
     margin-top: -64px;
     margin-bottom: 80px;
     z-index: 1;
+    gap: 48px;
 
-    overflow-y: scroll;
+    overflow-x: auto;
 }
 
-.navContainer > div {
-    margin-right: 48px;
+.navContainer > div:first-child {
+    margin-left: auto;
 }
 
 .navContainer > div:last-child {
-    margin-right: 0px;
+    margin-right: auto;
 }
 
 .content {
@@ -54,6 +54,10 @@
 .navContainer {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+.pageContainer {
+    padding-bottom: 150px;
 }
 
 @media (max-width: 800px) {

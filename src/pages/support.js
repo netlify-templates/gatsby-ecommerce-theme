@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { navigate } from 'gatsby';
 import * as styles from './support.module.css';
 
 import Banner from '../components/Banner';
@@ -31,6 +32,18 @@ const SupportPage = (props) => {
       case 'policy':
         tempElement = <Policy />;
         break;
+      case 'shipping':
+        tempElement = <Policy />;
+        break;
+      case 'returns':
+        tempElement = <Policy />;
+        break;
+      case 'payments':
+        tempElement = <Policy />;
+        break;
+      case 'terms':
+        tempElement = <Policy />;
+        break;
       default:
         break;
     }
@@ -55,7 +68,7 @@ const SupportPage = (props) => {
 
 
   return (
-    <Layout>
+    <Layout disablePaddingBottom>
       <div className={styles.root}>
         <Banner 
           maxWidth={'650px'}
@@ -69,6 +82,9 @@ const SupportPage = (props) => {
           {subpages.map((details, index) => {
             return(
             <ThemeLink
+              onClick={(e) => {
+                navigate(`/support#${details.key}`);
+              }}
               key={details.key}
               isActive = {current.key === details.key}
               to={`/support#${details.key}`} >
@@ -77,7 +93,8 @@ const SupportPage = (props) => {
             );
           })}
         </div>
-
+        
+        <div className={styles.pageContainer}>
         <Container size={'large'} spacing={'min'}>
           {subpages.map((details) => {
             return(
@@ -89,7 +106,7 @@ const SupportPage = (props) => {
             )
           })}
         </Container>
-
+        </div>
 
       </div>
     </Layout>

@@ -12,6 +12,7 @@ import Cross from './Cross';
 import Cycle from './Cycle';
 import Delivery from './Delivery';
 import Facebook from './Facebook';
+import FacebookInverse from './FacebookInverse';
 import Filter from './Filter';
 import Heart from './Heart';
 import HeartFill from './HeartFill';
@@ -19,9 +20,11 @@ import Instagram from './Instagram';
 import List from './List';
 import Logout from './Logout';
 import Minus from './Minus';
+import PinterestInverse from './PinterestInverse';
 import Plus from './Plus';
 import Search from './Search';
 import Twitter from './Twitter';
+import TwitterInverse from './TwitterInverse';
 import User from './User';
 import Youtube from './Youtube';
 
@@ -49,6 +52,8 @@ function Icon(props) {
         return <Delivery />;
     case 'facebook':
         return <Facebook />;
+    case 'facebookinverse':
+        return <FacebookInverse />;
     case 'filter':
         return <Filter />;
     case 'heart':
@@ -63,12 +68,16 @@ function Icon(props) {
         return <Logout />;
     case 'minus':
         return <Minus />;
+    case 'pinterestinverse':
+        return <PinterestInverse />;
     case 'plus':
         return <Plus />;
     case 'search':
       return <Search />
     case 'twitter':
         return <Twitter />;
+    case 'twitterinverse':
+        return <TwitterInverse />;
     case 'user':
         return <User />;
     case 'youtube':

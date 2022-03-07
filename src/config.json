@@ -33,7 +33,7 @@
                 "link": "/"
             },{
                 "text": "Blog",
-                "link": "/"
+                "link": "/blog"
             },{
                 "text": "Privacy Policy",
                 "link": "/support#policy"
@@ -121,7 +121,7 @@
         },
         {
           "menuLabel": "journal",
-          "menuLink": "/journal",
+          "menuLink": "/blog",
           "target": false,
           "category": [
             {

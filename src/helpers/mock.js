@@ -10,8 +10,8 @@ function generateMockProductData(count, tag) {
     return filtered.slice(0,count);
 }
 
-function generateMockBlogData() {
-    return blogJson;
+function generateMockBlogData(count) {
+    return blogJson.slice(0, count);
 }
   
 export {

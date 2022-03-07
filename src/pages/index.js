@@ -19,7 +19,7 @@ import { Link, navigate } from "gatsby";
 const IndexPage = () => {
 
   const newArrivals = generateMockProductData(3, 'shirt');
-  const blogData = generateMockBlogData();
+  const blogData = generateMockBlogData(3);
 
   const goToShop = () => {
     navigate('/shop');

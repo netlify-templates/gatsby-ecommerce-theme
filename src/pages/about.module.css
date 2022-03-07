@@ -10,15 +10,25 @@
 .navContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    white-space: nowrap;
     border-bottom: 1px solid var(--bg-light-gray);
     position: sticky;
     gap: 48px;
     top: 150px;
-    left: 0px;
     background-color: var(--standard-white);
-    overflow: auto;
+    overflow-x: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.navContainer > div:first-child {
+    margin-left: auto;
+}
+
+.navContainer > div:last-child {
+    margin-right: auto;
 }
 
 .detailContainer {
@@ -35,7 +45,8 @@
 }
 
 .imageContainer {
-    margin: 80px 48px;
+    padding-bottom: 200px;
+    margin: 80px 48px 0px 48px;
     min-height: 600px;
 }
 
@@ -86,13 +97,6 @@
 .navContainer::-webkit-scrollbar {
     display: none;
 }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-.navContainer {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
 
 @media (max-width:1050px) {
     .content img {
@@ -143,5 +147,9 @@
 @media (max-width: 800px) {
     .navContainer {
         top: 90px;
+    }
+
+    .imageContainer {
+        padding-bottom: 100px;
     }
 }
