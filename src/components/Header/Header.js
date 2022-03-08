@@ -119,7 +119,7 @@ const Header = (prop) => {
                   navigate('/account/orders');
                 }
               }} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
-              <div className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>
+              <div role={'presentation'} onClick={()=>navigate('/account/favorites')} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>
               <div className={styles.iconContainer} role={'presentation'} onClick={() => {
                   setShowSearch(!showSearch);
                 }}>
@@ -144,7 +144,10 @@ const Header = (prop) => {
               </form>
               <div className={styles.suggestionContianer}>
                 {searchSuggestions.map((suggestion, index) => 
-                  <p key={index} className={styles.suggestion}>
+                  <p role={'presentation'} onClick={()=> {
+                    setShowSearch(false);
+                    navigate(`/search?q=${suggestion}`)
+                  }} key={index} className={styles.suggestion}>
                     {suggestion}
                   </p>)}
               </div>

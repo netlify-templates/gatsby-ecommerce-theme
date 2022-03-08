@@ -30,10 +30,10 @@
                 "link": "/about"
             },{
                 "text": "Journal",
-                "link": "/"
+                "link": "/blog"
             },{
                 "text": "Blog",
-                "link": "/blog"
+                "link": "/blog/sample"
             },{
                 "text": "Privacy Policy",
                 "link": "/support#policy"
@@ -43,7 +43,7 @@
             "subTitle": "Support",
             "links": [{
                 "text": "FAQ",
-                "link": "/"
+                "link": "/faq"
             },{
                 "text": "Contact Us",
                 "link": "/support#contact"

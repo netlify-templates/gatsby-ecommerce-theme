@@ -20,8 +20,10 @@ import Instagram from './Instagram';
 import List from './List';
 import Logout from './Logout';
 import Minus from './Minus';
+import Phone from './Phone';
 import PinterestInverse from './PinterestInverse';
 import Plus from './Plus';
+import Question from './Question';
 import Search from './Search';
 import Twitter from './Twitter';
 import TwitterInverse from './TwitterInverse';
@@ -68,10 +70,14 @@ function Icon(props) {
         return <Logout />;
     case 'minus':
         return <Minus />;
+    case 'phone':
+        return <Phone />;
     case 'pinterestinverse':
         return <PinterestInverse />;
     case 'plus':
         return <Plus />;
+    case 'question':
+        return <Question />;
     case 'search':
       return <Search />
     case 'twitter':

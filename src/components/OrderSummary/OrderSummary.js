@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import Button from '../Button';
 import FormInputField from '../FormInputField/FormInputField';
@@ -50,9 +50,9 @@ const OrderSummary = (props) => {
       </div>
     </div>
     <div className={styles.actionContainer}>
-      <Button fullWidth level={'primary'}>checkout</Button>
+      <Button onClick={() => navigate('/orderConfirm')} fullWidth level={'primary'}>checkout</Button>
       <div className={styles.linkContainer}>
-        <Link to={'/shop'}>CONTINUE SHIPPING</Link>
+        <Link to={'/shop'}>CONTINUE SHOPPING</Link>
       </div>
     </div>
 </div> 

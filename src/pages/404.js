@@ -1,53 +1,42 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react"
+import { navigate } from "gatsby"
+import * as styles from './404.module.css';
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import Button from "../components/Button";
+import Container from "../components/Container";
+import FormInputField from "../components/FormInputField/FormInputField";
+import Layout from '../components/Layout';
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
 const NotFoundPage = () => {
+
+  const [search, setSearch] = useState('');
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${search}`);
+  }
+
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout disablePaddingBottom>
+      <Container size={'medium'}>
+      <div className={styles.root}>
+        <h1>404 Error</h1>
+        <h2>Page not found</h2>
+        <p>Uh oh, looks like the page you are looking for has moved or no longer exists.</p>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className={styles.searchContainer}>
+            <FormInputField 
+              id={'name'}
+              value={search}
+              handleChange={(_, e) => setSearch(e)}
+              type={'text'}
+            />
+            <Button type={'submit'} level={'primary'}>search</Button>
+          </div>
+        </form>
+      </div>
+      </Container>
+    </Layout>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 
 import Button from '../Button';
 import Icon from '../Icons/Icon';
@@ -30,7 +31,7 @@ const Blog = (props) => {
             <Icon symbol={'pinterestinverse'}></Icon>
           </div>
         </div>
-        <Button level={'secondary'} >back to blog</Button>
+        <Button onClick={() => navigate('/blog')} level={'secondary'} >back to blog</Button>
       </div>
     </div>
   );

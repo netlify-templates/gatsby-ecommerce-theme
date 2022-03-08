@@ -57,4 +57,9 @@
     .commentInput {
         margin-top: 0px;
     }
+
+    .section h4 {
+        font-size: 22px;
+        line-height: 26px;
+    }
 }

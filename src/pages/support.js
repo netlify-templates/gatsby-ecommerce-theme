@@ -60,6 +60,7 @@ const SupportPage = (props) => {
       const tempCurrent = subpages.filter((detail) => detail.key === hash)[0];
       if(tempCurrent.key !== current.key) {
         setCurrent(tempCurrent);
+        window.scrollTo(0, 475);
       }
     }
 
@@ -84,6 +85,7 @@ const SupportPage = (props) => {
             <ThemeLink
               onClick={(e) => {
                 navigate(`/support#${details.key}`);
+                
               }}
               key={details.key}
               isActive = {current.key === details.key}
