@@ -140,9 +140,10 @@ const MobileNavigation = (props) => {
             {depth === -1 && 
               <>
                 <div>
-                  <Link to={'/account/orders'} className={styles.mobileLink}>Orders</Link>
-                  <Link  to={'/account/address'} className={styles.mobileLink}>Addresses</Link>
-                  <Link  to={'/account/settings'} className={styles.mobileLink}>Settings</Link>
+                  <Link to={'/account/orders/'} className={styles.mobileLink}>Orders</Link>
+                  <Link  to={'/account/address/'} className={styles.mobileLink}>Addresses</Link>
+                  <Link  to={'/account/settings/'} className={styles.mobileLink}>Settings</Link>
+                  <Link  to={'/account/viewed/'} className={styles.mobileLink}>Recently Viewed</Link>
                 </div>
                 <div className={styles.navFooter}>
                   <div className={styles.logoutContainer} role={'presentation'} onClick={handleLogout}>

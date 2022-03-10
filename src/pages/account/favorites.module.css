@@ -16,6 +16,29 @@
     gap: 32px 16px;
 }
 
+.confirmDeleteContainer {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+}
+
+.confirmDeleteContainer h4 {
+    font-weight: normal;
+}
+
+.confirmDeleteContainer p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.actionContainer {
+    margin-top: 56px;
+    display: flex;
+    gap: 16px;
+}
+
 @media (max-width: 800px) {
     .root h1 {
         font-size: 32px;
@@ -25,5 +48,20 @@
 
     .favoriteListContainer {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .addressListContainer {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+
+    .actionContainer {
+        flex-direction: column;
+    }
+
+    .confirmDeleteContainer {
+        padding: 16px;
     }
 }

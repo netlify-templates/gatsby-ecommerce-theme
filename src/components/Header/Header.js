@@ -116,7 +116,7 @@ const Header = (prop) => {
                 if(isAuth() === false) {
                   navigate('/login')
                 } else {
-                  navigate('/account/orders');
+                  navigate('/account/orders/');
                 }
               }} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
               <div role={'presentation'} onClick={()=>navigate('/account/favorites')} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>

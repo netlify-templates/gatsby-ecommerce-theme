@@ -95,9 +95,17 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+@media (max-width: 800px) {
+    .titleContainer h4 {
+        font-size: 22px;
+    }
+}
+
 @media (max-width: 500px) {
     .totalContainer span {
         font-size: 18px;
         line-height: 22px;
-    }    
+    }
+    
+
 }

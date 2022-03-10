@@ -7,7 +7,7 @@ import * as styles from './FavoriteCard.module.css';
 
 const FavoriteCard = (props) => {
   const [showQuickView, setShowQuickView] = useState(false);
-  const { color, size, img, alt } = props;
+  const { color, size, img, alt, showConfirmDialog } = props;
   return (
     <div className={styles.root}>
       <div>
@@ -21,7 +21,7 @@ const FavoriteCard = (props) => {
       </div>
       <div className={styles.actionContainer}>
         <span role={'presentation'} onClick={() => setShowQuickView(true)}>Edit</span>
-        <span>Remove</span>
+        <span role={'presentation'} onClick={showConfirmDialog}>Remove</span>
       </div>
 
       <Drawer visible={showQuickView} close={() => setShowQuickView(false)}>

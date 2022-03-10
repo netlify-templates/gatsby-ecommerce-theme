@@ -3,7 +3,7 @@ import { navigate } from 'gatsby';
 
 const OrderIndexPage = (props) => {
   useEffect(() => {
-    navigate('/account/orders');
+    navigate('/account/orders/');
   }, [])
   
   return (

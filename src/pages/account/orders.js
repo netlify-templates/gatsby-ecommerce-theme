@@ -79,7 +79,7 @@ const OrderPage = (props) => {
   return (
     <Layout>
       <AccountLayout>
-        <Breadcrumbs crumbs={[{link: '/', label:'Home'}, {link: '/account', label:'Account'}, {link: '/account/orders', label:'Orders'}]} />
+        <Breadcrumbs crumbs={[{link: '/', label:'Home'}, {link: '/account', label:'Account'}, {link: '/account/orders/', label:'Orders'}]} />
         <h1>Orders</h1>
         <div className={`${styles.tableHeaderContainer} ${styles.gridStyle}`}>
           <span className={styles.tableHeader}>Order #</span>
