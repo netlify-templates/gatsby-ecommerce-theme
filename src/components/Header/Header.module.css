@@ -176,6 +176,30 @@
     display: none;
 }
 
+.bagIconContainer {
+    position: relative;
+}
+
+.bagNotification {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+
+    width: 14px;
+    height: 14px;
+    background-color: var(--standard-gold);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bagNotification span{
+    color: var(--standard-white);
+    font-size: 9px;
+}
+
 @media (max-width: 800px) {
     .mobileMenuContainer {
         display: block;

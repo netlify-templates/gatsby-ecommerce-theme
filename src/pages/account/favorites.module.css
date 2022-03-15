@@ -39,15 +39,17 @@
     gap: 16px;
 }
 
+@media (max-width: 1000px) {
+    .favoriteListContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 800px) {
     .root h1 {
         font-size: 32px;
         line-height: 38px;
         margin-bottom: 24px;
-    }
-
-    .favoriteListContainer {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 

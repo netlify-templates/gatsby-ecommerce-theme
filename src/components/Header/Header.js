@@ -103,11 +103,14 @@ const Header = (prop) => {
             </div>
             <Brand/>
             <div className={styles.actionContainers}>
-              <div className={styles.iconContainer} role={'presentation'} onClick={()=> {
+              <div className={`${styles.iconContainer} ${styles.bagIconContainer}`} role={'presentation'} onClick={()=> {
                 setShowMiniCart(true);
                 setMobileMenu(false);
               }}>
                 <Icon symbol={'bag'}></Icon>
+                <div className={styles.bagNotification}>
+                  <span>1</span>
+                </div>
                 <div className={styles.notificationContainer}>
                   <AddNotification />
                 </div>

@@ -5,3 +5,10 @@
 .root h1 {
     margin-bottom: 32px;
 }
+
+/* special case breakpoint in grid */
+@media (max-width: 1100px) {
+    .gridContainer > div > div {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

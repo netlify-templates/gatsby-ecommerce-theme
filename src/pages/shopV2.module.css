@@ -61,3 +61,22 @@
     justify-content: flex-end;
     margin-bottom: 16px;
 }
+
+@media (max-width: 800px) {
+    .filterContainer {
+        display: flex;
+        gap: 8px;
+        top: 91px; 
+        z-index: 49;
+        background-color: var(--standard-white);
+        padding: 16px;
+        margin-left: -2.5%;
+        margin-right: -2.5%;
+    }
+    
+
+    .content {
+        grid-template-columns: 1fr;
+        margin-top: -32px;
+    }
+}

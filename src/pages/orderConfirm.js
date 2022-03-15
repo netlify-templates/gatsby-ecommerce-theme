@@ -18,7 +18,7 @@ const OrderConfirmPage = (props) => {
           title={'Order Status'} 
           icon={'delivery'} 
           subtitle={'Check your order status'} 
-          link={'/account/settings'}
+          link={'/account/orders'}
           size={'lg'}
         />
 

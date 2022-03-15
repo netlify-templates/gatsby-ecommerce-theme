@@ -49,7 +49,6 @@ const AddressForm = (props) => {
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'Name'}
-          placeholder={'e.g. Home'}
           error={errorForm.name} 
         />
         <FormInputField               
@@ -58,7 +57,6 @@ const AddressForm = (props) => {
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'Address'}
-          placeholder={'123 Abbot Road'}
           error={errorForm.address} 
         />
         <FormInputField               

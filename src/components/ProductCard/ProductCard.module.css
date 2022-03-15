@@ -93,8 +93,37 @@
     visibility: visible;
 }
 
+.heartFillContainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: var(--standard-gold);
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+.heartFillContainer svg{
+    width: 20px;
+    height: 20px;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
 @media (max-width: 800px) {
     .bagContainer {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .heartContainer {
         opacity: 1;
         visibility: visible;
     }
@@ -130,5 +159,10 @@
     .bagContainer svg {
         width: 20px;
         height: 20px;
+    }
+
+    .heartContainer {
+        top: 32px;
+        right: 16px;
     }
 }
