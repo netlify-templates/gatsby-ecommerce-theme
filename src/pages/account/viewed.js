@@ -14,6 +14,7 @@ const RecentlyViewedPage = (props) => {
     const recentlyViewed = generateMockProductData(3, 'shirt');
 
     if(isAuth() === false) {
+        // test push
         navigate('/login');
     }
 
