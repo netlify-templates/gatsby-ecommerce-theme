@@ -112,6 +112,7 @@
 .imageContainer {
     width: 100%;
     height: 80px;
+    cursor: pointer;
 }
 
 .imageContainer img{

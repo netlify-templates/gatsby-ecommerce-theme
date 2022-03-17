@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 
 import CurrencyFormatter from '../CurrencyFormatter';
 import Icon from '../Icons/Icon';
@@ -63,7 +64,7 @@ const OrderItem = (props) => {
           {order.items.map((item, index) => {
             return(
               <div className={styles.itemContainer} key={index}>
-                <div className={styles.imageContainer}>
+                <div role={'presentation'} onClick={() => navigate('/product/sample')} className={styles.imageContainer}>
                   <img alt={item.alt} src={item.image}></img>
                 </div>
                 <div>

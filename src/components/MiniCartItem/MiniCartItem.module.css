@@ -79,4 +79,9 @@
         font-size: 13px;
         line-height: 16px;
     }
+
+    .priceContainer span {
+        font-size: 13px;
+        line-height: 16px;
+    }
 }
