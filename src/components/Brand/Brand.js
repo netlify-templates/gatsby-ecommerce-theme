@@ -7,7 +7,7 @@ const Brand = (props) => {
   
   return (
     <div className={styles.root} role={'presentation'} onClick={() => navigate('/')}>
-      {/* <h4>GENEVA</h4> */}
+      {/* <h4>SYDNEY</h4> */}
       <svg
       width={127}
       height={24}

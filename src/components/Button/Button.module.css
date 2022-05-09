@@ -138,3 +138,7 @@
     min-width: auto;
     font-weight: normal;
 }
+
+.link:hover {
+    text-decoration: none;
+}

@@ -282,18 +282,18 @@ a {
   color: var(--standard-grey);
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 ul.bullets {
   margin-left: 40px;
-  margin-top: -20px;
+  list-style: disc;
 }
 
 ul.bullets li {
   margin-bottom: 5px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
 }
 
 ol {
@@ -682,6 +682,13 @@ ol {
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
+}
+
+.callout {
+  margin: 40px 0;
+  padding: 30px;
+  background-color: var(--bg-light-gray);
+  text-align: center;
 }
 
 /* React Slick Custom Settings */

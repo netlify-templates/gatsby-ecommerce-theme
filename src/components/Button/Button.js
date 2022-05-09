@@ -1,12 +1,10 @@
 import React from "react"
-// import { Link } from "gatsby"
-
-// import { scroller } from 'react-scroll';
+import { Link } from "gatsby"
 
 import * as styles from './Button.module.css'
 
-const Button = ({ children, href, target, level, type, size, disabled, onClick, name, value, className, flat, link ,fullWidth, theme }) => {
-    const classes = [styles.button];
+const Button = ({ children, href, target, level, type, size, disabled, onClick, className, flat, link ,fullWidth, theme }) => {
+    const classes = level ? [styles.button] : [styles.link];
 
     if (level in styles) {
         classes.push(styles[level])
@@ -35,42 +33,23 @@ const Button = ({ children, href, target, level, type, size, disabled, onClick, 
     }
     
     const classOutput = classes.join(' ');
-
-    // const scrollToHash = (evt) => {
-    //     if (evt.currentTarget.getAttribute('href') && evt.currentTarget.getAttribute('href').indexOf('/#') > -1) {
-    //         evt.preventDefault();
-    //         const id = evt.currentTarget.getAttribute('href').split('/#')[1];
-    //         scroller.scrollTo(
-    //             id,
-    //             {
-    //                 duration: 800,
-    //                 delay: 0,
-    //                 offset: -180,
-    //                 smooth: 'easeInOutQuart'
-    //             }
-    //         );
-    //     }
-    // }
     return (
         <>
-            <button className={classOutput} onClick={onClick} type={type}>
-              {children}
-            </button>
-            {/* {(type === 'inputButton' || type === 'inputSubmit') && (
-                <input className={classOutput} type={type === 'inputSubmit' ? "submit" : "button"} name={name} value={value} {...(onClick ? {onClick} : {onClick: scrollToHash})} />
+            {(href && target) && (
+                <a href={href} target="_blank" rel="noreferrer noopener" className={classOutput} onClick={onClick}>
+                    {children}
+                </a>
             )}
-            {(type === 'button' || type === 'buttonSubmit') && (
-                <button className={classOutput} type={type === 'buttonSubmit' ? "submit" : ""} {...(onClick ? {onClick} : {onClick: scrollToHash})}>{children}</button>
+            {(href && !target) && (
+                <Link to={href} className={classOutput} onClick={onClick}>
+                    {children}
+                </Link>
             )}
-            {(type === 'span') && (
-                <span data-button className={classOutput} role="presentation" {...(onClick ? {onClick} : {onClick: scrollToHash})}>{children}</span>
+            {!href && (
+                <button className={classOutput} onClick={onClick} type={type} disabled={disabled}>
+                    {children}
+                </button>
             )}
-            {(!type || type === 'a') && target && (
-                <a href={href} className={classOutput} {...(onClick ? {onClick} : {onClick: scrollToHash})} disabled={disabled} target="_blank" rel="noreferrer">{children}</a>
-            )}
-            {(!type || type === 'a') && !target && (
-                <Link to={href} className={classOutput} {...(onClick ? {onClick} : {onClick: scrollToHash})} disabled={disabled}>{children}</Link>
-            )} */}
         </>
     )
 }

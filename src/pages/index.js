@@ -40,7 +40,7 @@ const IndexPage = () => {
 
         {/* Message Container */}
         <div className={styles.messageContainer}>
-          <p>This is a demonstration of the geneva theme for verse by <span className={styles.gold}>matter design.</span></p>
+          <p>This is a demonstration of the Sydney theme for verse by <span className={styles.gold}>matter design.</span></p>
           <p>wear by <span className={styles.gold}>sunspel</span> and <span className={styles.gold}>scotch&soda</span></p>
         </div>
 
@@ -88,7 +88,7 @@ const IndexPage = () => {
         {/* Quote */}
         <Quote 
           bgColor={'var(--standard-light-grey)'}
-          title={'about geneva'}
+          title={'about Sydney'}
           quote={"“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”"}
         />
 
@@ -113,7 +113,7 @@ const IndexPage = () => {
 
         {/* Social Media */}
         <div className={styles.socialContainer}>
-          <Title name={'Styled by You'} subtitle={'Tag @geneva to be featured.'}/>
+          <Title name={'Styled by You'} subtitle={'Tag @sydney to be featured.'}/>
           <div className={styles.socialContentGrid}>
             <img src={`/social/socialMedia1.png`} alt={'social media 1'}  />
             <img src={`/social/socialMedia2.png`} alt={'social media 2'}  />

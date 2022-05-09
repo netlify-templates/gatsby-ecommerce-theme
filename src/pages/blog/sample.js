@@ -12,13 +12,13 @@ const SamplePage = (props) => {
       <div className={styles.root}>
         <Container>
           <div className={styles.blogContainer}>
-            <Blog category={'design'} title={'Friends of Geneva: Flora Fricker'} image={'/blogFeatured.png'} alt={''}>
+            <Blog category={'design'} title={'Friends of Sydney: Flora Fricker'} image={'/blogFeatured.png'} alt={''}>
               <div className={styles.content}>
                 <p className={styles.excerpt}>
                   London-based floral designer Flora Fricker champions seasonal British flowers and UK producers in her beautiful and sustainable creations. This season, we worked with Flora to style Sunspel stores for Christmas, for which she produced eye-catching sustainably sourced wreaths. 
                 </p>
                 <p className={styles.blogParagraph}>
-                  Delaware limited liability company (The Geneva) collects personal information that you voluntarily provide when applying or registering for an account with The Upside or making a purchase on The Upside website; www.theupside.com (the Website).
+                  Delaware limited liability company (The Sydney) collects personal information that you voluntarily provide when applying or registering for an account with The Upside or making a purchase on The Upside website; www.theupside.com (the Website).
                 </p>
                 <p className={styles.blogParagraph}>
                 This Privacy Policy (Privacy Policy) outlines how your information is collected, used and disclosed when you access or use our Services as defined in our Terms. This information is collected, used and disclosed in accordance with the Privacy Act 1988 (Cth) (Privacy Act).

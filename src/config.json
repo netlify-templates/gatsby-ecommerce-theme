@@ -50,6 +50,10 @@
             },{
                 "text": "Shipping & Returns",
                 "link": "/support#returns"
+            },
+            {
+                "text": "How to use this theme",
+                "link": "/how-to-use"
             }]
         }
     ],
