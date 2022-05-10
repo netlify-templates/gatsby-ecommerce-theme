@@ -98,7 +98,7 @@ const HowToUsePage = (props) => {
 
               <p>Our team are fanatical about site speed and the agility of a composable commerce approach. If you need help to setup a Headless architecture, we’d love to hear from you.</p>
 
-              <p><Button target={true} href="https://jamm.matter.design/">Contact the team at Matter.</Button></p>
+              <p><Button target={true} href="https://www.matterdesign.com.au/contact/">Contact the team at Matter.</Button></p>
 
             </div>
           </div>
