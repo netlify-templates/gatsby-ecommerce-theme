@@ -91,7 +91,7 @@ const HowToUsePage = (props) => {
                   <li>Reviews.io</li>
               </ul>
           
-              <strong>Stock Availability and Store Locator:</strong>
+              <strong>Physical Locations:</strong>
               <ul>
                   <li>Localisr.io</li>
               </ul>
