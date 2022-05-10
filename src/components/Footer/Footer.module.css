@@ -160,6 +160,10 @@
     line-height: 15px;
 }
 
+.copyrightContainer a {
+    color: var(--standard-white);
+}
+
 .mobileFooterLinks {
     display: none;
 }
