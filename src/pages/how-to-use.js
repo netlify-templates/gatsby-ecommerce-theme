@@ -21,8 +21,6 @@ const HowToUsePage = (props) => {
           <div className={styles.section}>
             <span>This theme is proudly brought to you by the team at <Button target={true} href="https://matterdesign.com.au/">Matter Design & Digital</Button> (Matter.).</span>
             <div className={styles.subSection}>
-                <p>Please see the terms of use below -</p>
-
                 <p>The Sydney theme is available for a JAMStack architecture and is compatible with the following e-commerce platforms:</p>
                 <ul className='bullets'>
                     <li>BigCommerce</li>
