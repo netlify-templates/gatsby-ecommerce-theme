@@ -1,91 +1,107 @@
-import React from 'react';
-import * as styles from './faq.module.css';
+import React, { useRef } from 'react';
+import * as styles from './about.module.css';
 
 import Layout from "../components/Layout/Layout";
-import Banner from '../components/Banner';
+import ThemeLink from '../components/ThemeLink';
 import Container from '../components/Container';
 import Button from '../components/Button';
 
 const HowToUsePage = (props) => {
+
+  let builtRef = useRef();
+  let toolsRef = useRef();
+
+  const handleScroll = (elementReference) => {
+    if(elementReference) {
+      window.scrollTo({
+        behavior: "smooth",
+        top: (elementReference.current.offsetTop - 280),
+      });
+    }
+  }
+
   return (
     <Layout>
       <div className={styles.root}>
-        <Banner 
-          maxWidth={'650px'}
-          name={`How to use this theme`}
-          bgImage={'/faqCover.png'}
-          color={'var(--standard-white)'}
-          height={'350px'}
-        />
-        <Container>
-          <div className={styles.section}>
-            <span>This theme is proudly brought to you by the team at <Button target={true} href="https://matterdesign.com.au/">Matter Design & Digital</Button> (Matter.).</span>
-            <div className={styles.subSection}>
-                <p>The Sydney theme is available for a JAMStack architecture and is compatible with the following e-commerce platforms:</p>
-                <ul className='bullets'>
-                    <li>BigCommerce</li>
-                    <li>VTEX (roadmap)</li>
-                    <li>Commercetools (roadmap)</li>
-                </ul>
-                <p>The Sydney theme is available with back end microservices connected through Matter.’s own JAMM.™ <Button target={true} href="https://matterdesign.com.au/jamm-matter-launches-a-jamstack-inspired-headless-architecture/">frontend Headless framework</Button>.</p>
-
-                <p>JAMM.™ can connect, orchestrate and publish data from any back-end service. JAMM.™ creates a server-side rendered website that is fast, stable and scalable for high traffic events.</p>
-
-                <p>Compatible microservices include:</p>
-
-                <h3>Advanced Search:</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://www.algolia.com/">Algolia</Button></li>
-                    <li><Button target={true} href="https://searchspring.com/">Searchspring</Button> (roadmap)</li>
-                    <li><Button target={true} href="https://www.attraqt.com/">XO</Button> (roadmap)</li>
-                    <li><Button target={true} href="https://www.syte.ai/">Syte</Button> (roadmap)</li>
-                </ul>
-
-                <h3>Product Information Management (PIM):</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://www.akeneo.com/?utm_source=matterdesign&utm_medium=marketplace&utm_campaign=netlify-jamm-theme">Akeneo</Button></li>
-                </ul>
-
-                <h3>Content Management Systems (CMS):</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://www.contentful.com/">Contentful</Button></li>
-                    <li><Button target={true} href="https://wordpress.com/">WordPress</Button></li>
-                    <li><Button target={true} href="https://www.sanity.io/">Sanity</Button></li>
-                    <li><Button target={true} href="https://builder.io/">Builder.io</Button></li>
-                </ul>
-
-                <h3>Marketing Automation:</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://www.klaviyo.com/partner/signup?utm_source=0010V00002MLrPy&utm_medium=partner">Klaviyo</Button></li>
-                    <li><Button target={true} href="https://ortto.com/">Ortto</Button></li>
-                    <li><Button target={true} href="https://dotdigital.com/">Dot Digital</Button></li>
-                </ul>
-
-                <h3>Customer Support:</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://gorgias.grsm.io/1072065">Gorgias</Button></li>
-                    <li><Button target={true} href="https://www.zendesk.com/">Zendesk</Button></li>
-                </ul>
-
-                <h3>Reviews and User Generated Content:</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://www.yotpo.com/">Yotpo</Button></li>
-                    <li><Button target={true} href="https://www.trustpilot.com/">Trustpilot</Button></li>
-                    <li><Button target={true} href="https://www.reviews.io/">Reviews.io</Button></li>
-                </ul>
-            
-                <h3>Stock Availability and Store Locator:</h3>
-                <ul className='bullets'>
-                    <li><Button target={true} href="https://matterdesign.com.au/localisr-a-geolocation-powered-store-finder-for-bigcommerce/">Localisr.io</Button></li>
-                </ul>
-
-                <div className='callout'>
-                    <Button target={true} href="https://jamm.matter.design/" level="primary">Read more about JAMM.™</Button>
-
-                    <p>If you have any question regarding the use of this theme please contact us at <Button target={true} href="https://jamm.matter.design/">https://jamm.matter.design/</Button></p>
-                </div>
-            </div>
+        <div className={styles.navContainer}>
+          <ThemeLink onClick={() => handleScroll(builtRef)} to={'#builtby'}>Who built this theme</ThemeLink>
+          <ThemeLink onClick={() => handleScroll(toolsRef)} to={'#tools'}>Compatible technologies</ThemeLink>
         </div>
+        <Container size={'large'} spacing={'min'}>
+          <div className={styles.content} style={{paddingTop: '80px'}}>
+            <h3>Built By Matter.</h3>
+            <div id="#builtBy" ref={builtRef}>
+              <p>This theme is proudly brought to you by the team at <Button target={true} href="https://matterdesign.com.au/">Matter Design & Digital</Button> (Matter.).</p>
+              <p>The Sydney theme is built for Netlify as an ecommerce theme suitable for JAMStack archtitecture. This theme is free to use through Netlify’s GitHub account, and can be used with any ecommerce platform that support a headless architecture.</p>
+              <p>Matter. has pre-built connections to microservices available through its JAMM.™ solution. JAMM.™ is a system built to run a headless architecture. JAMM.™ can connect micro-services, orchestrate data and publish websites to an edge network for lighting fast performce. JAMM.™ creates a server-side rendered website that is fast, stable and scalable for high traffic events.</p>
+              <Button target={true} href="https://jamm.matter.design/">Read more about JAMM.™</Button>
+            </div>
+            <h3>Best of Breed Tools</h3>
+            <div id={'#tools'} ref={toolsRef}>
+              <p>Headless architecture enables Composable Commerce. What this means is that you can ‘compose’ a suite of best of breed tools together to create an agile ecommerce system. This approach is the opposite end of the spectrum from a traditional ‘Monolithic’ architecture where all the functionality and data comes from one source.</p>
+              <p>Why go with Composable Commerce? History has shown, technology innovation comes from new specialised solutions that find better ways to do things. By creating an architecture that taps into this innovation, you are getting a system that is innovating faster than monolithic solutions giving you a competitive advantage.</p>
+              <p>Matter. has been innovating since 2003, and we have aligned with companies that do it best. The following technologies are either currently available or are on our roadmap for JAMM.™.</p>
+
+              <strong>Ecommerce:</strong>
+              <ul>
+                  <li>BigCommerce</li>
+                  <li>VTEX (roadmap)</li>
+                  <li>Commercetools (roadmap)</li>
+              </ul>
+
+              <strong>Content Management Systems (CMS):</strong>
+              <ul>
+                  <li>Contentful</li>
+                  <li>WordPress</li>
+                  <li>Sanity</li>
+                  <li>Builder.io</li>
+              </ul>
+
+              <strong>Advanced Search:</strong>
+              <ul>
+                  <li>Algolia</li>
+                  <li>Searchspring (roadmap)</li>
+                  <li>XO (roadmap)</li>
+                  <li>Syte (roadmap)</li>
+              </ul>
+
+              <strong>Product Information Management (PIM):</strong>
+              <ul>
+                  <li>Akeneo</li>
+              </ul>
+
+              <strong>Marketing Automation:</strong>
+              <ul>
+                  <li>Klaviyo</li>
+                  <li>Ortto</li>
+                  <li>Dot Digital</li>
+                  <li>Omnisend</li>
+              </ul>
+
+              <strong>Customer Support:</strong>
+              <ul>
+                  <li>Gorgias</li>
+                  <li>Zendesk</li>
+              </ul>
+
+              <strong>Reviews and User Generated Content:</strong>
+              <ul>
+                  <li>Yotpo</li>
+                  <li>Trustpilot</li>
+                  <li>Reviews.io</li>
+              </ul>
+          
+              <strong>Stock Availability and Store Locator:</strong>
+              <ul>
+                  <li>Localisr.io</li>
+              </ul>
+
+              <p>Our team are fanatical about site speed and the agility of a composable commerce approach. If you need help to setup a Headless architecture, we’d love to hear from you.</p>
+
+              <p><Button target={true} href="https://jamm.matter.design/">Contact the team at Matter.</Button></p>
+
+            </div>
+          </div>
         </Container>
       </div>
     </Layout>

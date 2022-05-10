@@ -86,11 +86,15 @@
     margin-bottom: 32px;
 }
 
-.content li {
+.content ol li {
     font-family: var(--standard-header);
     font-weight: normal;
     font-size: 32px;
     line-height: 52px;
+}
+
+.content ul {
+    margin-bottom: 32px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -119,7 +123,7 @@
         line-height: 38px;
     }
 
-    .content li {
+    .content ol li {
         font-size: 22px;
         line-height: 42px;
     }
