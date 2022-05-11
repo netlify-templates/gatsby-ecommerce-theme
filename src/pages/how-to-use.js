@@ -35,6 +35,7 @@ const HowToUsePage = (props) => {
               <p>The Sydney theme is built for Netlify as an ecommerce theme suitable for JAMStack archtitecture. This theme is free to use through Netlify’s GitHub account, and can be used with any ecommerce platform that support a headless architecture.</p>
               <p>Matter. has pre-built connections to microservices available through its JAMM.™ solution. JAMM.™ is a system built to run a headless architecture. JAMM.™ can connect micro-services, orchestrate data and publish websites to an edge network for lighting fast performce. JAMM.™ creates a server-side rendered website that is fast, stable and scalable for high traffic events.</p>
               <Button target={true} href="https://jamm.matter.design/">Read more about JAMM.™</Button>
+              <img alt={'JAMM Detail'} src={'/how-to-use/jamm-sydney-1upd@2x.png'} style={{width: "100%", height: "auto"}} />
             </div>
             <h3>Best of Breed Tools</h3>
             <div id={'#tools'} ref={toolsRef}>
@@ -103,6 +104,9 @@ const HowToUsePage = (props) => {
             </div>
           </div>
         </Container>
+        <div className={styles.imageContainer}>
+          <img  alt={'Best of Breed tools'} src={'/how-to-use/logos@2x.png'}></img>
+        </div>
       </div>
     </Layout>
   );
