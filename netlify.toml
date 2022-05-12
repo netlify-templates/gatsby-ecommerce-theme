@@ -1,0 +1,4 @@
+[build]
+  command = "gatsby build"
+  functions = "netlify/functions"
+  publish = "public"
