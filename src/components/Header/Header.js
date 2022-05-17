@@ -103,14 +103,14 @@ const Header = (prop) => {
             </div>
             <Brand/>
             <div className={styles.actionContainers}>
-            <button className={styles.iconContainer}  onClick={() => {
+            <button aria-label="Search" className={styles.iconContainer} onClick={() => {
                   setShowSearch(!showSearch);
                 }}>
                 <Icon symbol={'search'}></Icon>
               </button>
-              <Link href="/account/favorites" className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></Link>
-              <Link href={isAuth() ? "/login" : "/account/orders/"} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></Link>
-              <button className={`${styles.iconContainer} ${styles.bagIconContainer}`} 
+              <Link aria-label="Favorites" href="/account/favorites" className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></Link>
+              <Link aria-label="Orders" href={isAuth() ? "/login" : "/account/orders/"} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></Link>
+              <button aria-label="Cart" className={`${styles.iconContainer} ${styles.bagIconContainer}`} 
                 onClick={()=> {
                 setShowMiniCart(true);
                 setMobileMenu(false);
