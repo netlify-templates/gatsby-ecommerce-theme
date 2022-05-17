@@ -103,7 +103,15 @@ const Header = (prop) => {
             </div>
             <Brand/>
             <div className={styles.actionContainers}>
-              <div className={`${styles.iconContainer} ${styles.bagIconContainer}`} role={'presentation'} onClick={()=> {
+            <button className={styles.iconContainer}  onClick={() => {
+                  setShowSearch(!showSearch);
+                }}>
+                <Icon symbol={'search'}></Icon>
+              </button>
+              <Link href="/account/favorites" className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></Link>
+              <Link href={isAuth() ? "/login" : "/account/orders/"} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></Link>
+              <button className={`${styles.iconContainer} ${styles.bagIconContainer}`} 
+                onClick={()=> {
                 setShowMiniCart(true);
                 setMobileMenu(false);
               }}>
@@ -114,20 +122,7 @@ const Header = (prop) => {
                 <div className={styles.notificationContainer}>
                   <AddNotification />
                 </div>
-              </div>
-              <div role={'presentation'} onClick={() => {
-                if(isAuth() === false) {
-                  navigate('/login')
-                } else {
-                  navigate('/account/orders/');
-                }
-              }} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'user'}></Icon></div>
-              <div role={'presentation'} onClick={()=>navigate('/account/favorites')} className={`${styles.iconContainer} ${styles.hideOnMobile}`}><Icon symbol={'heart'}></Icon></div>
-              <div className={styles.iconContainer} role={'presentation'} onClick={() => {
-                  setShowSearch(!showSearch);
-                }}>
-                <Icon symbol={'search'}></Icon>
-              </div>
+              </button> 
             </div>
           </div>
 
