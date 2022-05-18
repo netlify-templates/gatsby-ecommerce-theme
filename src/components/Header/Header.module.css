@@ -72,12 +72,8 @@ button,
 }
 
 .actionContainers > * {
-  margin-left: 32px;
+  margin-right: 32px;
   cursor: pointer;
-}
-
-.actionContainers *:first-child {
-  margin-left: 0px;
 }
 
 .iconContainer {
@@ -85,6 +81,7 @@ button,
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    padding: 0;
 }
 
 .iconContainer svg {
@@ -239,14 +236,14 @@ button,
         display: none;
     }
 
-  .actionContainers > * {
-    margin-left: 16px;
-    cursor: pointer;
-  }
+    .actionContainers > * {
+        margin-right: 16px;
+        cursor: pointer;
+    }
 
-  .actionContainers > *:first-child {
-    margin-left: 0px;
-  }
+    .actionContainers > *:last-child {
+        margin-right: 0px;
+    }
 
     .header {
         padding: 24px 8px 24px 8px;
