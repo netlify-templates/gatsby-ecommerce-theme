@@ -5,9 +5,7 @@ import * as styles from './BlogPreview.module.css';
 const BlogPreview = (props) => {
   const {image, altImage, title, link, category, showExcerpt, excerpt} = props;
 
-  const handleClick = () => {
-    navigate('/blog/sample');
-  };
+  const handleClick = () => { navigate(link); };
 
   return (
     <div className={styles.root} onClick={handleClick}>
