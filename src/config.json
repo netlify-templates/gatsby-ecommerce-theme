@@ -131,64 +131,7 @@
     {
       "menuLabel": "journal",
       "menuLink": "/blog",
-      "target": false,
-      "category": [
-        {
-          "categoryLabel": "Life & Beyond",
-          "submenu": [
-            {
-              "menuLabel": "15 Outfits for Your Summer",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Keeping it Real",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Top Best Sellers Winter Collection",
-              "menuLink": "#"
-            }
-          ]
-        },
-        {
-          "categoryLabel": "Fashion Trends",
-          "submenu": [
-            {
-              "menuLabel": "Winter Collection",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Sports Collection",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Season of Giving",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Test 1",
-              "menuLink": "#"
-            }
-          ]
-        },
-        {
-          "categoryLabel": "Another Category Name",
-          "submenu": [
-            {
-              "menuLabel": "Lorem ipsum",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Interesting Link",
-              "menuLink": "#"
-            },
-            {
-              "menuLabel": "Top Best Sellers Winter Collection",
-              "menuLink": "#"
-            }
-          ]
-        }
-      ]
+      "category": null
     },
     {
       "menuLabel": "About",
