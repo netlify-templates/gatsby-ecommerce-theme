@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    cursor: pointer;
 }
 
 .blogPreviewImage {
     width: 100%;
     object-fit: cover;
     height: 320px;
-    cursor: pointer;
 }
 
 .category {
