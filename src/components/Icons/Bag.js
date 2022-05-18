@@ -5,6 +5,8 @@ const Bag = () => (
     width={18}
     height={20}
     fill="none"
+    aria-hidden="true"
+    focusable="false"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 18 20"
   >
