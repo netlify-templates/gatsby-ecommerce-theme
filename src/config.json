@@ -76,15 +76,15 @@
             },
             {
               "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "jackets",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "trousers",
-              "menuLink": "#"
+              "menuLink": "/shop"
             }
           ]
         },
@@ -93,23 +93,23 @@
           "submenu": [
             {
               "menuLabel": "All clothing",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "jackets",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "trousers",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "pants",
-              "menuLink": "#"
+              "menuLink": "/shop"
             }
           ]
         },
@@ -118,11 +118,11 @@
           "submenu": [
             {
               "menuLabel": "caps & scarves",
-              "menuLink": "#"
+              "menuLink": "/shop"
             },
             {
               "menuLabel": "bags",
-              "menuLink": "#"
+              "menuLink": "/shop"
             }
           ]
         }

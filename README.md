@@ -1,9 +1,4 @@
-<p align="center">
-  <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-</p>
-<h1 align="center">
-  Gatsby Sydney Ecommerce Theme
-</h1>
+![github-banner](https://user-images.githubusercontent.com/3611928/169144953-49223b21-1e00-4607-971a-4f870468a986.svg)
 
 ## 🚀 Local development Quick start
 

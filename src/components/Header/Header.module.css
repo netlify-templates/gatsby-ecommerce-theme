@@ -6,10 +6,7 @@
     z-index: 50;
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+.iconButton {
   border: none;
   background-color: unset;
   overflow: visible;
@@ -74,6 +71,7 @@ button,
 .actionContainers > * {
   margin-right: 32px;
   cursor: pointer;
+  color: var(--standard-black);
 }
 
 .iconContainer {
