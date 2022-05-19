@@ -117,7 +117,7 @@ const ProductPage = (props) => {
             title={'Sustainability'}
             description={'We design our products to look good and to be used on a daily basis. And our aim is to inspire people to live with few timeless objects made to last. This is why quality over quantity is a cornerstone of our ethos and we have no interest in trends or seasonal collections.'}
             ctaText={'learn more'}
-            cta={() => navigate('/blogs')}
+            cta={() => navigate('/blog')}
             bgColor={'var(--standard-light-grey)'}
           />
         </div>

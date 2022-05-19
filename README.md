@@ -1,9 +1,4 @@
-<p align="center">
-  <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-</p>
-<h1 align="center">
-  Gatsby Sydney Ecommerce Theme
-</h1>
+![github-banner](https://user-images.githubusercontent.com/3611928/169144953-49223b21-1e00-4607-971a-4f870468a986.svg)
 
 ## ⚡️ Quick Setup + Deploy Option
 
@@ -44,4 +39,3 @@ Click the button below and it will help you create a new repo, create a new Netl
   ```
   
   Open your browser and visit <http://localhost:5000>, your project should now be running!
- 
