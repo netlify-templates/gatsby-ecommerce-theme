@@ -42,11 +42,6 @@ const BlogPage = (props) => {
           </Container>
         </div>
 
-        <div className={styles.loadMoreContainer}>
-          <span>6 of 456</span>
-          <Button fullWidth level={'secondary'}>LOAD MORE</Button>
-        </div>
-
       </div>
     </Layout>
   );
