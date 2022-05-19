@@ -74,6 +74,7 @@ button,
 .actionContainers > * {
   margin-right: 32px;
   cursor: pointer;
+  color: var(--standard-black);
 }
 
 .iconContainer {
