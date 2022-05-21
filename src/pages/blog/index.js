@@ -2,7 +2,6 @@ import React from 'react';
 import { navigate } from 'gatsby';
 
 import BlogPreviewGrid from '../../components/BlogPreviewGrid';
-import Button from '../../components/Button';
 import Container from '../../components/Container';
 import Hero from '../../components/Hero';
 import Layout from '../../components/Layout/Layout';
