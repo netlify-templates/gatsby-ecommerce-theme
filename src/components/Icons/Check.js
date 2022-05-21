@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Check = () => (
   <svg
@@ -10,6 +10,6 @@ const Check = () => (
   >
     <path d="m1 7 4.5 4.5L14 3" stroke="#000" strokeLinecap="square" />
   </svg>
-)
+);
 
-export default Check
+export default Check;

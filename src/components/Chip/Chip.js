@@ -4,7 +4,7 @@ import * as styles from './Chip.module.css';
 import Icon from '../Icons/Icon';
 
 const Chip = (props) => {
-  const {name, close} = props;
+  const { name, close } = props;
   return (
     <div className={styles.root} role={'presentation'} onClick={close}>
       <span>{name}</span>

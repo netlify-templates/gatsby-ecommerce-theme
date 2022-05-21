@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const CreditCard = () => (
-    <svg
+  <svg
     width={50}
     height={37}
     fill="none"
@@ -13,6 +13,6 @@ const CreditCard = () => (
       fill="#000"
     />
   </svg>
-)
+);
 
-export default CreditCard
+export default CreditCard;

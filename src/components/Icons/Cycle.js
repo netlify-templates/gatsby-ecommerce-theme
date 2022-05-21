@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Cycle = () => (
-    <svg
+  <svg
     width={51}
     height={54}
     fill="none"
@@ -21,6 +21,6 @@ const Cycle = () => (
       strokeWidth={0.4}
     />
   </svg>
-)
+);
 
-export default Cycle
+export default Cycle;

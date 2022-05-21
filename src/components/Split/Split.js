@@ -7,7 +7,10 @@ const Split = (props) => {
   const { image, alt, title, description, ctaText, cta, bgColor } = props;
   return (
     <div className={styles.root}>
-      <div className={styles.contentContainer} style={{backgroundColor: bgColor}}>
+      <div
+        className={styles.contentContainer}
+        style={{ backgroundColor: bgColor }}
+      >
         <div className={styles.detailContainer}>
           <h4>{title}</h4>
           <p>{description}</p>

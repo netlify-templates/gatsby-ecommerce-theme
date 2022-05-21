@@ -1,14 +1,13 @@
 import React from 'react';
 import * as styles from './Slider.module.css';
-import Slick from "react-slick";
+import Slick from 'react-slick';
 
 const Slider = (props) => {
-
   const { children, settings, spacing } = props;
 
   const customPaging = () => {
-    return(<div className={styles.mobilePagination}></div>)
-  }
+    return <div className={styles.mobilePagination}></div>;
+  };
 
   const defaultSettings = {
     dots: true,
@@ -18,14 +17,14 @@ const Slider = (props) => {
     slidesToScroll: 1,
     arrows: false,
     dotsClass: `${styles.customDots}`,
-    customPaging: customPaging
+    customPaging: customPaging,
   };
 
   return (
     <div className={`${styles.root} ${spacing === true ? styles.spacing : ''}`}>
-        <Slick {...defaultSettings} {...settings}>
-          {children}
-        </Slick>
+      <Slick {...defaultSettings} {...settings}>
+        {children}
+      </Slick>
     </div>
   );
 };

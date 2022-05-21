@@ -5,9 +5,8 @@ import Button from '../Button';
 import FormInputField from '../FormInputField';
 
 const AddressForm = (props) => {
-
   const { closeForm } = props;
-  
+
   const initialState = {
     name: '',
     address: '',
@@ -29,74 +28,82 @@ const AddressForm = (props) => {
   const [form, setForm] = useState(initialState);
   const [errorForm, setErrorForm] = useState(errorState);
 
-  const handleChange = (id ,e) => {
+  const handleChange = (id, e) => {
     const tempForm = { ...form, [id]: e };
     setForm(tempForm);
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrorForm(errorState);
     closeForm();
-  }
+  };
 
   return (
     <div className={styles.root}>
       <form className={styles.inputContainer} onSubmit={(e) => handleSubmit(e)}>
-        <FormInputField               
+        <FormInputField
           id={'name'}
           value={form.name}
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'Name'}
-          error={errorForm.name} 
+          error={errorForm.name}
         />
-        <FormInputField               
+        <FormInputField
           id={'address'}
           value={form.address}
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'Address'}
-          error={errorForm.address} 
+          error={errorForm.address}
         />
-        <FormInputField               
+        <FormInputField
           id={'country'}
           value={form.country}
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'Country'}
-          error={errorForm.country} 
+          error={errorForm.country}
         />
-        <FormInputField               
+        <FormInputField
           id={'state'}
           value={form.state}
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'State'}
-          error={errorForm.state} 
+          error={errorForm.state}
         />
-        <FormInputField               
+        <FormInputField
           id={'postal'}
           value={form.postal}
           handleChange={(id, e) => handleChange(id, e)}
           type={'number'}
           labelName={'Postal Code'}
-          error={errorForm.postal} 
+          error={errorForm.postal}
         />
-        <FormInputField               
+        <FormInputField
           id={'address'}
           value={form.address}
           handleChange={(id, e) => handleChange(id, e)}
           type={'input'}
           labelName={'Street'}
-          error={errorForm.address} 
+          error={errorForm.address}
         />
-      <div className={styles.actionContainers}>
-        <Button fullWidth type={'submit'} level={'primary'}>Save</Button>
-        <Button fullWidth type={'button'} onClick={closeForm} level={'secondary'}>Cancel</Button>
-      </div>
+        <div className={styles.actionContainers}>
+          <Button fullWidth type={'submit'} level={'primary'}>
+            Save
+          </Button>
+          <Button
+            fullWidth
+            type={'button'}
+            onClick={closeForm}
+            level={'secondary'}
+          >
+            Cancel
+          </Button>
+        </div>
       </form>
-
     </div>
   );
 };

@@ -7,7 +7,7 @@ import Icon from '../Icons/Icon';
 import * as styles from './Blog.module.css';
 
 const Blog = (props) => {
-  const {title, category, image, alt, children } = props;
+  const { title, category, image, alt, children } = props;
   return (
     <div className={styles.root}>
       <span className={styles.category}>{category}</span>
@@ -15,9 +15,7 @@ const Blog = (props) => {
       <div className={styles.imageContainer}>
         <img src={image} alt={alt} />
       </div>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
       <div className={styles.footerContainer}>
         <span>Share with:</span>
         <div className={styles.socialMediaListContainer}>
@@ -31,7 +29,9 @@ const Blog = (props) => {
             <Icon symbol={'pinterestinverse'}></Icon>
           </div>
         </div>
-        <Button onClick={() => navigate('/blog')} level={'secondary'} >back to blog</Button>
+        <Button onClick={() => navigate('/blog')} level={'secondary'}>
+          back to blog
+        </Button>
       </div>
     </div>
   );

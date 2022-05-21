@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 // Alphabetical order please
 import Arrow from './Arrow';
@@ -33,64 +33,64 @@ import Youtube from './Youtube';
 function Icon(props) {
   switch (props.symbol) {
     case 'arrow':
-        return <Arrow />;
+      return <Arrow />;
     case 'bag':
-        return <Bag />;
+      return <Bag />;
     case 'bagPlus':
-        return <BagPlus />;
+      return <BagPlus />;
     case 'burger':
-        return <Burger />;
+      return <Burger />;
     case 'caret':
-        return <Caret />;
+      return <Caret />;
     case 'check':
-        return <Check />;
+      return <Check />;
     case 'creditcard':
-        return <CreditCard />;
+      return <CreditCard />;
     case 'cross':
-        return <Cross />;
+      return <Cross />;
     case 'cycle':
-        return <Cycle />;
+      return <Cycle />;
     case 'delivery':
-        return <Delivery />;
+      return <Delivery />;
     case 'facebook':
-        return <Facebook />;
+      return <Facebook />;
     case 'facebookinverse':
-        return <FacebookInverse />;
+      return <FacebookInverse />;
     case 'filter':
-        return <Filter />;
+      return <Filter />;
     case 'heart':
-        return <Heart />
+      return <Heart />;
     case 'heartFill':
-        return <HeartFill />;
+      return <HeartFill />;
     case 'instagram':
-        return <Instagram />
+      return <Instagram />;
     case 'list':
-        return <List />;
+      return <List />;
     case 'logout':
-        return <Logout />;
+      return <Logout />;
     case 'minus':
-        return <Minus />;
+      return <Minus />;
     case 'phone':
-        return <Phone />;
+      return <Phone />;
     case 'pinterestinverse':
-        return <PinterestInverse />;
+      return <PinterestInverse />;
     case 'plus':
-        return <Plus />;
+      return <Plus />;
     case 'question':
-        return <Question />;
+      return <Question />;
     case 'search':
-      return <Search />
+      return <Search />;
     case 'twitter':
-        return <Twitter />;
+      return <Twitter />;
     case 'twitterinverse':
-        return <TwitterInverse />;
+      return <TwitterInverse />;
     case 'user':
-        return <User />;
+      return <User />;
     case 'youtube':
-        return <Youtube />;
+      return <Youtube />;
     default:
-      return <span>Unknown icon: {props.symbol}</span>
+      return <span>Unknown icon: {props.symbol}</span>;
   }
 }
 
-export default Icon
+export default Icon;
