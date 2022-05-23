@@ -50,7 +50,7 @@ Click the button below and it will help you create a new repo, create a new Netl
       netlify init # initialize a new Netlify project & deploy
       ```
 
-   It will use the information from the included Netlify configuration file, [`netlify.toml`](./netlify.toml), to set up the build command as `npm run     generate` to create a static project and locate the build project in the `dist` directory.
+   It will use the information from the included Netlify configuration file, [`netlify.toml`](./netlify.toml), to set up the build command as `gatsby build` to create a static project and locate the build project in the `public` directory.
 
    The `init` process will also set up continuous deployment for your project so that a new build will be triggered & deployed when you push code to       the   repo (you can change this from your project dashboard: Site Settings/Build & deploy/Continuous Deployment).
 
