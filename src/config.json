@@ -131,7 +131,7 @@
     {
       "menuLabel": "journal",
       "menuLink": "/blog",
-      "category": null
+      "target": false
     },
     {
       "menuLabel": "About",
