@@ -154,10 +154,10 @@ const Header = (prop) => {
               <div className={styles.bagNotification}>
                 <span>1</span>
               </div>
-              <div className={styles.notificationContainer}>
-                <AddNotification />
-              </div>
             </button>
+            <div className={styles.notificationContainer}>
+                <AddNotification openCart={() => setShowMiniCart(true)} />
+            </div>
           </div>
         </div>
 
