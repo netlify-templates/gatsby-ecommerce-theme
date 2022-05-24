@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const User = () => (
-    <svg
+  <svg
     width={20}
     height={20}
     fill="none"
@@ -15,6 +15,6 @@ const User = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default User
+export default User;

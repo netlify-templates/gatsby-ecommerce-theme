@@ -10,9 +10,11 @@
   isNumeric(value)
 */
 function isNumeric(str) {
-  if (['string', 'number'].indexOf(typeof str) === -1) return false // we only process strings and numbers!  
-  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-          !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+  if (['string', 'number'].indexOf(typeof str) === -1) return false; // we only process strings and numbers!
+  return (
+    !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+    !isNaN(parseFloat(str))
+  ); // ...and ensure strings of whitespace fail
 }
 
 /**
@@ -40,9 +42,9 @@ function validateEmail(email) {
 
     validateStrongPassword(email)
  */
-    function validateStrongPassword(password) {
-      return /(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/.test(password);
-    }
+function validateStrongPassword(password) {
+  return /(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/.test(password);
+}
 
 /**
  * Checks for empty string
@@ -53,10 +55,9 @@ function validateEmail(email) {
 
     isEmpty(email)
  */
-    function isEmpty(input) {
-      if(input === '' || input === null || input === undefined)
-      return true;
-    }
+function isEmpty(input) {
+  if (input === '' || input === null || input === undefined) return true;
+}
 
 /**
  * Checks if user is authenticated
@@ -68,20 +69,14 @@ function validateEmail(email) {
     isAuth()
  */
 function isAuth() {
-  const isBrowser = typeof window !== "undefined"
-  if(isBrowser) {
+  const isBrowser = typeof window !== 'undefined';
+  if (isBrowser) {
     const token = window.localStorage.getItem('key');
-    if(token) return true;
+    if (token) return true;
     else return false;
   } else {
     return true;
   }
 }
 
-export {
-  isNumeric,
-  validateEmail,
-  validateStrongPassword,
-  isEmpty,
-  isAuth,
-};
+export { isNumeric, validateEmail, validateStrongPassword, isEmpty, isAuth };

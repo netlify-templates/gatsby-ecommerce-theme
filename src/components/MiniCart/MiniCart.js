@@ -8,10 +8,9 @@ import MiniCartItem from '../MiniCartItem';
 import * as styles from './MiniCart.module.css';
 
 const MiniCart = (props) => {
-  
   const sampleCartItem = {
     image: '/products/pdp1.jpeg',
-    alt: '',    
+    alt: '',
     name: 'Lambswool Crew Neck Jumper',
     price: 220,
     color: 'Anthracite Melange',
@@ -24,7 +23,7 @@ const MiniCart = (props) => {
         <h4>My Bag</h4>
       </div>
       <div className={styles.cartItemsContainer}>
-        <MiniCartItem {...sampleCartItem}/>
+        <MiniCartItem {...sampleCartItem} />
       </div>
       <div className={styles.summaryContainer}>
         <div className={styles.summaryContent}>
@@ -34,13 +33,17 @@ const MiniCart = (props) => {
               <CurrencyFormatter amount={220} appendZero />
             </span>
           </div>
-          <span className={styles.taxNotes}>Taxes and shipping will be calculated at checkout</span>
-          <Button onClick={() => navigate('/cart')} level={'primary'} fullWidth>checkout</Button>
+          <span className={styles.taxNotes}>
+            Taxes and shipping will be calculated at checkout
+          </span>
+          <Button onClick={() => navigate('/cart')} level={'primary'} fullWidth>
+            checkout
+          </Button>
           <div className={styles.linkContainer}>
             <Link to={'/shop'}>continue shopping</Link>
           </div>
-        </div>        
-      </div>     
+        </div>
+      </div>
     </div>
   );
 };

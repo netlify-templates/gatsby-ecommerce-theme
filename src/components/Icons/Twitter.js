@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Twitter = () => (
-    <svg
+  <svg
     width={16}
     height={16}
     fill="none"
@@ -13,6 +13,6 @@ const Twitter = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default Twitter
+export default Twitter;

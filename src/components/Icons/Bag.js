@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Bag = () => (
-    <svg
+  <svg
     width={18}
     height={20}
     fill="none"
@@ -15,6 +15,6 @@ const Bag = () => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default Bag
+export default Bag;

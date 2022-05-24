@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Minus = () => (
-    <svg
+  <svg
     width={15}
     height={15}
     fill="none"
@@ -10,6 +10,6 @@ const Minus = () => (
   >
     <path d="M1 7.5h13" stroke="currentColor" />
   </svg>
-)
+);
 
-export default Minus
+export default Minus;

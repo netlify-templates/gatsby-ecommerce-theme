@@ -1,5 +1,5 @@
 import { Link, navigate } from 'gatsby';
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 
 import AddItemNotificationContext from '../../context/AddItemNotificationProvider';
 
@@ -9,10 +9,9 @@ import Icon from '../Icons/Icon';
 import * as styles from './AddNotification.module.css';
 
 const AddNotification = (props) => {
-
   const sampleCartItem = {
     image: '/products/pdp1.jpeg',
-    alt: '',    
+    alt: '',
     name: 'Lambswool Crew Neck Jumper',
     price: 220,
     color: 'Anthracite Melange',
@@ -23,7 +22,11 @@ const AddNotification = (props) => {
   const showNotif = ctxAddItemNotification.state?.open;
 
   return (
-    <div className={`${styles.root} ${showNotif === true ? styles.show : styles.hide}`}>
+    <div
+      className={`${styles.root} ${
+        showNotif === true ? styles.show : styles.hide
+      }`}
+    >
       <div className={styles.header}>
         <div className={styles.iconContainer}>
           <Icon symbol={'check'}></Icon>
@@ -41,10 +44,14 @@ const AddNotification = (props) => {
           <span className={styles.meta}>Size: {sampleCartItem.size}</span>
         </div>
       </div>
-      
+
       <div className={styles.actionContainer}>
-        <Button level={'secondary'}>view my bag (1)</Button>
-        <Button onClick={()=>navigate('/cart')} level={'primary'}>checkout</Button>
+        <Button onClick={props.openCart} level={'secondary'}>
+          view my bag (1)
+        </Button>
+        <Button level="primary" href="/cart">
+          checkout
+        </Button>
         <div className={styles.linkContainer}>
           <Link to={'/shop'}>continue shopping</Link>
         </div>

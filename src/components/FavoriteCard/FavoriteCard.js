@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import Drawer from '../Drawer';
 import QuickView from '../QuickView';
@@ -20,12 +20,19 @@ const FavoriteCard = (props) => {
         </div>
       </div>
       <div className={styles.actionContainer}>
-        <span role={'presentation'} onClick={() => setShowQuickView(true)}>Edit</span>
-        <span role={'presentation'} onClick={showConfirmDialog}>Remove</span>
+        <span role={'presentation'} onClick={() => setShowQuickView(true)}>
+          Edit
+        </span>
+        <span role={'presentation'} onClick={showConfirmDialog}>
+          Remove
+        </span>
       </div>
 
       <Drawer visible={showQuickView} close={() => setShowQuickView(false)}>
-        <QuickView buttonTitle={'update favorite'} close={() => setShowQuickView(false)}/>
+        <QuickView
+          buttonTitle={'update favorite'}
+          close={() => setShowQuickView(false)}
+        />
       </Drawer>
     </div>
   );

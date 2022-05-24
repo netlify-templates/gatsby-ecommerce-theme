@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Burger = () => (
-    <svg
+  <svg
     width={20}
     height={13}
     fill="none"
@@ -10,6 +10,6 @@ const Burger = () => (
   >
     <path d="M0 6.333h20M0 1h20M0 11.667h20" stroke="currentColor" />
   </svg>
-)
+);
 
-export default Burger
+export default Burger;
