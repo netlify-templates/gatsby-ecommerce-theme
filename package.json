@@ -13,6 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "format": "prettier --write \"{gatsby-*.js,src/**/*.js}\"",
     "plop": "plop"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "react-slick": "^0.28.1"
   },
   "devDependencies": {
-    "plop": "^3.0.5"
+    "plop": "^3.0.5",
+    "prettier": "^2.6.2"
   }
 }

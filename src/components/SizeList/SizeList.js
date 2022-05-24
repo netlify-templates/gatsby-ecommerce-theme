@@ -13,12 +13,14 @@ const SizeList = (props) => {
       </div>
       <div className={styles.sizeSelection}>
         {sizeList?.map((sizeOption, index) => {
-            return(<BoxOption 
+          return (
+            <BoxOption
               key={index}
-              data={sizeOption} 
+              data={sizeOption}
               setActive={setActiveSize}
               isActive={activeSize === sizeOption}
-            />)
+            />
+          );
         })}
       </div>
     </div>

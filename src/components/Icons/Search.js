@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Search = () => (
-    <svg
+  <svg
     width={20}
     height={20}
     fill="none"
@@ -15,6 +15,6 @@ const Search = () => (
       stroke="currentColor"
     />
   </svg>
-)
+);
 
-export default Search
+export default Search;
