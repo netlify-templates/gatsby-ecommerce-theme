@@ -156,7 +156,7 @@ const Header = (prop) => {
               </div>
             </button>
             <div className={styles.notificationContainer}>
-                <AddNotification openCart={() => setShowMiniCart(true)} />
+              <AddNotification openCart={() => setShowMiniCart(true)} />
             </div>
           </div>
         </div>
