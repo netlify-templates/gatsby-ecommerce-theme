@@ -1,5 +1,11 @@
 ![github-banner](https://user-images.githubusercontent.com/3611928/169144953-49223b21-1e00-4607-971a-4f870468a986.svg)
 
+This project...
+
+![full page screenshot](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1653371030/CleanShot_2022-05-24_at_01.11.52_2x_bspa8c.jpg)
+![responsive size screenshots](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1653371220/CleanShot_2022-05-24_at_01.17.46_2x_qn6l9c.jpg)
+![shop screenshot](https://res.cloudinary.com/dzkoxrsdj/image/upload/v1653371283/CleanShot_2022-05-24_at_01.20.43_2x_mef3pw.jpg)
+
 ## ⚡️ Quick Setup + Deploy Option
 
 Click the button below and it will help you create a new repo, create a new Netlify project, and deploy this Theme!
