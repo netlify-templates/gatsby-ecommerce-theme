@@ -17,6 +17,7 @@
     "plop": "plop"
   },
   "dependencies": {
+    "@netlify/plugin-gatsby": "^3.1.0",
     "gatsby": "^4.5.4",
     "gatsby-plugin-manifest": "^4.14.0",
     "react": "^17.0.1",

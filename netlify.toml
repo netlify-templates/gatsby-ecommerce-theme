@@ -3,4 +3,4 @@
   functions = "netlify/functions"
   publish = "public"
 [[plugins]]
-  package = "netlify-plugin-gatsby"
+  package = "@netlify/plugin-gatsby"
