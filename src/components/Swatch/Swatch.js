@@ -5,7 +5,7 @@ const Swatch = (props) => {
   const { data, setActiveSwatch, isActive } = props;
 
   return (
-    <div
+    <button
       className={`${styles.root} ${isActive === true ? styles.isActive : ''}`}
       onClick={() => setActiveSwatch(data)}
     >
@@ -13,7 +13,7 @@ const Swatch = (props) => {
         style={{ backgroundColor: data.color }}
         className={styles.circle}
       ></div>
-    </div>
+    </button>
   );
 };
 
