@@ -1,22 +1,18 @@
 import React from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import * as styles from './BlogPreview.module.css';
 
 const BlogPreview = (props) => {
   const { image, altImage, title, link, category, showExcerpt, excerpt } =
     props;
 
-  const handleClick = () => {
-    navigate(link);
-  };
-
   return (
-    <div className={styles.root} onClick={handleClick}>
+    <div className={styles.root} >
       <img
         className={styles.blogPreviewImage}
         alt={altImage}
         src={image}
-        role={'presentation'}
+        role={'figure'}
       />
       <span className={styles.category}>{category}</span>
       <h4 className={styles.title}>
