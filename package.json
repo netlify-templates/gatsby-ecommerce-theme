@@ -1,8 +1,8 @@
 {
-  "name": "my-gatsby-site",
+  "name": "gatsby-ecommerce-theme",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby Site",
+  "description": "An e-commerce theme designed by Matter Design for Netlify.",
   "author": "Matter Design",
   "keywords": [
     "gatsby"
