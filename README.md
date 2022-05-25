@@ -16,7 +16,7 @@ Take a look at the screenshot below or preview the live site here: https://gatsb
 
 Click the button below and it will help you create a new repo, create a new Netlify project, and deploy this Theme!
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-sydney-ecommerce-theme&utm_source=github&utm_medium=gatsbysydneyecomm-cs&utm_campaign=devex-cs)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-ecommerce-theme&utm_source=github&utm_medium=matter-design-theme-repo&utm_campaign=template-team)
 
 ## 💫 Regular Setup
 
@@ -73,7 +73,7 @@ Click the button below and it will help you create a new repo, create a new Netl
   - You can deploy within the Netlify site by connecting to git, this [video](https://www.youtube.com/watch?v=4h8B080Mv4U&t=107s) will walk you through that process. 
   - Or, you can use the Deploy to Netlify button which will walk you through the process of spinning up a repo, creating a new project in Netlify, AND deploying it :)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-sydney-ecommerce-theme&utm_source=github&utm_medium=gatsbysydneyecomm-cs&utm_campaign=devex-cs)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-ecommerce-theme&utm_source=github&utm_medium=matter-design-theme-repo&utm_campaign=template-team)
 
 ## Project Structure
 
