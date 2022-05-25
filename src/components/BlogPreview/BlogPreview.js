@@ -11,6 +11,7 @@ const BlogPreview = (props) => {
   };
 
   return (
+    /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
     <div className={styles.root} onClick={handleClick}>
       <img
         className={styles.blogPreviewImage}
