@@ -7,7 +7,7 @@ const BlogPreview = (props) => {
     props;
 
   return (
-    <div className={styles.root} >
+    <div className={styles.root}>
       <img
         className={styles.blogPreviewImage}
         alt={altImage}
