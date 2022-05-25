@@ -1,5 +1,5 @@
 .root {
-    width: 30px;
+    background-color: white;
     height: 30px;
     border-radius: 50%;
     border: 1px solid var(--bg-light-gray);
