@@ -1,4 +1,4 @@
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 
 import AddItemNotificationContext from '../../context/AddItemNotificationProvider';
