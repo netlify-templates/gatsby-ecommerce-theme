@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@netlify/plugin-gatsby": "^3.2.1",
+    "cypress": "^10.0.3",
     "gatsby": "^4.5.4",
     "gatsby-plugin-manifest": "^4.14.0",
     "react": "^17.0.1",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-netlify": "^4.4.0",
+    "netlify-plugin-cypress": "~2.2.0",
     "plop": "^3.0.5",
     "prettier": "^2.6.2"
   }

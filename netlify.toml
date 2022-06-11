@@ -2,5 +2,15 @@
   command = "gatsby build"
   functions = "netlify/functions"
   publish = "public"
+
 [[plugins]]
   package = "@netlify/plugin-gatsby"
+
+[[plugins]]
+  package = "netlify-plugin-cypress"
+
+  [plugins.inputs.postBuild]
+    enable = true
+
+  [plugins.inputs]
+    enable = false
