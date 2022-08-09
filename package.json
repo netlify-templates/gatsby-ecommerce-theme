@@ -27,7 +27,7 @@
     "react-slick": "^0.29.0"
   },
   "devDependencies": {
-    "gatsby-plugin-netlify": "^4.4.0",
+    "gatsby-plugin-netlify": "^5.0.0",
     "netlify-plugin-cypress": "~2.2.0",
     "plop": "^3.0.5",
     "prettier": "^2.6.2"
