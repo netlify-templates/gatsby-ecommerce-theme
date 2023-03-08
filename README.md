@@ -1,4 +1,4 @@
-![github-banner](https://user-images.githubusercontent.com/3611928/169144953-49223b21-1e00-4607-971a-4f870468a986.svg)
+![Gatsby E-commerce theme designed by Matter](https://user-images.githubusercontent.com/43764894/223762927-2e463570-b09a-4d51-ab81-2e0fa8aa2c70.png)
 
 This beautiful theme from the [Matter Design Team](https://matterdesign.com.au/) gives you the styling and scaffolding for your next e-commerce site. You can customize to your heart's content and add the tooling for cart, transactions, product, and more. This theme uses:
 
