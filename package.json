@@ -29,7 +29,7 @@
   "devDependencies": {
     "gatsby-plugin-netlify": "^5.0.0",
     "netlify-plugin-cypress": "~2.2.0",
-    "plop": "^3.0.5",
+    "plop": "^4.0.0",
     "prettier": "^2.6.2"
   }
 }
