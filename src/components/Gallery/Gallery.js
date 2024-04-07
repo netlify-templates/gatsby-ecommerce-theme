@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from '../Slider';
 
 import * as styles from './Gallery.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const Gallery = (props) => {
   const { images } = props;
@@ -15,7 +16,7 @@ const Gallery = (props) => {
     return images?.map((imageObject, index) => {
       return (
         <div key={index} className={styles.imageContainer}>
-          <img alt={imageObject.alt} src={imageObject.image} />
+          <img alt={imageObject.alt} src={toOptimizedImage(imageObject.image)} />
         </div>
       );
     });
@@ -27,7 +28,7 @@ const Gallery = (props) => {
         {images?.map((imageObject, index) => {
           return (
             <div key={index} className={styles.imageContainer}>
-              <img alt={imageObject.alt} src={imageObject.image} />
+              <img alt={imageObject.alt} src={toOptimizedImage(imageObject.image)} />
             </div>
           );
         })}

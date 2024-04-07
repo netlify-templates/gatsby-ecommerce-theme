@@ -6,6 +6,7 @@ import ThemeLink from '../components/ThemeLink';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from './about.module.css';
+import { toOptimizedImage } from '../helpers/general';
 const AboutPage = (props) => {
   let historyRef = useRef();
   let valuesRef = useRef();
@@ -63,7 +64,7 @@ const AboutPage = (props) => {
         </Container>
 
         <div className={styles.imageContainer}>
-          <img alt={'shirt brand'} src={'/about1.png'}></img>
+          <img alt={'shirt brand'} src={toOptimizedImage('/about1.png')}></img>
         </div>
 
         <Container size={'large'} spacing={'min'}>
@@ -87,7 +88,7 @@ const AboutPage = (props) => {
                 <li>Sophisticated and not mass-produced</li>
                 <li>Only natural materials</li>
               </ol>
-              <img alt={'founder'} src={'/about2.png'}></img>
+              <img alt={'founder'} src={toOptimizedImage('/about2.png')}></img>
             </div>
             <h3>Sustainability</h3>
             <div id={'#sustainability'} ref={sustainabilityRef}>
@@ -118,7 +119,7 @@ const AboutPage = (props) => {
         </Container>
 
         <div className={styles.imageContainer}>
-          <img alt={'shirt backwards'} src={'/about3.png'}></img>
+          <img alt={'shirt backwards'} src={toOptimizedImage('/about3.png')}></img>
         </div>
       </div>
     </Layout>

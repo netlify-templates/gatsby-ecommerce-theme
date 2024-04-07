@@ -5,6 +5,7 @@ import Button from '../Button';
 import Icon from '../Icons/Icon';
 
 import * as styles from './Blog.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const Blog = (props) => {
   const { title, category, image, alt, children } = props;
@@ -13,7 +14,7 @@ const Blog = (props) => {
       <span className={styles.category}>{category}</span>
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.imageContainer}>
-        <img src={image} alt={alt} />
+        <img src={toOptimizedImage(image)} alt={alt} />
       </div>
       <div>{children}</div>
       <div className={styles.footerContainer}>

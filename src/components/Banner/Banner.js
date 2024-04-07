@@ -1,5 +1,6 @@
 import React from 'react';
 import * as styles from './Banner.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const Banner = (props) => {
   const {
@@ -15,7 +16,7 @@ const Banner = (props) => {
 
   const customStyling = {
     backgroundColor: bgColor,
-    backgroundImage: bgImage !== undefined ? `url(${bgImage})` : 'none',
+    backgroundImage: bgImage !== undefined ? `url(${toOptimizedImage(bgImage)})` : 'none',
     height: height,
     color: color,
   };

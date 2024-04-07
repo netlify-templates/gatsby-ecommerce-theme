@@ -6,6 +6,7 @@ import CurrencyFormatter from '../CurrencyFormatter';
 import RemoveItem from '../RemoveItem';
 
 import * as styles from './MiniCartItem.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const MiniCartItem = (props) => {
   const { image, alt, name, price, color, size } = props;
@@ -17,7 +18,7 @@ const MiniCartItem = (props) => {
         role={'presentation'}
         onClick={() => navigate('/product/sample')}
       >
-        <img src={image} alt={alt} />
+        <img src={toOptimizedImage(image)} alt={alt} />
       </div>
       <div className={styles.detailsContainer}>
         <div className={styles.metaContainer}>

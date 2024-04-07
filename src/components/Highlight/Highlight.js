@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import * as styles from './Highlight.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const Highlight = (props) => {
   const {
@@ -16,7 +17,7 @@ const Highlight = (props) => {
 
   return (
     <div className={styles.root}>
-      <img alt={altImage} src={image} className={styles.highlightImage} />
+      <img alt={altImage} src={toOptimizedImage(image)} className={styles.highlightImage} />
       <div className={styles.contentContainer}>
         <h3>{title}</h3>
         <p>{description}</p>
@@ -24,7 +25,7 @@ const Highlight = (props) => {
         <img
           className={styles.miniImage}
           alt={miniImageAlt}
-          src={miniImage}
+          src={toOptimizedImage(miniImage)}
         ></img>
       </div>
     </div>

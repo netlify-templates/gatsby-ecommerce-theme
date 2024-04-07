@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, navigate } from 'gatsby';
 import * as styles from './BlogPreview.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const BlogPreview = (props) => {
   const { image, altImage, title, link, category, showExcerpt, excerpt } =
@@ -16,7 +17,7 @@ const BlogPreview = (props) => {
       <img
         className={styles.blogPreviewImage}
         alt={altImage}
-        src={image}
+        src={toOptimizedImage(image)}
         role={'figure'}
       />
       <span className={styles.category}>{category}</span>

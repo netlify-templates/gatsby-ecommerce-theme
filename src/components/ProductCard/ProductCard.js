@@ -4,6 +4,7 @@ import * as styles from './ProductCard.module.css';
 
 import Icon from '../Icons/Icon';
 import CurrencyFormatter from '../CurrencyFormatter';
+import { toOptimizedImage } from '../../helpers/general';
 
 const ProductCard = (props) => {
   const [isWishlist, setIsWishlist] = useState(false);
@@ -39,7 +40,7 @@ const ProductCard = (props) => {
         onClick={() => handleRouteToProduct()}
         role={'presentation'}
       >
-        <img style={{ height: `${height}px` }} src={image} alt={imageAlt}></img>
+        <img style={{ height: `${height}px` }} src={toOptimizedImage(image)} alt={imageAlt}></img>
         <div
           className={styles.bagContainer}
           role={'presentation'}

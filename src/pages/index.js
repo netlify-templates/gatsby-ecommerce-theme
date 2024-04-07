@@ -15,6 +15,7 @@ import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
 
 import * as styles from './index.module.css';
 import { Link, navigate } from 'gatsby';
+import { toOptimizedImage } from '../helpers/general';
 
 const IndexPage = () => {
   const newArrivals = generateMockProductData(3, 'shirt');
@@ -88,7 +89,7 @@ const IndexPage = () => {
 
       {/* Promotion */}
       <div className={styles.promotionContainer}>
-        <Hero image={'/banner2.png'} title={`-50% off \n All Essentials`} />
+        <Hero image={toOptimizedImage('/banner2.png')} title={`-50% off \n All Essentials`} />
         <div className={styles.linkContainers}>
           <Link to={'/shop'}>WOMAN</Link>
           <Link to={'/shop'}>MAN</Link>
@@ -115,7 +116,7 @@ const IndexPage = () => {
       {/* Promotion */}
       <div className={styles.sustainableContainer}>
         <Hero
-          image={'/banner3.png'}
+          image={toOptimizedImage('/banner3.png')}
           title={'We are Sustainable'}
           subtitle={
             'From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.'
@@ -133,10 +134,10 @@ const IndexPage = () => {
           subtitle={'Tag @sydney to be featured.'}
         />
         <div className={styles.socialContentGrid}>
-          <img src={`/social/socialMedia1.png`} alt={'social media 1'} />
-          <img src={`/social/socialMedia2.png`} alt={'social media 2'} />
-          <img src={`/social/socialMedia3.png`} alt={'social media 3'} />
-          <img src={`/social/socialMedia4.png`} alt={'social media 4'} />
+          <img src={toOptimizedImage(`/social/socialMedia1.png`)} alt={'social media 1'} />
+          <img src={toOptimizedImage(`/social/socialMedia2.png`)} alt={'social media 2'} />
+          <img src={toOptimizedImage(`/social/socialMedia3.png`)} alt={'social media 3'} />
+          <img src={toOptimizedImage(`/social/socialMedia4.png`)} alt={'social media 4'} />
         </div>
       </div>
       <AttributeGrid />

@@ -4,6 +4,7 @@ import { navigate } from 'gatsby';
 import CurrencyFormatter from '../CurrencyFormatter';
 import Icon from '../Icons/Icon';
 import * as styles from './OrderItem.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const OrderItem = (props) => {
   const { headerStyling, order } = props;
@@ -102,7 +103,7 @@ const OrderItem = (props) => {
                   onClick={() => navigate('/product/sample')}
                   className={styles.imageContainer}
                 >
-                  <img alt={item.alt} src={item.image}></img>
+                  <img alt={item.alt} src={toOptimizedImage(item.image)}></img>
                 </div>
                 <div>
                   <span className={styles.itemName}>{item.name}</span>

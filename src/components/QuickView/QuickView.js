@@ -9,6 +9,7 @@ import { generateMockProductData } from '../../helpers/mock';
 import AddItemNotificationContext from '../../context/AddItemNotificationProvider';
 
 import * as styles from './QuickView.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const QuickView = (props) => {
   const { close, buttonTitle = 'Add to Bag' } = props;
@@ -38,7 +39,7 @@ const QuickView = (props) => {
             <CurrencyFormatter amount={sampleProduct.price}></CurrencyFormatter>
           </div>
           <div className={styles.productImageContainer}>
-            <img alt={sampleProduct.alt} src={sampleProduct.image}></img>
+            <img alt={sampleProduct.alt} src={toOptimizedImage(sampleProduct.image)}></img>
           </div>
         </div>
 

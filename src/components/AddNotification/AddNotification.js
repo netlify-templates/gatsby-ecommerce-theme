@@ -7,6 +7,7 @@ import Button from '../Button';
 import Icon from '../Icons/Icon';
 
 import * as styles from './AddNotification.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const AddNotification = (props) => {
   const sampleCartItem = {
@@ -36,7 +37,7 @@ const AddNotification = (props) => {
 
       <div className={styles.newItemContainer}>
         <div className={styles.imageContainer}>
-          <img alt={sampleCartItem.alt} src={sampleCartItem.image} />
+          <img alt={sampleCartItem.alt} src={toOptimizedImage(sampleCartItem.image)} />
         </div>
         <div className={styles.detailContainer}>
           <span className={styles.name}>{sampleCartItem.name}</span>
