@@ -1,6 +1,7 @@
 import { navigate } from 'gatsby';
 import React from 'react';
 import * as styles from './ProductCollection.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const ProductCollection = (props) => {
   const { image, title, text, link } = props;
@@ -10,7 +11,7 @@ const ProductCollection = (props) => {
       role={'presentation'}
       onClick={() => navigate(link)}
       className={styles.root}
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${toOptimizedImage(image)})` }}
     >
       <div className={styles.content}>
         <span className={styles.title}>{title}</span>

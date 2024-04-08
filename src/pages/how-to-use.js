@@ -5,6 +5,7 @@ import Layout from '../components/Layout/Layout';
 import ThemeLink from '../components/ThemeLink';
 import Container from '../components/Container';
 import Button from '../components/Button';
+import { toOptimizedImage } from '../helpers/general';
 
 const HowToUsePage = (props) => {
   let builtRef = useRef();
@@ -61,7 +62,7 @@ const HowToUsePage = (props) => {
               </Button>
               <img
                 alt={'JAMM Detail'}
-                src={'/how-to-use/jamm-sydney-1upd@2x.png'}
+                src={toOptimizedImage('/how-to-use/jamm-sydney-1upd@2x.png')}
                 style={{ display: 'block', height: 'auto' }}
               />
             </div>
@@ -163,7 +164,7 @@ const HowToUsePage = (props) => {
         <div className={styles.imageContainer}>
           <img
             alt={'Best of Breed tools'}
-            src={'/how-to-use/logos@2x.png'}
+            src={toOptimizedImage('/how-to-use/logos@2x.png')}
           ></img>
         </div>
       </div>

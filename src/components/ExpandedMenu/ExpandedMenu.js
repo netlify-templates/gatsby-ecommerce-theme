@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 
 import * as styles from './ExpandedMenu.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const ExpandedMenu = (props) => {
   const { menu } = props;
@@ -30,8 +31,8 @@ const ExpandedMenu = (props) => {
         })}
       </div>
       <div className={styles.imageContainer}>
-        <img src={'/headerPic1.png'} alt={'header 1'}></img>
-        <img src={'/headerPic2.png'} alt={'header 2'}></img>
+        <img src={toOptimizedImage('/headerPic1.png')} alt={'header 1'}></img>
+        <img src={toOptimizedImage('/headerPic2.png')} alt={'header 2'}></img>
       </div>
     </div>
   );

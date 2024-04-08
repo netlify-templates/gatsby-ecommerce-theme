@@ -79,4 +79,19 @@ function isAuth() {
   }
 }
 
-export { isNumeric, validateEmail, validateStrongPassword, isEmpty, isAuth };
+/**
+ * Adds a query param to URLs which is captures by redirect rules
+ * (when running in Netlify - otherwise it's harmless)
+ * 
+    import { toOptimizedImage } from '../helpers/general'
+
+    <img src={toOptimizedImage(image)} .../>
+ */
+function toOptimizedImage(imageUrl) {
+  if (!imageUrl.startsWith('/') || imageUrl.endsWith("imgcdn=true")) return imageUrl;
+  return imageUrl + 
+          (imageUrl.includes("?") ? "&" : "?") + 
+          "imgcdn=true";
+}
+
+export { isNumeric, validateEmail, validateStrongPassword, isEmpty, isAuth, toOptimizedImage };

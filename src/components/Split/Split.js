@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from '../Button';
 import * as styles from './Split.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const Split = (props) => {
   const { image, alt, title, description, ctaText, cta, bgColor } = props;
@@ -20,7 +21,7 @@ const Split = (props) => {
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <img src={image} alt={alt}></img>
+        <img src={toOptimizedImage(image)} alt={alt}></img>
       </div>
     </div>
   );

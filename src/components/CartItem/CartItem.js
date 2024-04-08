@@ -8,6 +8,7 @@ import QuickView from '../QuickView';
 
 import * as styles from './CartItem.module.css';
 import { navigate } from 'gatsby';
+import { toOptimizedImage } from '../../helpers/general';
 
 const CartItem = (props) => {
   const [showQuickView, setShowQuickView] = useState(false);
@@ -20,7 +21,7 @@ const CartItem = (props) => {
         role={'presentation'}
         onClick={() => navigate('/product/sample')}
       >
-        <img src={image} alt={alt}></img>
+        <img src={toOptimizedImage(image)} alt={alt}></img>
       </div>
       <div className={styles.itemContainer}>
         <span className={styles.name}>{name}</span>

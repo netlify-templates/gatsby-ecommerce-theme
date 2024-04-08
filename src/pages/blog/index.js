@@ -9,6 +9,7 @@ import ThemeLink from '../../components/ThemeLink';
 
 import { generateMockBlogData } from '../../helpers/mock';
 import * as styles from './index.module.css';
+import { toOptimizedImage } from '../../helpers/general';
 
 const BlogPage = (props) => {
   const blogData = generateMockBlogData(6);
@@ -18,7 +19,7 @@ const BlogPage = (props) => {
       <div className={styles.root}>
         <Hero
           maxWidth={'400px'}
-          image={'/blogCover.png'}
+          image={toOptimizedImage('/blogCover.png')}
           title={`The new standard of Closing`}
           ctaLink={'read story'}
           ctaTo={'/blog/sample'}

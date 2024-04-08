@@ -8,6 +8,7 @@ const Swatch = (props) => {
     <button
       className={`${styles.root} ${isActive === true ? styles.isActive : ''}`}
       onClick={() => setActiveSwatch(data)}
+      aria-label="Swatch"
     >
       <div
         style={{ backgroundColor: data.color }}
