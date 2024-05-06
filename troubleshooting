@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Basics - Basic Troubleshooting Technique s</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Computer Basics</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#problem">Problem</a></li>
+<li><a href="#contact">Contact</a></li>
+		
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Computer Basics</h2>
+        <p>Welcome to Computer Basics, your one-stop destination for learning about computers. Whether you're a beginner or looking to refresh your knowledge, we've got you covered!</p>
+        <p>In this website, you'll find information about the basic components of a computer, as well as essential troubleshooting techniques to help you overcome common issues.</p>
+    </section>
+
+    <section id="components">
+        <h2>Basic Components of a Computer</h2>
+        <p>A computer consists of several key components that work together to perform various tasks. Here are the essential components:</p>
+        <h3>1. Central Processing Unit (CPU)</h3>
+        <p>The CPU is often referred to as the brain of the computer. It executes instructions and performs calculations necessary for the computer to function.</p>
+        <h3>2. Random Access Memory (RAM)</h3>
+        <p>RAM is temporary storage that the computer uses to store data that is actively being used or processed. It allows for quick access to information, but the data is lost when the computer is powered off.</p>
+        <h3>3. Hard Disk Drive (HDD) or Solid State Drive (SSD)</h3>
+        <p>The HDD or SSD is where the computer stores permanent data, including the operating system, applications, and user files. HDDs use spinning disks to store data, while SSDs use flash memory, providing faster access speeds.</p>
+        <h3>4. Motherboard</h3>
+        <p>The motherboard is the main circuit board of the computer. It provides connections for other components and allows them to communicate with each other.</p>
+        <h3>5. Graphics Processing Unit (GPU)</h3>
+        <p>The GPU is responsible for rendering graphics and images on the computer monitor. It is especially important for tasks such as gaming and video editing.</p>
+    </section>
+
+    <section id="troubleshooting">
+        <h2>Basic Troubleshooting Techniques</h2>
+        <p>Encountering problems with your computer can be frustrating, but knowing some basic troubleshooting techniques can help you resolve issues quickly. Here are some common techniques:</p>
+        <h3>1. Restart Your Computer</h3>
+        <p>Many problems can be resolved simply by restarting your computer. This can help clear temporary glitches and reset the system.</p>
+        <h3>2. Check Cables and Connections</h3>
+        <p>Loose or faulty cables can cause various issues, such as display problems or connectivity issues. Make sure all cables are securely connected.</p>
+        <h3>3. Run Antivirus Software</h3>
+        <p>If your computer is behaving strangely or showing signs of malware infection, run a full antivirus scan to detect and remove any malicious software.</p>
+        <h3>4. Update Drivers</h3>
+        <p>Outdated or incompatible drivers can cause hardware malfunctions or performance issues. Make sure to regularly update your drivers to ensure optimal performance.</p>
+        <h3>5. Check for Software Updates</h3>
+        <p>Software updates often include bug fixes and security patches that can address common issues. Make sure to keep your operating system and applications up to date.</p>
+        <h3>6. Consult Online Resources</h3>
+        <p>If you're unable to resolve an issue on your own, don't hesitate to seek help from online forums, support websites, or user communities. You may find solutions provided by other users who have encountered similar problems.</p>
+   <h3>7. Free Up Disk Space</h3>
+    <p>If your computer is running slow or displaying error messages related to low disk space, try freeing up space on your hard drive by deleting unnecessary files or programs.</p>
+    
+    <h3>8. Run Disk Cleanup and Defragmentation</h3>
+    <p>Disk Cleanup and Defragmentation tools can help optimize your hard drive by removing temporary files and organizing data more efficiently. Run these utilities regularly to improve system performance.</p>
+    
+    <h3>9. Check for Overheating</h3>
+    <p>Overheating can cause your computer to slow down or shut down unexpectedly. Make sure your computer's vents are clear of dust and debris, and consider using a cooling pad or adjusting your computer's power settings to prevent overheating.</p>
+    
+    <h3>10. Perform System Restore</h3>
+    <p>If your computer is experiencing issues after installing new software or updates, you can use System Restore to revert your system back to a previous state when it was functioning correctly.</p>
+    
+    <h3>11. Seek Professional Help</h3>
+    <p>If you're unable to resolve an issue on your own, don't hesitate to seek help from a professional technician or computer repair service. They have the expertise and tools necessary to diagnose and fix complex problems.</p>
+</section>
+
+
+<section id="problem">
+        <h2>Simple Solutions to Common Problems</h2>
+        <p>Most of the time, problems can be fixed using simple troubleshooting techniques, like closing and reopening the program. It's important to try these simple solutions before resorting to more extreme measures. If the problem still isn't fixed, you can try other troubleshooting techniques.
+      <br> <h3> Problem: Power button will not start computer </h3>
+
+<ul>
+                <li>Solution 1: If your computer does not start, begin by checking the power cord to confirm that it is plugged securely into the back of the computer case and the power outlet.</li>
+             <br>   <li>Solution 2: If it is plugged into an outlet, make sure it is a working outlet. To check your outlet, you can plug in another electrical device, such as a lamp.</li>
+               <br>  <li>Solution 3: If the computer is plugged in to a surge protector, verify that it is turned on. You may have to reset the surge protector by turning it off and then back on. You can also plug a lamp or other device into the surge protector to verify that it's working correctly.
+</li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_surgeprotector.jpg" alt="computer" width="250" height="200"> <br>
+              <br>     <li>Solution 4: If you are using a laptop, the battery may not be charged. Plug the AC adapter into the wall, then try to turn on the laptop. If it still doesn't start up, you may need to wait a few minutes and try again.</li>
+             </ul> <br>
+
+
+<h3>Problem: An application is running slowly</h3> <br>
+<ul>
+<li> Solution 1: Close and reopen the application. </li> <br>
+<li>Solution 2: Update the application. To do this, click the Help menu and look for an option to check for Updates. If you don't find this option, another idea is to run an online search for application updates.
+</li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_software_update.jpg" alt="computer" width="250" height="200"> <br>
+
+</ul> <br>
+
+<h3> Problem: An application is frozen </h3> <br>
+<p> Sometimes an application may become stuck, or frozen. When this happens, you won't be able to close the window or click any buttons within the application. </p> <br>
+<ul>
+<li>Solution 1: Force quit the application. On a PC, you can press (and hold) Ctrl+Alt+Delete (the Control, Alt, and Delete keys) on your keyboard to open the Task Manager. On a Mac, press and hold Command+Option+Esc. You can then select the unresponsive application and click End task (or Force Quit on a Mac) to close it.
+ </li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_end_task.jpg" alt="computer" width="250" height="200"> <br>
+<li>Solution 2: Restart the computer. If you are unable to force quit an application, restarting your computer will close all open apps. </li> <br>
+
+</ul> <br>
+
+<h3>Problem: All programs on the computer run slowly</h3> <br>
+<ul>
+<li> Solution 1: Run a virus scanner. You may have malware running in the background that is slowing things down. </li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_protecting_antivirus.jpg" alt="computer" width="250" height="200"> <br>
+<li> Solution 2: Your computer may be running out of hard drive space. Try deleting any files or programs you don't need. </li> <br>
+<li> Solution 3: If you're using a PC, you can run Disk Defragmenter. To learn more about Disk Defragmenter, check out our lesson on Protecting Your Computer. </li> <br>
+
+</ul> <br>
+
+<h3>Problem: The computer is frozen</h3> <br>
+<p> Sometimes your computer may become completely unresponsive, or frozen. When this happens, you won't be able to click anywhere on the screen, open or close applications, or access shut-down options. </p>
+<ul>
+<li> Solution 1 (Windows only): Restart Windows Explorer. To do this, press and hold Ctrl+Alt+Delete on your keyboard to open the Task Manager. Next, locate and select Windows Explorer from the Processes tab and click Restart. You may need to click More Details at the bottom of the window to see the Processes tab. </li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_windows_explorer_restart.jpg" alt="computer" width="250" height="200"> <br>
+<li> Solution 2 (Mac only): Restart Finder. To do this, press and hold Command+Option+Esc on your keyboard to open the Force Quit Applications dialog box. Next, locate and select Finder, then click Relaunch. </li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_mac_force_quit.jpg" alt="computer" width="250" height="200"> <br>
+
+<li>Solution 3: Press and hold the Power button. The Power button is usually located on the front or side of the computer, typically indicated by the power symbol. Press and hold the Power button for 5 to 10 seconds to force the computer to shut down.</li> <br>
+<li>Solution 4: If the computer still won't shut down, you can unplug the power cable from the electrical outlet. If you're using a laptop, you may be able to remove the battery to force the computer to turn off. Note: This solution should be your last resort after trying the other suggestions above.</li> <br>
+
+</ul> <br>
+
+<h3>Problem: The mouse or keyboard has stopped working</h3> <br>
+<ul>
+<li> Solution 1: If you're using a wired mouse or keyboard, make sure it's correctly plugged into the computer. </li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_usb_mouse_keyboard.jpg" alt="computer" width="250" height="200"> <br>
+<li> Solution 2: If you're using a wireless mouse or keyboard, make sure it's turned on and that its batteries are charged. </li> <br>
+</ul> <br>
+
+
+<h3>Problem: The sound isn't working</h3> <br>
+<ul>
+<li> Solution 1: Check the volume level. Click the audio button in the top-right or bottom-right corner of the screen to make sure the sound is turned on and that the volume is up. </li> <br>
+<li>Solution 2: Check the audio player controls. Many audio and video players will have their own separate audio controls. Make sure the sound is turned on and that the volume is turned up in the player. </li> <br>
+<li>Solution 3: Check the cables. Make sure external speakers are plugged in, turned on, and connected to the correct audio port or a USB port. If your computer has color-coded ports, the audio output port will usually be green. </li> <br>
+<li>Solution 4: Connect headphones to the computer to find out if you can hear sound through the headphones. </li> <br>
+<img src="https://media.gcflearnfree.org/content/55e073327dd48174331f516f_01_17_2014/troubleshooting_headphones_speakers.jpg" alt="computer" width="250" height="200"> <br>
+
+</ul> <br>
+
+
+<h3>Problem: The screen is blank</h3> <br>
+<ul>
+<li>Solution 1: The computer may be in Sleep mode. Click the mouse or press any key on the keyboard to wake it. </li> <br>
+<li>Solution 2: Make sure the monitor is plugged in and turned on. </li> <br>
+<li>Solution 3: Make sure the computer is plugged in and turned on. </li> <br>
+<li>Solution 4: If you're using a desktop, make sure the monitor cable is properly connected to the computer tower and the monitor. </li> <br>
+
+</ul> <br>
+
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or suggestions, we'd love to hear from you! Please feel free to contact us using the information below:</p>
+        <p>Email: info@computerbasics.com</p>
+        <p>Phone: 1-800-COMPUTER</p>
+        <p>Address: 0245 Main Street, Mariveles, Bataan</p>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Computer Basics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
