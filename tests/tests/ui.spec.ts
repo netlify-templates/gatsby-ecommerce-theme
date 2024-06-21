@@ -79,3 +79,88 @@ test('Hero section "Essentials for a cold winter" should have a background image
 
   expect(backgroundImage).toContain('/banner1.png?imgcdn=true');
 });
+
+
+
+test('Hero section "Essentials for a cold winter" should have a background image', async ({ page }) => {
+  await page.goto('localhost:5000');
+
+  // Select the specific hero section by using the text content
+  const heroSection = page.locator('.Hero-module--root--39580:has-text("Essentials for a cold winter")');
+
+  // Check if the background image is set correctly
+  const backgroundImage = await heroSection.evaluate((element) => {
+    return window.getComputedStyle(element).getPropertyValue('background-image');
+  });
+
+  expect(backgroundImage).toContain('/banner1.png?imgcdn=true');
+});
+
+test('click on shop now button and verify redirection', async ({ page }) => {
+  await page.goto('http://localhost:5000');
+
+  // Click on the button
+  await page.click('button.Button-module--button--c17ef.Button-module--primary--2e17d.Hero-module--ctaButton--06285');
+
+  await page.waitForNavigation();
+
+  expect(page.url()).toBe('http://localhost:5000/shop/');
+});
+
+test('click on shop now button and redirection', async ({ page }) => {
+  await page.goto('http://localhost:5000');
+
+  await page.click('button.Button-module--button--c17ef.Button-module--primary--2e17d.Hero-module--ctaButton--06285');
+
+  await page.waitForNavigation();
+
+  expect(page.url()).toBe('http://localhost:5000/shop/');
+});
+
+
+test('Home page text exist', async ({ page }) => {
+  await page.goto('localhost:5000');
+
+  const Text = "This is a demonstration of the Sydney theme for verse by";
+  const NewCollection = "New Collection";
+
+  const HeaderShop = await page.getByText(Text);
+  const newCollectionExist = await page.getByText(NewCollection);
+
+  await expect(HeaderShop).toBeTruthy();
+  await expect(newCollectionExist).toBeTruthy();
+});
+
+test('click on SHOP NOW and verify redirection', async ({ page }) => {
+  await page.goto('http://localhost:5000');
+
+  await page.click('span.ProductCollection-module--text--79158');
+
+  await page.waitForNavigation();
+
+  expect(page.url()).toBe('http://localhost:5000/shop/');
+});
+
+test('click on Women and verify redirection', async ({ page }) => {
+  await page.goto('http://localhost:5000');
+
+  await page.click('span.ProductCollection-module--title--b48e6');
+
+  await page.waitForNavigation();
+
+  expect(page.url()).toBe('http://localhost:5000/shop/');
+});
+
+test('New Arrivals exist and redirect on shop page', async ({ page }) => {
+  await page.goto('http://localhost:5000');
+
+  const TextHeaderExist = "New Arrivals";
+  let Header = await page.getByText(TextHeaderExist);
+
+  await expect(Header).toBeVisible();
+  await page.click('div.ProductCard-module--imageContainer--00924');
+
+  await page.waitForNavigation();
+
+  expect(page.url()).toBe('http://localhost:5000/product/sample/');
+});
