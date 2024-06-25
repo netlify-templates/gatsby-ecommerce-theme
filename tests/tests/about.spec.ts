@@ -1,5 +1,48 @@
 import { test, expect } from '@playwright/test';
 
+
+test('About page | Header elements exist', async ({ page }) => {
+    await page.goto('http://localhost:5000');
+  
+    // Find the main container with a more specific locator
+    const mainContainer = page.locator('div.Container-module--container--6761c >> nth=0');
+    await expect(mainContainer).toBeVisible();
+  
+    // Check the header
+    const header = mainContainer.locator('div.Header-module--header--aa06a');
+    await expect(header).toBeVisible();
+  
+    // Check the navigation links
+    const navLinks = header.locator('nav a.Header-module--navLink--2a5b8');
+    await expect(navLinks.nth(0)).toHaveText('Shop');
+    await expect(navLinks.nth(1)).toHaveText('journal');
+    await expect(navLinks.nth(2)).toHaveText('About');
+  
+    // Check the burger icon / page resolution
+    // const burgerIcon = header.locator('div.Header-module--burgerIcon--813a8');
+    // await expect(burgerIcon).toBeVisible();
+  
+    // Check the brand logo
+    const brandLogo = header.locator('div.Brand-module--root--7bb0e');
+    await expect(brandLogo).toBeVisible();
+  
+    // Check the search button
+    const searchButton = header.locator('button[aria-label="Search"]');
+    await expect(searchButton).toBeVisible();
+  
+    // Check the favorites link
+    const favoritesLink = header.locator('a[aria-label="Favorites"]');
+    await expect(favoritesLink).toBeVisible();
+  
+    // Check the orders link
+    const ordersLink = header.locator('a[aria-label="Orders"]');
+    await expect(ordersLink).toBeVisible();
+  
+    // Check the cart button
+    const cartButton = header.locator('button[aria-label="Cart"]');
+    await expect(cartButton).toBeVisible();
+  });
+
 test('About page | Header text exists', async ({ page }) => {
     await page.goto('localhost:5000/about/');
   
