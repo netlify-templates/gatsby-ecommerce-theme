@@ -109,3 +109,54 @@ test('Shop page | check elements existence', async ({ page }) => {
     await expect(metaInfo).toBeVisible();
     await expect(metaInfo).toHaveText('+ 2 colors');
   });
+
+  test('Shop page | Check all elements in the footer exist', async ({ page }) => {
+    await page.goto('http://localhost:5000/shop/');
+   
+   // footer container
+   const footerContainer = page.locator('.Footer-module--content--2aeb3');
+   await expect(footerContainer).toBeVisible({ timeout: 10000 });
+ 
+   //footer content top
+   const footerContentTop = footerContainer.locator('.Footer-module--contentTop--729c1');
+   await expect(footerContentTop).toBeVisible();
+ 
+   // "Info" section
+   const infoSection = footerContentTop.locator('.Footer-module--footerLinkContainer--34ce1').nth(0);
+   await expect(infoSection).toBeVisible();
+   await expect(infoSection.locator('.Footer-module--linkTitle--fa138')).toHaveText('Info');
+ 
+   //"Info" links
+   const infoLinks = infoSection.locator('.Footer-module--linkList--6f95b li a');
+   await expect(infoLinks).toHaveCount(6);
+   await expect(infoLinks.nth(0)).toHaveText('About Us');
+   await expect(infoLinks.nth(1)).toHaveText('Journal');
+   await expect(infoLinks.nth(2)).toHaveText('Privacy Policy');
+ 
+   // "Support" section
+   const supportSection = footerContentTop.locator('.Footer-module--footerLinkContainer--34ce1').nth(1);
+   await expect(supportSection).toBeVisible();
+   await expect(supportSection.locator('.Footer-module--linkTitle--fa138')).toHaveText('Support');
+ 
+   // "Support" links
+   const supportLinks = supportSection.locator('.Footer-module--linkList--6f95b li a');
+   await expect(supportLinks).toHaveCount(8);
+   await expect(supportLinks.nth(0)).toHaveText('FAQ');
+   await expect(supportLinks.nth(1)).toHaveText('Contact Us');
+   await expect(supportLinks.nth(2)).toHaveText('Shipping & Returns');
+   await expect(supportLinks.nth(3)).toHaveText('How to use this theme');
+ 
+   // newsletter section
+   const newsletterSection = footerContainer.locator('.Footer-module--newsLetter--91500');
+   await expect(newsletterSection).toBeVisible();
+   await expect(newsletterSection.locator('.Footer-module--newsLetterContent--e10ad')).toBeVisible();
+   await expect(newsletterSection.locator('.Footer-module--linkTitle--fa138')).toHaveText('Newsletter');
+   await expect(newsletterSection.locator('.Footer-module--promoMessage--b609e')).toHaveText('Get 15% off your first purchase! Plus, be the first to know about sales, new product launches and exclusive offers!');
+ 
+   // newsletter input form
+   await expect(newsletterSection.locator('.Footer-module--newsLetterForm--11787 input[name="newsLetterInput"]')).toBeVisible();
+ 
+   // social media icons in the footer
+   const socialIcons = newsletterSection.locator('.Footer-module--socialIconContainer--ac360');
+   await expect(socialIcons).toHaveCount(4);
+ });
