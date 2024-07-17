@@ -143,3 +143,76 @@ test('Login page | Check all elements exist on login page', async ({ page }) => 
    const socialIcons = newsletterSection.locator('.Footer-module--socialIconContainer--ac360');
    await expect(socialIcons).toHaveCount(4);
  });
+
+
+ test('Login page | functionality test', async ({ page }) => {
+  await page.goto('http://localhost:5000/login/');
+
+  await expect(page.locator('h1.login-module--loginTitle--fd184')).toBeVisible();
+
+  // Fill in the email
+  await page.fill('input[name="email"]', 'test@example.com');
+
+  // Fill in the password
+  await page.fill('input[name="password"]', 'password123');
+
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click('button[type="submit"]')
+]);
+
+  // URL is correct after login
+  await expect(page).toHaveURL('http://localhost:5000/account/orders/');
+});
+
+test('Login page | Create account button redirects to signup page', async ({ page }) => {
+  await page.goto('http://localhost:5000/login/');
+
+     // Click the "create an account" button
+  await Promise.all([
+      page.waitForNavigation(),
+      page.click('button:has-text("create an account")')
+  ]);
+
+  // Check that the URL is correct after clicking "create an account"
+  await expect(page).toHaveURL('http://localhost:5000/signup/');
+});
+
+
+test('Login page | Fill signup form and create an account', async ({ page }) => {
+  await page.goto('http://localhost:5000/signup');
+
+  // Fill in the signup form
+  await page.fill('input[name="firstName"]', 'John');
+  await page.fill('input[name="lastName"]', 'Doe'); 
+  await page.fill('input[name="email"]', 'ss@gmail.com');
+  await page.fill('input[name="password"]', 'Password1');
+
+  await Promise.all([
+      page.waitForNavigation(),
+      page.click('button:has-text("create account")')
+  ]);
+
+  // URL is correct after creating an account
+  await expect(page).toHaveURL('http://localhost:5000/accountSuccess/');
+});
+
+test('Check redirection on button clicks', async ({ page }) => {
+  await page.goto('http://localhost:5000/accountSuccess/');
+
+  const accountsButton = page.locator('.ActionCard-module--actionName--fe65b:has-text("Accounts")');
+  await accountsButton.click();
+
+  await expect(page).toHaveURL('http://localhost:5000/login/');
+
+  await expect(page.locator('h1')).toHaveText('Login');
+});
+
+test('Check redirection on Shop button click', async ({ page }) => {
+  await page.goto('http://localhost:5000/accountSuccess/');
+
+  const shopButton = page.locator('.ActionCard-module--actionName--fe65b:has-text("Shop")');
+  await shopButton.click();
+
+  await expect(page).toHaveURL('http://localhost:5000/shop/'); 
+});
