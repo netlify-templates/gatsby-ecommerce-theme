@@ -17,15 +17,15 @@
     "plop": "plop"
   },
   "dependencies": {
-    "gatsby": "^5.13.3",
-    "gatsby-adapter-netlify": "^1.1.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "gatsby": "^5.13.6",
+    "gatsby-adapter-netlify": "^1.1.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-slick": "^0.30.2"
   },
   "devDependencies": {
-    "plop": "^3.0.5",
-    "prettier": "^3.2.5"
+    "plop": "^4.0.1",
+    "prettier": "^3.3.2"
   }
 }
