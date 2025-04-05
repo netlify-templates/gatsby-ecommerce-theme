@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main  # Change to your main branch name if different
+
+media_folder: "static/img"  # Where uploaded images will go
+public_folder: "/img"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.js"  # This is our home page file; adjust if needed
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "description", label: "Description", widget: "text" }
