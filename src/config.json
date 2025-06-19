@@ -64,7 +64,7 @@
   ],
   "headerLinks": [
     {
-      "menuLabel": "Shop",
+      "menuLabel": "Gallery",
       "menuLink": "/shop",
       "category": [
         {
@@ -129,7 +129,12 @@
       ]
     },
     {
-      "menuLabel": "journal",
+      "menuLabel": "Classes",
+      "menuLink": "/blog",
+      "category": null
+    },
+    {
+      "menuLabel": "Blog",
       "menuLink": "/blog",
       "category": null
     },
