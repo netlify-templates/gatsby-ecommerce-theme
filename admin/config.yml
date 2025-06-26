@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main  # o master si usas esa rama
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - label: "Inicio"
+        name: "home"
+        file: "src/pages/index.js"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Contenido", name: "body", widget: "text" }
