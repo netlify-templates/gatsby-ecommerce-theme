@@ -115,13 +115,14 @@ const IndexPage = () => {
 
       {/* Promotion */}
       <div className={styles.sustainableContainer}>
-        <Hero
-  title={"Essentials for a cold winter"}
-  subtitle={"Discover Autumn Winter 2021"}
-  ctaText={"shop now"}
-  ...
-/>
+        import homeContent from '../contenido/home.json';
 
+      <Hero
+        title={homeContent.hero_title}
+        subtitle={homeContent.hero_subtitle}
+        ctaText={homeContent.hero_cta}
+        ...
+        />
       </div>
 
       {/* Social Media */}
