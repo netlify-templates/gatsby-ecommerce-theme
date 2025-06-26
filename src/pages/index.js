@@ -121,7 +121,6 @@ const IndexPage = () => {
         title={homeContent.hero_title}
         subtitle={homeContent.hero_subtitle}
         ctaText={homeContent.hero_cta}
-        ...
         />
       </div>
 
