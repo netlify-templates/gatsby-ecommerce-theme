@@ -23,6 +23,9 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-slick": "^0.30.2"
+    "gatsby-plugin-image": "^3.13.0",
+    "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-transformer-sharp": "^3.13.0"
   },
   "devDependencies": {
     "plop": "^3.0.5",
