@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐞 QA Portfolio — Ia Gelashvili</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+      background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+      color:#e2e8f0;line-height:1.6;min-height:100vh;padding:20px
+    }
+    .container{max-width:1400px;margin:0 auto}
+    header{ text-align:center;padding:40px 20px;margin-bottom:20px; background:rgba(255,255,255,.02);border-radius:20px;backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.1) }
+    h1{ font-size:2.4rem;font-weight:700;margin-bottom:10px; background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 100%); -webkit-background-clip:text;-webkit-text-fill-color:transparent }
+
+    /* Tabs */
+    nav{display:flex;justify-content:center;gap:10px;margin-bottom:20px;position:sticky;top:10px;z-index:10;flex-wrap:wrap}
+    nav button{padding:10px 16px;border:none;border-radius:8px;cursor:pointer;background:rgba(255,255,255,.05);color:#e2e8f0;font-size:.95rem;border:1px solid rgba(255,255,255,.1)}
+    nav button.active{background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 100%);color:#0b1220;font-weight:600}
+    .pill{display:inline-block;min-width:24px;padding:.1rem .4rem;margin-left:.3rem;border-radius:999px;background:rgba(255,255,255,.15);font-weight:700;font-size:.8rem}
+
+    /* Stats */
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+    .stat-card{background:rgba(255,255,255,.05);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.1);text-align:center}
+    .stat-number{font-size:1.8rem;font-weight:800}
+    .stat-label{color:#94a3b8;font-size:.85rem;text-transform:uppercase;letter-spacing:.8px}
+
+    .controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;padding:14px;background:rgba(255,255,255,.02);border-radius:14px;border:1px solid rgba(255,255,255,.1)}
+    .search-box{flex:1;min-width:260px;padding:10px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#e2e8f0;font-size:1rem}
+    .filter-group{display:flex;flex-wrap:wrap;gap:8px}
+    .filter-btn{padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;cursor:pointer;font-size:.9rem}
+    .filter-btn.active{background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 100%);border-color:transparent;color:#0b1220}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:18px;margin-bottom:30px}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px;transition:all .25s ease;cursor:pointer;outline:none}
+    .card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,.35);border-color:rgba(96,165,250,.3)}
+    .card:focus-visible{box-shadow:0 0 0 3px rgba(96,165,250,.35)}
+    .header{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}
+    .id{font-size:.85rem;color:#64748b;font-family:'Courier New',monospace}
+    .title{font-size:1.1rem;font-weight:700;color:#f1f5f9}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .badge{padding:6px 10px;border-radius:6px;font-size:.75rem;font-weight:700;border:1px solid transparent;text-transform:uppercase;letter-spacing:.5px}
+
+    /* Category badges */
+    .category-functional{background:rgba(59,130,246,.2);color:#60a5fa;border-color:rgba(59,130,246,.3)}
+    .category-ui-ux{background:rgba(168,85,247,.2);color:#a78bfa;border-color:rgba(168,85,247,.3)}
+    .category-accessibility{background:rgba(34,197,94,.2);color:#4ade80;border-color:rgba(34,197,94,.3)}
+    .category-security,.category-validation{background:rgba(239,68,68,.2);color:#f87171;border-color:rgba(239,68,68,.3)}
+    .category-performance{background:rgba(251,146,60,.2);color:#fb923c;border-color:rgba(251,146,60,.3)}
+    .category-negative{background:rgba(239,68,68,.2);color:#f87171;border-color:rgba(239,68,68,.3)}
+    .category-regression{background:rgba(234,179,8,.2);color:#fbbf24;border-color:rgba(234,179,8,.3)}
+
+    /* Levels */
+    .severity-critical{background:rgba(239,68,68,.2);color:#f87171;border-color:rgba(239,68,68,.3)}
+    .severity-high{background:rgba(251,146,60,.2);color:#fb923c;border-color:rgba(251,146,60,.3)}
+    .severity-medium{background:rgba(234,179,8,.2);color:#fbbf24;border-color:rgba(234,179,8,.3)}
+    .severity-low{background:rgba(34,197,94,.2);color:#4ade80;border-color:rgba(34,197,94,.3)}
+
+    .priority-critical{background:rgba(14,165,233,.2);color:#38bdf8;border-color:rgba(14,165,233,.3)}
+    .priority-high{background:rgba(56,189,248,.15);color:#7dd3fc;border-color:rgba(56,189,248,.25)}
+    .priority-medium{background:rgba(99,102,241,.15);color:#a5b4fc;border-color:rgba(99,102,241,.25)}
+    .priority-low{background:rgba(20,184,166,.15);color:#5eead4;border-color:rgba(20,184,166,.25)}
+
+    .details{display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+    .section{margin-bottom:10px}
+    .section h4{color:#60a5fa;font-size:.85rem;margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px}
+    .section p,.section ol{color:#cbd5e1;font-size:.95rem}
+    .section ol,.section ul{padding-left:18px}
+
+    .env{background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.2);border-radius:8px;padding:10px;margin-top:8px;font-size:.85rem}
+    .env div{display:flex;gap:8px;margin-bottom:4px}
+    .env strong{color:#60a5fa;min-width:80px}
+
+    .no-results{text-align:center;padding:40px 20px;color:#94a3b8;font-size:1.1rem}
+    footer{text-align:center;padding:30px 20px;color:#64748b;font-size:.9rem}
+
+    .outcome-positive{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.25)}
+    .outcome-negative{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.25)}
+
+    /* Document sections */
+    .doc-section{display:none;background:rgba(255,255,255,.02);border-radius:14px;padding:30px;border:1px solid rgba(255,255,255,.1)}
+    .doc-section.active{display:block}
+    .doc-section h2{color:#60a5fa;font-size:1.8rem;margin-bottom:20px}
+    .doc-section h3{color:#a78bfa;font-size:1.3rem;margin:20px 0 12px}
+    .doc-section h4{color:#94a3b8;font-size:1.1rem;margin:15px 0 8px}
+    .doc-section table{width:100%;border-collapse:collapse;margin:15px 0;background:rgba(255,255,255,.03);border-radius:8px;overflow:hidden}
+    .doc-section th,.doc-section td{padding:12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1)}
+    .doc-section th{background:rgba(96,165,250,.1);color:#60a5fa;font-weight:600}
+    .doc-section tr:hover{background:rgba(255,255,255,.03)}
+    .status-pass{color:#4ade80}
+    .status-fail{color:#f87171}
+    .status-blocked{color:#fbbf24}
+    .status-pending{color:#94a3b8}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🐞 QA Portfolio</h1>
+    <p style="color:#94a3b8;font-size:1.2rem;margin-top:10px;font-weight:500">Ia Gelashvili — Quality Assurance Engineer</p>
+  </header>
+
+  <nav>
+    <button class="tab-btn" data-tab="bugs">Bug Reports <span id="bugs-pill" class="pill">28</span></button>
+    <button class="tab-btn active" data-tab="testcases">Test Cases <span id="tcs-pill" class="pill">23</span></button>
+    <button class="tab-btn" data-tab="rtm">RTM <span class="pill">15</span></button>
+    <button class="tab-btn" data-tab="testplan">Test Plan</button>
+    <button class="tab-btn" data-tab="strategy">Test Strategy</button>
+    <button class="tab-btn" data-tab="summary">Summary Report</button>
+  </nav>
+
+  <!-- BUGS PANEL -->
+  <section id="bugs-section" style="display:none;">
+    <div class="stats" id="bug-stats"></div>
+    <div class="controls">
+      <input type="text" class="search-box" id="bug-search" placeholder="🔍 Search bugs">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Functional">Functional</button>
+        <button class="filter-btn" data-filter="UI/UX">UI/UX</button>
+        <button class="filter-btn" data-filter="Accessibility">Accessibility</button>
+        <button class="filter-btn" data-filter="Security">Security</button>
+        <button class="filter-btn" data-filter="Validation">Validation</button>
+        <button class="filter-btn" data-filter="Performance">Performance</button>
+      </div>
+    </div>
+    <div class="grid" id="bugsGrid"></div>
+    <div class="no-results" id="bug-empty" style="display:none;">No bugs found.</div>
+  </section>
+
+  <!-- TEST CASES PANEL -->
+  <section id="testcases-section" style="display:block;">
+    <div class="stats" id="tc-stats"></div>
+    <div class="controls">
+      <input type="text" class="search-box" id="tc-search" placeholder="🔍 Search test cases">
+      <div class="filter-group" id="tc-cat-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="functional">Functional</button>
+        <button class="filter-btn" data-filter="negative">Negative</button>
+        <button class="filter-btn" data-filter="regression">Regression</button>
+        <button class="filter-btn" data-filter="accessibility">Accessibility</button>
+        <button class="filter-btn" data-filter="performance">Performance</button>
+      </div>
+      <div class="filter-group" id="tc-outcome-filters">
+        <button class="filter-btn active" data-outcome="all">All Outcomes</button>
+        <button class="filter-btn" data-outcome="positive">Positive</button>
+        <button class="filter-btn" data-outcome="negative">Negative</button>
+      </div>
+    </div>
+    <div class="grid" id="tcGrid"></div>
+    <div class="no-results" id="tc-empty" style="display:none;">No test cases found.</div>
+  </section>
+
+  <!-- RTM PANEL -->
+  <section id="rtm-section" class="doc-section">
+    <h2>📊 Requirements Traceability Matrix (RTM)</h2>
+    <p style="margin-bottom:20px;color:#cbd5e1">Mapping between requirements, test cases, and execution status for full coverage tracking.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Req ID</th>
+          <th>Requirement</th>
+          <th>Test Case IDs</th>
+          <th>Priority</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>REQ-001</td>
+          <td>User Authentication & Authorization</td>
+          <td>TC-FUNC-001, TC-FUNC-002, TC-NEG-001</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-002</td>
+          <td>Password Reset Flow</td>
+          <td>TC-FUNC-003, TC-NEG-003</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-003</td>
+          <td>Shopping Cart & Checkout</td>
+          <td>TC-FUNC-004, TC-NEG-002, TC-VAL-003</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-004</td>
+          <td>Form Validation</td>
+          <td>TC-VAL-001, TC-VAL-002, TC-VAL-003</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-fail">✗ Fail</span></td>
+        </tr>
+        <tr>
+          <td>REQ-005</td>
+          <td>Accessibility Compliance (WCAG 2.1)</td>
+          <td>TC-A11Y-001, TC-A11Y-002, TC-A11Y-003</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-006</td>
+          <td>Security Standards</td>
+          <td>TC-SEC-001, TC-SEC-002, TC-SEC-003</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-007</td>
+          <td>Performance Benchmarks</td>
+          <td>TC-PERF-001, TC-PERF-002, TC-REG-001</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-fail">✗ Fail</span></td>
+        </tr>
+        <tr>
+          <td>REQ-008</td>
+          <td>Search & Pagination</td>
+          <td>TC-REG-001</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-009</td>
+          <td>Wishlist Persistence</td>
+          <td>TC-REG-002</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-010</td>
+          <td>Profile Management</td>
+          <td>TC-SMK-002</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-011</td>
+          <td>Internationalization (i18n)</td>
+          <td>TC-SMK-003</td>
+          <td><span class="badge priority-low">Low</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-012</td>
+          <td>Application Shell & Error Handling</td>
+          <td>TC-SMK-001</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-013</td>
+          <td>Modal Focus Management</td>
+          <td>TC-A11Y-003</td>
+          <td><span class="badge priority-medium">Medium</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-014</td>
+          <td>Session Management</td>
+          <td>TC-SEC-002</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+        <tr>
+          <td>REQ-015</td>
+          <td>Content Security Policy</td>
+          <td>TC-SEC-003</td>
+          <td><span class="badge priority-high">High</span></td>
+          <td><span class="status-pass">✓ Pass</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Coverage Summary</h3>
+    <div class="stats" style="margin-top:20px">
+      <div class="stat-card"><div class="stat-number">15</div><div class="stat-label">Requirements</div></div>
+      <div class="stat-card"><div class="stat-number">23</div><div class="stat-label">Test Cases</div></div>
+      <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Coverage</div></div>
+      <div class="stat-card"><div class="stat-number">87%</div><div class="stat-label">Pass Rate</div></div>
+    </div>
+  </section>
+
+  <!-- TEST PLAN PANEL -->
+  <section id="testplan-section" class="doc-section">
+    <h2>📋 Test Plan</h2>
+    
+    <h3>1. Introduction</h3>
+    <h4>1.1 Purpose</h4>
+    <p>This Test Plan describes the testing approach, scope, resources, and schedule for the E-Commerce Platform Release v2.5. The objective is to ensure quality, reliability, and user satisfaction before production deployment.</p>
+    
+    <h4>1.2 Scope</h4>
+    <p><strong>In Scope:</strong></p>
+    <ul>
+      <li>User authentication and authorization (login, logout, password reset)</li>
+      <li>Shopping cart and checkout flow</li>
+      <li>Form validation and error handling</li>
+      <li>Accessibility compliance (WCAG 2.1 Level AA)</li>
+      <li>Security testing (XSS, CSRF, SQL injection)</li>
+      <li>Performance benchmarks (page load, LCP, memory)</li>
+      <li>Cross-browser compatibility (Chrome, Firefox, Safari, Edge)</li>
+      <li>Mobile responsive design</li>
+    </ul>
+    <p><strong>Out of Scope:</strong></p>
+    <ul>
+      <li>Third-party payment gateway internal logic</li>
+      <li>Legacy admin panel (planned for v3.0)</li>
+      <li>Email server infrastructure</li>
+    </ul>
+
+    <h3>2. Test Strategy</h3>
+    <h4>2.1 Testing Levels</h4>
+    <ul>
+      <li><strong>Unit Testing:</strong> Developers ensure 80%+ code coverage</li>
+      <li><strong>Integration Testing:</strong> API contracts, database transactions</li>
+      <li><strong>System Testing:</strong> End-to-end user workflows</li>
+      <li><strong>Acceptance Testing:</strong> UAT with stakeholders</li>
+    </ul>
+
+    <h4>2.2 Testing Types</h4>
+    <ul>
+      <li><strong>Functional:</strong> Core features and business logic</li>
+      <li><strong>Non-Functional:</strong> Performance, security, accessibility</li>
+      <li><strong>Regression:</strong> Ensure existing features remain intact</li>
+      <li><strong>Smoke:</strong> Quick sanity checks post-deployment</li>
+    </ul>
+
+    <h3>3. Test Environment</h3>
+    <table>
+      <thead>
+        <tr><th>Environment</th><th>Purpose</th><th>URL</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Development</td><td>Dev testing</td><td>dev.example.com</td></tr>
+        <tr><td>Staging</td><td>Pre-prod validation</td><td>staging.example.com</td></tr>
+        <tr><td>Production</td><td>Live environment</td><td>example.com</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4. Test Deliverables</h3>
+    <ul>
+      <li>Test Cases (23 total)</li>
+      <li>Requirements Traceability Matrix (RTM)</li>
+      <li>Bug Reports (28 identified)</li>
+      <li>Test Execution Summary</li>
+      <li>Final Test Report</li>
+    </ul>
+
+    <h3>5. Schedule</h3>
+    <table>
+      <thead>
+        <tr><th>Phase</th><th>Duration</th><th>Start Date</th><th>End Date</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Test Planning</td><td>3 days</td><td>Oct 1</td><td>Oct 3</td></tr>
+        <tr><td>Test Design</td><td>5 days</td><td>Oct 4</td><td>Oct 8</td></tr>
+        <tr><td>Test Execution</td><td>10 days</td><td>Oct 9</td><td>Oct 18</td></tr>
+        <tr><td>Bug Fixing</td><td>7 days</td><td>Oct 19</td><td>Oct 25</td></tr>
+        <tr><td>Regression Testing</td><td>3 days</td><td>Oct 26</td><td>Oct 28</td></tr>
+        <tr><td>UAT</td><td>2 days</td><td>Oct 29</td><td>Oct 30</td></tr>
+      </tbody>
+    </table>
+
+    <h3>6. Resources</h3>
+    <ul>
+      <li><strong>QA Lead:</strong> 1 person</li>
+      <li><strong>QA Engineers:</strong> 2 people</li>
+      <li><strong>Automation Engineer:</strong> 1 person</li>
+      <li><strong>Tools:</strong> Jira, TestRail, Selenium, Jest, Lighthouse, Axe DevTools</li>
+    </ul>
+
+    <h3>7. Risk Management</h3>
+    <table>
+      <thead>
+        <tr><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Environment instability</td><td>High</td><td>Daily smoke tests</td></tr>
+        <tr><td>Late requirement changes</td><td>Medium</td><td>Change control process</td></tr>
+        <tr><td>Resource unavailability</td><td>Medium</td><td>Cross-training team members</td></tr>
+      </tbody>
+    </table>
+
+    <h3>8. Entry & Exit Criteria</h3>
+    <h4>Entry Criteria:</h4>
+    <ul>
+      <li>Requirements finalized and approved</li>
+      <li>Test environment ready and accessible</li>
+      <li>Test cases reviewed and approved</li>
+    </ul>
+    <h4>Exit Criteria:</h4>
+    <ul>
+      <li>100% test case execution</li>
+      <li>Zero critical/high severity bugs open</li>
+      <li>90%+ pass rate on regression suite</li>
+      <li>Sign-off from stakeholders</li>
+    </ul>
+  </section>
+
+  <!-- TEST STRATEGY PANEL -->
+  <section id="strategy-section" class="doc-section">
+    <h2>🎯 Test Strategy</h2>
+    
+    <h3>1. Overview</h3>
+    <p>The Test Strategy defines the high-level approach to testing across all projects. It aligns with business objectives, risk management, and quality goals.</p>
+
+    <h3>2. Testing Principles</h3>
+    <ul>
+      <li><strong>Early Testing:</strong> Shift-left approach; testing begins at requirement phase</li>
+      <li><strong>Risk-Based:</strong> Prioritize high-risk, high-impact areas</li>
+      <li><strong>Automation-First:</strong> Automate repetitive tests; manual for exploratory</li>
+      <li><strong>Continuous Testing:</strong> Integrate testing into CI/CD pipeline</li>
+      <li><strong>Defect Prevention:</strong> Focus on preventing defects, not just finding them</li>
+    </ul>
+
+    <h3>3. Test Levels & Types</h3>
+    <table>
+      <thead>
+        <tr><th>Level</th><th>Responsibility</th><th>Tools</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unit Testing</td><td>Developers</td><td>Jest, Mocha, JUnit</td></tr>
+        <tr><td>Integration Testing</td><td>Developers + QA</td><td>Postman, SuperTest</td></tr>
+        <tr><td>System Testing</td><td>QA Engineers</td><td>Selenium, Cypress</td></tr>
+        <tr><td>Acceptance Testing</td><td>Product Owners</td><td>Manual, TestRail</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4. Functional Testing Approach</h3>
+    <h4>4.1 Positive Testing</h4>
+    <p>Verify expected behavior with valid inputs and typical user workflows.</p>
+    
+    <h4>4.2 Negative Testing</h4>
+    <p>Test system behavior with invalid inputs, edge cases, and error conditions.</p>
+    
+    <h4>4.3 Boundary Testing</h4>
+    <p>Test at limits of input ranges (min, max, just below, just above).</p>
+
+    <h3>5. Non-Functional Testing</h3>
+    <h4>5.1 Performance Testing</h4>
+    <ul>
+      <li><strong>Load Testing:</strong> 100-500 concurrent users</li>
+      <li><strong>Stress Testing:</strong> Beyond capacity to find breaking point</li>
+      <li><strong>Endurance Testing:</strong> 4-8 hour sustained load</li>
+      <li><strong>Spike Testing:</strong> Sudden traffic surges</li>
+    </ul>
+
+    <h4>5.2 Security Testing</h4>
+    <ul>
+      <li>OWASP Top 10 vulnerability scanning</li>
+      <li>SQL injection, XSS, CSRF testing</li>
+      <li>Authentication and authorization checks</li>
+      <li>Data encryption verification</li>
+    </ul>
+
+    <h4>5.3 Accessibility Testing</h4>
+    <ul>
+      <li>WCAG 2.1 Level AA compliance</li>
+      <li>Screen reader compatibility (NVDA, JAWS, VoiceOver)</li>
+      <li>Keyboard navigation</li>
+      <li>Color contrast ratios</li>
+    </ul>
+
+    <h4>5.4 Compatibility Testing</h4>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Coverage</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Browsers</td><td>Chrome 110+, Firefox 115+, Safari 16+, Edge 110+</td></tr>
+        <tr><td>Mobile</td><td>iOS 15+, Android 11+</td></tr>
+        <tr><td>Screen Sizes</td><td>320px - 2560px</td></tr>
+      </tbody>
+    </table>
+
+    <h3>6. Automation Strategy</h3>
+    <h4>6.1 Automation Pyramid</h4>
+    <ul>
+      <li><strong>70% Unit Tests:</strong> Fast, isolated, developer-owned</li>
+      <li><strong>20% Integration Tests:</strong> API and service contracts</li>
+      <li><strong>10% E2E Tests:</strong> Critical user journeys</li>
+    </ul>
+
+    <h4>6.2 Automation Criteria</h4>
+    <p>Automate tests that are:</p>
+    <ul>
+      <li>Repetitive and time-consuming</li>
+      <li>Part of regression suite</li>
+      <li>High-risk critical paths</li>
+      <li>Data-driven with multiple permutations</li>
+    </ul>
+
+    <h4>6.3 Tools & Frameworks</h4>
+    <ul>
+      <li><strong>Web UI:</strong> Selenium WebDriver, Cypress, Playwright</li>
+      <li><strong>API:</strong> Postman, REST Assured, SuperTest</li>
+      <li><strong>Mobile:</strong> Appium, Detox</li>
+      <li><strong>Performance:</strong> JMeter, k6, Lighthouse CI</li>
+    </ul>
+
+    <h3>7. Defect Management</h3>
+    <h4>7.1 Severity Levels</h4>
+    <ul>
+      <li><strong>Critical:</strong> System crash, data loss, security breach</li>
+      <li><strong>High:</strong> Major feature broken, no workaround</li>
+      <li><strong>Medium:</strong> Feature partially works, workaround exists</li>
+      <li><strong>Low:</strong> Minor UI issue, cosmetic</li>
+    </ul>
+
+    <h4>7.2 Priority Levels</h4>
+    <ul>
+      <li><strong>Critical:</strong> Fix immediately, block release</li>
+      <li><strong>High:</strong> Fix before release</li>
+      <li><strong>Medium:</strong> Fix in next sprint</li>
+      <li><strong>Low:</strong> Fix when resources available</li>
+    </ul>
+
+    <h3>8. Test Data Management</h3>
+    <ul>
+      <li>Use synthetic data for testing (GDPR compliant)</li>
+      <li>Maintain separate test databases per environment</li>
+      <li>Automate test data generation and cleanup</li>
+      <li>Mask production data if used in lower environments</li>
+    </ul>
+
+    <h3>9. Continuous Integration</h3>
+    <ul>
+      <li>Run unit tests on every commit</li>
+      <li>Run integration tests on every merge to main</li>
+      <li>Run E2E smoke tests on every deployment</li>
+      <li>Full regression suite nightly</li>
+    </ul>
+
+    <h3>10. Metrics & Reporting</h3>
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Target</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Test Coverage</td><td>≥ 80%</td></tr>
+        <tr><td>Defect Detection Rate</td><td>≥ 85%</td></tr>
+        <tr><td>Test Pass Rate</td><td>≥ 90%</td></tr>
+        <tr><td>Automation Coverage</td><td>≥ 70%</td></tr>
+        <tr><td>Mean Time to Detect (MTTD)</td><td>≤ 4 hours</td></tr>
+        <tr><td>Mean Time to Resolve (MTTR)</td><td>≤ 24 hours (Critical)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SUMMARY REPORT PANEL -->
+  <section id="summary-section" class="doc-section">
+    <h2>📊 Test Execution Summary Report</h2>
+    
+    <h3>Executive Summary</h3>
+    <p><strong>Project:</strong> E-Commerce Platform v2.5</p>
+    <p><strong>Test Period:</strong> October 9 - October 28, 2024</p>
+    <p><strong>Environment:</strong> Staging (staging.example.com)</p>
+    <p><strong>Report Date:</strong> October 28, 2024</p>
+
+    <div class="stats" style="margin:20px 0">
+      <div class="stat-card"><div class="stat-number">23</div><div class="stat-label">Total Test Cases</div></div>
+      <div class="stat-card"><div class="stat-number">20</div><div class="stat-label">Passed</div></div>
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Failed</div></div>
+      <div class="stat-card"><div class="stat-number">87%</div><div class="stat-label">Pass Rate</div></div>
+    </div>
+
+    <h3>Test Execution Overview</h3>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Total</th><th>Pass</th><th>Fail</th><th>Pass Rate</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Functional</td><td>10</td><td>9</td><td>1</td><td>90%</td>
+        </tr>
+        <tr>
+          <td>Negative</td><td>3</td><td>3</td><td>0</td><td>100%</td>
+        </tr>
+        <tr>
+          <td>Regression</td><td>5</td><td>5</td><td>0</td><td>100%</td>
+        </tr>
+        <tr>
+          <td>Accessibility</td><td>3</td><td>3</td><td>0</td><td>100%</td>
+        </tr>
+        <tr>
+          <td>Performance</td><td>2</td><td>1</td><td>1</td><td>50%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Defect Summary</h3>
+    <div class="stats" style="margin:20px 0">
+      <div class="stat-card"><div class="stat-number">28</div><div class="stat-label">Total Bugs Found</div></div>
+      <div class="stat-card"><div class="stat-number">5</div><div class="stat-label">Critical</div></div>
+      <div class="stat-card"><div class="stat-number">11</div><div class="stat-label">High</div></div>
+      <div class="stat-card"><div class="stat-number">12</div><div class="stat-label">Medium/Low</div></div>
+    </div>
+
+    <h4>Defects by Category</h4>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Count</th><th>Resolved</th><th>Open</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Functional</td><td>5</td><td>4</td><td>1</td></tr>
+        <tr><td>UI/UX</td><td>4</td><td>3</td><td>1</td></tr>
+        <tr><td>Accessibility</td><td>4</td><td>4</td><td>0</td></tr>
+        <tr><td>Validation</td><td>4</td><td>2</td><td>2</td></tr>
+        <tr><td>Security</td><td>4</td><td>3</td><td>1</td></tr>
+        <tr><td>Performance</td><td>7</td><td>4</td><td>3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Critical Issues</h3>
+    <table>
+      <thead>
+        <tr><th>Bug ID</th><th>Title</th><th>Status</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BUG-002</td>
+          <td>Login action triggers no network request</td>
+          <td><span class="status-pass">Fixed</span></td>
+          <td>Deployed to staging</td>
+        </tr>
+        <tr>
+          <td>BUG-008</td>
+          <td>Database connection pool exhaustion</td>
+          <td><span class="status-pass">Fixed</span></td>
+          <td>Configuration updated</td>
+        </tr>
+        <tr>
+          <td>BUG-011</td>
+          <td>Password shows plain text after error</td>
+          <td><span class="status-pass">Fixed</span></td>
+          <td>Security patch applied</td>
+        </tr>
+        <tr>
+          <td>BUG-014</td>
+          <td>Race condition in payment processing</td>
+          <td><span class="status-fail">Open</span></td>
+          <td><strong>BLOCKER - Must fix before release</strong></td>
+        </tr>
+        <tr>
+          <td>BUG-020</td>
+          <td>Password reset link accepts expired tokens</td>
+          <td><span class="status-pass">Fixed</span></td>
+          <td>Token validation improved</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Test Environment Details</h3>
+    <ul>
+      <li><strong>Server:</strong> AWS EC2 t3.large (staging)</li>
+      <li><strong>Database:</strong> PostgreSQL 15.2</li>
+      <li><strong>Browser Coverage:</strong> Chrome 120, Firefox 119, Safari 17, Edge 120</li>
+      <li><strong>Mobile Devices:</strong> iPhone 13 (iOS 17), Xiaomi Redmi Note 10 (Android 11), MacBook M2</li>
+    </ul>
+
+    <h3>Key Findings</h3>
+    <h4>✅ Strengths</h4>
+    <ul>
+      <li>Authentication and authorization working reliably</li>
+      <li>Accessibility compliance achieved (WCAG 2.1 AA)</li>
+      <li>Security measures properly implemented (CSP, CSRF protection)</li>
+      <li>Regression testing passed with no new issues</li>
+      <li>Form validation working for most scenarios</li>
+    </ul>
+
+    <h4>⚠️ Areas of Concern</h4>
+    <ul>
+      <li><strong>Payment Processing:</strong> Race condition bug (BUG-014) is a release blocker</li>
+      <li><strong>Performance:</strong> Multiple performance issues under load (BUG-030, BUG-031, BUG-032, BUG-033)</li>
+      <li><strong>Validation:</strong> Some edge cases still accepting invalid input (BUG-023, BUG-024)</li>
+      <li><strong>Memory Leaks:</strong> Dashboard charts causing memory growth (BUG-032)</li>
+    </ul>
+
+    <h3>Risk Assessment</h3>
+    <table>
+      <thead>
+        <tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment race condition</td>
+          <td><span class="badge severity-critical">Critical</span></td>
+          <td>Fix before release + add idempotency key</td>
+        </tr>
+        <tr>
+          <td>Performance degradation under load</td>
+          <td><span class="badge severity-high">High</span></td>
+          <td>Optimize queries, add caching, monitor in production</td>
+        </tr>
+        <tr>
+          <td>Memory leak on dashboard</td>
+          <td><span class="badge severity-medium">Medium</span></td>
+          <td>Fix chart cleanup, add monitoring</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Recommendations</h3>
+    <ol>
+      <li><strong>DO NOT RELEASE</strong> until BUG-014 (payment race condition) is fixed and retested</li>
+      <li>Address all Critical and High severity bugs before production deployment</li>
+      <li>Implement performance monitoring and alerting in production</li>
+      <li>Schedule performance optimization sprint for v2.6</li>
+      <li>Add automated load testing to CI/CD pipeline</li>
+      <li>Increase unit test coverage for payment module to 95%+</li>
+      <li>Conduct security audit before go-live</li>
+    </ol>
+
+    <h3>Test Completion Criteria</h3>
+    <table>
+      <thead>
+        <tr><th>Criteria</th><th>Target</th><th>Actual</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Test Case Execution</td><td>100%</td><td>100%</td><td><span class="status-pass">✓</span></td></tr>
+        <tr><td>Pass Rate</td><td>≥ 90%</td><td>87%</td><td><span class="status-fail">✗</span></td></tr>
+        <tr><td>Critical Bugs</td><td>0 open</td><td>1 open</td><td><span class="status-fail">✗</span></td></tr>
+        <tr><td>High Bugs</td><td>≤ 2 open</td><td>3 open</td><td><span class="status-fail">✗</span></td></tr>
+        <tr><td>Requirements Coverage</td><td>100%</td><td>100%</td><td><span class="status-pass">✓</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sign-Off Status</h3>
+    <p><strong>QA Sign-Off:</strong> <span class="status-fail">❌ NOT APPROVED</span> - Critical bug must be fixed</p>
+    <p><strong>Reason:</strong> BUG-014 (payment race condition) is a release blocker that could result in duplicate charges to customers.</p>
+    <p><strong>Next Steps:</strong></p>
+    <ol>
+      <li>Development team to fix BUG-014 with priority</li>
+      <li>QA to retest payment flow with concurrent transactions</li>
+      <li>Performance team to optimize load time issues</li>
+      <li>Schedule re-test and sign-off meeting after fixes</li>
+    </ol>
+
+    <h3>Attachments</h3>
+    <ul>
+      <li>Detailed Test Case Results (23 test cases)</li>
+      <li>Bug Reports with Screenshots (28 bugs)</li>
+      <li>Performance Test Results (JMeter reports)</li>
+      <li>Accessibility Audit Report (Axe DevTools)</li>
+      <li>Security Scan Report (OWASP ZAP)</li>
+    </ul>
+  </section>
+
+  <footer>🔧 Ia Gelashvili — Professional QA Engineer Portfolio</footer>
+</div>
+
+<script>
+// Sample bug data (same as before)
+const bugs = [
+  {id:"BUG-002",title:"Login action triggers no network request",category:"Functional",severity:"Critical",priority:"Critical",summary:"When clicking the Login button with valid credentials, no network request is sent to the authentication server.",steps:["Navigate to the login page","Enter valid username and password","Open browser DevTools and go to Network tab","Click the Login button","Observe that no API call appears in the Network tab"],expected:"A POST request should be sent to /api/auth/login with credentials, and user should be authenticated.",actual:"No network request is triggered. The button appears to do nothing.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-004",title:"Double-click triggers duplicate order creation",category:"Functional",severity:"High",priority:"High",summary:"Rapid double-click on 'Place order' sends two POSTs and creates duplicate orders.",steps:["Add item to cart","Proceed to checkout","Double-click 'Place Order' quickly","Inspect Network tab and DB records"],expected:"Button should be debounced and/or server idempotency key enforced.",actual:"Two orders created for one intent.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-005",title:"UI remains active after server error",category:"Functional",severity:"Medium",priority:"Medium",summary:"When the server returns a 500 error, the UI remains interactive and users can continue clicking buttons.",steps:["Trigger a server error by submitting invalid data","Observe that error message appears briefly","Notice that form fields remain enabled","Try clicking the Submit button again","Verify that another request is sent"],expected:"When a server error occurs, the UI should be disabled or show a clear error state.",actual:"UI remains fully interactive. Users can continue submitting forms.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-013",title:"Wishlist not persisted across sessions",category:"Functional",severity:"Medium",priority:"Medium",summary:"Items added to wishlist disappear after logout/login cycle.",steps:["Add any product to wishlist","Logout","Login again","Open wishlist"],expected:"Wishlist items should persist per user.",actual:"Wishlist is empty after re-login.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-016",title:"Logout button unresponsive after idle timeout",category:"Functional",severity:"High",priority:"High",summary:"After a session timeout due to inactivity, the Logout button becomes unresponsive.",steps:["Log in to the application","Wait for the idle timeout period (15-30 minutes)","Observe the session timeout notification","Click the Logout button","Notice that nothing happens"],expected:"The Logout button should remain functional even after timeout, clearing storage and redirecting to login.",actual:"The Logout button is unresponsive. Users must manually refresh the browser.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-007",title:"Error messages poorly visible",category:"UI/UX",severity:"Low",priority:"Medium",summary:"Error messages appear in light gray text on white background, making them difficult to read.",steps:["Navigate to registration form","Submit the form with invalid data","Observe the error message that appears","Note the poor contrast ratio"],expected:"Error messages should be clearly visible with sufficient color contrast (WCAG AA: 4.5:1).",actual:"Error messages appear in light gray on white background, barely visible.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-008",title:"Multiple error messages stacking",category:"UI/UX",severity:"Medium",priority:"Medium",summary:"When multiple validation errors occur, error messages stack without clearing previous ones.",steps:["Open a form with multiple required fields","Leave all fields empty and click Submit","Observe error messages appearing","Correct one field and click Submit again","Notice old error messages remain"],expected:"Previous error messages should be cleared before displaying new validation results.",actual:"Error messages accumulate with each submission, creating clutter.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-017",title:"Modal close icon too small on mobile",category:"UI/UX",severity:"Low",priority:"Low",summary:"The 'X' icon hit area is <24px, hard to tap.",steps:["Open any modal on mobile","Try closing by tapping 'X'"],expected:"Hit target should be ≥ 24x24px.",actual:"Users frequently miss tap and close fails.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-018",title:"Sticky header overlaps anchor targets",category:"UI/UX",severity:"Low",priority:"Low",summary:"Anchors scroll content under fixed header, hiding section titles.",steps:["Open docs page","Click in-page TOC anchor"],expected:"Scroll offset should account for header height.",actual:"Section title hidden by header.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-003",title:"Error messages not read by screen reader",category:"Accessibility",severity:"Medium",priority:"Medium",summary:"When form validation errors appear, screen readers do not announce them.",steps:["Enable a screen reader (TalkBack on Android)","Navigate to a registration form","Fill in invalid data and submit","Listen for screen reader announcement","Observe that no errors are announced"],expected:"Error messages should have proper ARIA live region attributes so screen readers announce them.",actual:"Error messages appear visually but are not announced by screen readers.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-012",title:"Focus not moved to invalid field",category:"Accessibility",severity:"Medium",priority:"Medium",summary:"When form validation fails, keyboard focus remains on Submit button instead of moving to first invalid field.",steps:["Navigate to a form using only keyboard","Leave the first required field empty","Tab through to Submit button and press Enter","Observe that focus remains on Submit button","User must manually tab back through all fields"],expected:"When validation fails, focus should automatically move to the first field with an error.",actual:"Focus stays on Submit button. Keyboard users must navigate backwards.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-021",title:"Non-unique IDs break label association",category:"Accessibility",severity:"Medium",priority:"Medium",summary:"Multiple inputs share same id attribute, screen readers read wrong label.",steps:["Inspect DOM on checkout page","Find repeated id for address inputs"],expected:"IDs must be unique and labels associated via for/id.",actual:"Label association unreliable.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-022",title:"Keyboard trap inside cookie banner",category:"Accessibility",severity:"High",priority:"High",summary:"Tab focus can't escape the cookie dialog without mouse.",steps:["Use keyboard only","Try to tab past cookie dialog"],expected:"Focus should be cyclical inside modal with a visible close and ESC support.",actual:"Focus trapped indefinitely.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-001",title:"Invalid date of birth accepted",category:"Validation",severity:"High",priority:"High",summary:"The date of birth field accepts impossible dates such as future dates or dates before 1900.",steps:["Navigate to user registration form","In Date of Birth field, enter a future date (2030-01-01)","Click Submit","Observe that the form is accepted without error","Also test with date like 1800-01-01"],expected:"Date of birth should be validated to ensure it is a reasonable date in the past.",actual:"Any date format is accepted including future dates and dates from 1800s.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-010",title:"Invalid email format accepted",category:"Validation",severity:"High",priority:"High",summary:"The email field accepts strings that are not valid email addresses.",steps:["Navigate to registration or contact form","In email field, enter testuser (no @ or domain)","Click Submit","Observe form is accepted","Also test with test@ and test@domain"],expected:"Email field should validate against standard email format and reject invalid formats.",actual:"Invalid email formats are accepted: testuser, test@, test@domain.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-023",title:"Phone accepts letters and emoji",category:"Validation",severity:"Medium",priority:"Medium",summary:"Phone input allows non-digits and saves successfully.",steps:["Enter '555-AB😊' in phone","Submit form"],expected:"Non-digit characters should be rejected or stripped.",actual:"Value saved as entered.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-024",title:"Negative quantity allowed in cart",category:"Validation",severity:"High",priority:"High",summary:"Quantity field accepts -1 leading to price calculation bugs.",steps:["Add product to cart","Set qty to -1"],expected:"Minimum quantity should be 1.",actual:"Cart total becomes negative or NaN.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-011",title:"Password shows plain text after error",category:"Security",severity:"High",priority:"High",summary:"When a login attempt fails, the password field temporarily switches to plain text.",steps:["Navigate to login page","Enter incorrect username and password","Click Login","Observe error message appears","Notice password field briefly shows plain text before masking again"],expected:"Password field should remain masked at all times, regardless of validation state.",actual:"Password briefly appears in plain text after failed login attempt.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-020",title:"Password reset link accepts expired tokens",category:"Security",severity:"High",priority:"Critical",summary:"Password reset links continue to work even after the token expiration time has passed.",steps:["Request a password reset email","Wait for token expiration time (should be 15-30 minutes)","Click the reset link from the email","Observe that the reset page loads successfully","Successfully change password with expired token"],expected:"Expired tokens should be rejected with an error message asking user to request a new reset link.",actual:"Expired tokens are accepted and users can reset passwords indefinitely after requesting link.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-025",title:"JWT not invalidated after password change",category:"Security",severity:"High",priority:"High",summary:"Existing sessions remain valid after password reset.",steps:["Login on device A","Reset password on device B","Use device A to access protected API"],expected:"All sessions should be invalidated after credential change.",actual:"Old JWT continues to work.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-026",title:"CSP header missing allows inline scripts",category:"Security",severity:"High",priority:"High",summary:"No Content-Security-Policy header; inline scripts execute unrestrained.",steps:["Open any page","Check Response Headers"],expected:"Strict CSP should be configured.",actual:"No CSP present.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-030",title:"Search results take over 10 seconds to load",category:"Performance",severity:"High",priority:"High",summary:"Performing a search with more than 50 results causes the page to freeze and delay response for over 10 seconds.",steps:["Log in with valid credentials","Navigate to the search page","Enter a keyword that returns many results","Measure the response time with DevTools"],expected:"Search results should load in under 3 seconds with proper pagination or lazy loading.",actual:"Page freezes and takes 10+ seconds to display results.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-031",title:"Large images not optimized on mobile",category:"Performance",severity:"Medium",priority:"Medium",summary:"Hero images load full-resolution on 3G, blocking render.",steps:["Throttle to 'Slow 3G'","Load home page","Record LCP"],expected:"Responsive images with srcset/sizes should serve smaller assets.",actual:">2MB image served to mobile.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-032",title:"Memory leak on dashboard charts",category:"Performance",severity:"High",priority:"High",summary:"Navigating between tabs repeatedly increases memory usage until crash.",steps:["Open Dashboard","Switch tabs 30 times","Observe memory in Performance panel"],expected:"Memory should be freed on unmount.",actual:"Heap steadily grows.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-033",title:"High CPU usage during infinite scroll",category:"Performance",severity:"Medium",priority:"High",summary:"Infinite scrolling through large product lists causes the browser CPU usage to spike above 80%, making the page laggy.",steps:["Navigate to the product listing page","Scroll continuously for at least 30 seconds","Open Task Manager / Performance Monitor and observe CPU usage"],expected:"CPU usage should remain stable under 40%.",actual:"CPU spikes to 80—90%, resulting in scroll lag and stuttering animations.",environment:{device:"Xiaomi Redmi Note 10 Lite",os:"Android 11",browser:"Chrome Mobile"}},
+  {id:"BUG-034",title:"Service worker caches stale API responses",category:"Performance",severity:"Medium",priority:"Medium",summary:"Old responses returned even after server fix until hard refresh.",steps:["Load app","Trigger API that was recently fixed","Receive old cached payload"],expected:"Cache invalidation strategy should update on version bump.",actual:"Stale data persists.",environment:{device:"MacBook M2",os:"macOS Sonoma 14.5",browser:"Chrome 143.0.7489.3"}},
+  {id:"BUG-014",title:"Race condition in payment processing",category:"Functional",severity:"Critical",priority:"Critical",summary:"Double-clicking payment button charges user twice",steps:["Add item to cart","Proceed to checkout","Click Pay button twice quickly"],expected:"Only one payment should process",actual:"User charged twice, two orders created",environment:{device:"Mobile",os:"iOS 17",browser:"Safari Mobile"}}
+];
+
+// Test cases data (same as before - keeping it complete)
+const testCases = [
+  {id:"TC-FUNC-001", title:"User can log in with valid credentials", category:"functional", priority:"High", type:"Positive / Functional", preconditions:"User account exists and is ACTIVE; application base URL reachable; browser cache cleared or private window.", steps:[ "Open application base URL (/login)", "Verify login form renders without console errors", "Enter valid email in Email field (valid_user@example.com)", "Enter valid password in Password field (Valid#123)", "Click 'Login' button once and observe loading indicator", "Intercept /api/auth/login in DevTools and confirm 200 response", "Verify JWT/session cookie is stored (Application → Cookies)", "Confirm redirect to Dashboard and that user's display name is shown" ], expected:"Authentication succeeds with HTTP 200; user lands on Dashboard; session cookie is set; no PII leaks in URL.", postconditions:"User is logged-in; active session exists.", testData:"email: valid_user@example.com, password: Valid#123", tags:["login","auth","smoke"], outcome:"positive"},
+  {id:"TC-FUNC-002", title:"User can log out from header", category:"functional", priority:"High", type:"Positive / Functional", preconditions:"User is logged-in and currently on Dashboard.", steps:[ "Open header profile menu", "Click 'Logout'", "Observe network call to /api/auth/logout → 204/200", "Verify session cookie is cleared from storage", "Confirm redirect to /login page", "Attempt to open a protected route via URL (e.g., /dashboard)", "Verify redirect back to /login (no access)" ], expected:"Session invalidated; cookies/tokens cleared; protected routes inaccessible.", postconditions:"No active session remains; user at Login page.", tags:["logout","session","smoke"], outcome:"positive"},
+  {id:"TC-FUNC-003", title:"Password reset flow works end-to-end", category:"functional", priority:"High", type:"Positive / Flow", preconditions:"Registered email exists; mail service operational.", steps:["Open 'Forgot password'","Submit registered email","Open test mailbox and copy token","Open reset link","Set new strong password","Login with new password"], expected:"Reset email arrives; token accepted; old password rejected; new password works.", postconditions:"User logged in with new credentials.", tags:["auth","password","flow"], outcome:"positive"},
+  {id:"TC-FUNC-004", title:"Add to cart and checkout with card", category:"functional", priority:"High", type:"Positive / Functional", preconditions:"User account with verified address and valid test card.", steps:["Login","Add product to cart","Proceed to checkout","Enter card 4242 4242 4242 4242","Confirm payment"], expected:"Payment succeeds; order created; confirmation email sent.", postconditions:"Order in 'Processing' state.", tags:["checkout","payments","smoke"], outcome:"positive"},
+  {id:"TC-NEG-001", title:"Login blocked with invalid password", category:"negative", priority:"High", type:"Negative / Validation", preconditions:"Existing user email.", steps:["Open /login","Enter valid email and wrong password","Click Login"], expected:"HTTP 401, inline error shown; no cookie set.", postconditions:"No session.", tags:["login","security"], outcome:"negative"},
+  {id:"TC-NEG-002", title:"Prevent duplicate order on double-click", category:"negative", priority:"High", type:"Negative / Functional", preconditions:"Cart has items.", steps:["Open checkout","Double-click 'Place order' rapidly"], expected:"Only one order created; second request idempotent (429/409 ignored).", postconditions:"Single order exists.", tags:["checkout","debounce","idempotency"], outcome:"negative"},
+  {id:"TC-NEG-003", title:"Reject expired password reset token", category:"negative", priority:"High", type:"Negative / Security", preconditions:"Password reset requested 40+ minutes ago.", steps:["Open old reset link"], expected:"Token rejected with friendly error and CTA to resend.", postconditions:"Account unchanged.", tags:["auth","security"], outcome:"negative"},
+  {id:"TC-REG-001", title:"Search results paginate after >50 items", category:"regression", priority:"Medium", type:"Regression / Performance", preconditions:"Dataset with >200 results.", steps:["Search popular keyword","Scroll to load more"], expected:"Pagination/lazy-load triggers under 3s.", postconditions:"N/A", tags:["search","pagination"], outcome:"positive"},
+  {id:"TC-REG-002", title:"Wishlist persists after relogin", category:"regression", priority:"Medium", type:"Regression / Functional", preconditions:"Wishlist has items.", steps:["Logout","Login","Open wishlist"], expected:"Items remain.", postconditions:"N/A", tags:["wishlist","persistence"], outcome:"positive"},
+  {id:"TC-A11Y-001", title:"Error messages announced via ARIA live", category:"accessibility", priority:"Medium", type:"Accessibility", preconditions:"Screen reader enabled.", steps:["Submit invalid form","Listen for announcement"], expected:"Errors are read once in polite/assertive region.", postconditions:"N/A", tags:["aria","sr"], outcome:"positive"},
+  {id:"TC-A11Y-002", title:"Focus moves to first invalid field", category:"accessibility", priority:"Medium", type:"Accessibility", preconditions:"Keyboard only.", steps:["Leave first required empty","Submit"], expected:"Focus jumps to first invalid input.", postconditions:"N/A", tags:["focus","validation"], outcome:"positive"},
+  {id:"TC-A11Y-003", title:"Modal traps focus with ESC to close", category:"accessibility", priority:"Medium", type:"Accessibility", preconditions:"Any modal open.", steps:["Tab through controls","Press ESC"], expected:"Focus stays inside; ESC closes; focus returns to trigger.", postconditions:"N/A", tags:["modal","keyboard"], outcome:"positive"},
+  {id:"TC-PERF-001", title:"LCP under 2.5s on fast 3G", category:"performance", priority:"Medium", type:"Web Vitals", preconditions:"Home page, throttled network.", steps:["Throttle Fast 3G","Load home page","Record LCP"], expected:"LCP ≤ 2.5s.", postconditions:"N/A", tags:["web-vitals","lcp"], outcome:"positive"},
+  {id:"TC-PERF-002", title:"Charts unmount without memory leak", category:"performance", priority:"Medium", type:"Performance", preconditions:"Dashboard with charts.", steps:["Switch tabs 50 times","Profile memory"], expected:"Heap returns near baseline.", postconditions:"N/A", tags:["memory","charts"], outcome:"positive"},
+  {id:"TC-VAL-001", title:"Reject future Date of Birth", category:"functional", priority:"High", type:"Validation", preconditions:"Registration form.", steps:["Enter 2035-01-01 in DOB","Submit"], expected:"Inline error and server-side 422.", postconditions:"No account created.", tags:["validation","dob"], outcome:"negative"},
+  {id:"TC-VAL-002", title:"Email must contain @ and domain", category:"functional", priority:"High", type:"Validation", preconditions:"Registration form.", steps:["Enter 'test@' in email","Submit"], expected:"Error shown; no POST.", postconditions:"N/A", tags:["validation","email"], outcome:"negative"},
+  {id:"TC-VAL-003", title:"Quantity cannot be negative", category:"functional", priority:"High", type:"Validation", preconditions:"Cart with one item.", steps:["Set qty to -1","Update cart"], expected:"Qty resets to 1 with error.", postconditions:"N/A", tags:["cart","validation"], outcome:"negative"},
+  {id:"TC-SEC-001", title:"Password not revealed on failed login", category:"regression", priority:"High", type:"Security", preconditions:"Login page.", steps:["Enter wrong creds","Submit"], expected:"Password stays masked at all times.", postconditions:"N/A", tags:["security","privacy"], outcome:"positive"},
+  {id:"TC-SEC-002", title:"Invalidate all sessions after password change", category:"regression", priority:"High", type:"Security", preconditions:"Two active sessions.", steps:["Change password on A","Use B to call protected API"], expected:"B is rejected (401).", postconditions:"N/A", tags:["jwt","sessions"], outcome:"positive"},
+  {id:"TC-SEC-003", title:"CSP header blocks inline scripts", category:"regression", priority:"High", type:"Security", preconditions:"Any page.", steps:["Inspect headers","Attempt inline <script> execution"], expected:"Blocked by CSP; console shows violation.", postconditions:"N/A", tags:["csp","xss"], outcome:"positive"},
+  {id:"TC-SMK-001", title:"App shell loads with no console errors", category:"functional", priority:"Medium", type:"Smoke", preconditions:"Fresh tab.", steps:["Open base URL","Check console"], expected:"No errors (only info/warnings).", postconditions:"N/A", tags:["smoke"], outcome:"positive"},
+  {id:"TC-SMK-002", title:"Profile update saves and persists", category:"functional", priority:"Medium", type:"Smoke", preconditions:"Logged in.", steps:["Open profile","Change display name","Save","Reload"], expected:"New name persists.", postconditions:"N/A", tags:["profile"], outcome:"positive"},
+  {id:"TC-SMK-003", title:"Locale switch changes UI language", category:"functional", priority:"Low", type:"Smoke", preconditions:"Multiple locales configured.", steps:["Switch locale to DE","Reload"], expected:"Strings rendered in German; locale cookie set.", postconditions:"N/A", tags:["i18n"], outcome:"positive"}
+];
+
+// Helper functions
+const qs = (s, el=document) => el.querySelector(s);
+const qsa = (s, el=document) => [...el.querySelectorAll(s)];
+const elc = (tag, cls) => { const e = document.createElement(tag); if(cls) e.className = cls; return e; };
+
+function badge(cls, text){
+  const b = document.createElement('span');
+  b.className = 'badge ' + cls;
+  b.textContent = text; return b;
+}
+
+function setTab(tab){
+  qsa('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  
+  // Hide all sections
+  ['bugs-section','testcases-section','rtm-section','testplan-section','strategy-section','summary-section'].forEach(id => {
+    const el = qs('#'+id);
+    if(el) el.style.display = 'none';
+  });
+  
+  // Show active section
+  const activeSection = qs('#'+tab+'-section');
+  if(activeSection) {
+    activeSection.style.display = 'block';
+    if(activeSection.classList.contains('doc-section')) activeSection.classList.add('active');
+  }
+  
+  if(tab === 'bugs' || tab === 'testcases') updateStats();
+}
+
+function renderBugs(list){
+  const grid = qs('#bugsGrid');
+  grid.innerHTML = '';
+  list.forEach(item=>{
+    const card = elc('article','card');
+    card.tabIndex = 0;
+    card.setAttribute('role','button');
+    card.setAttribute('aria-expanded','false');
+
+    const head = elc('div','header');
+    const left = elc('div');
+    const id = elc('div','id'); id.textContent = item.id;
+    const title = elc('div','title'); title.textContent = item.title;
+    left.append(id,title);
+
+    const meta = elc('div','meta');
+    meta.append(
+      badge('category-' + item.category.replace('/','-').toLowerCase(), item.category),
+      badge('severity-' + item.severity.toLowerCase(), 'Severity: ' + item.severity),
+      badge('priority-' + item.priority.toLowerCase(), 'Priority: ' + item.priority)
+    );
+
+    const details = elc('div','details');
+    details.innerHTML = `
+      <div class="section"><h4>Summary</h4><p>${item.summary}</p></div>
+      <div class="section"><h4>Steps to Reproduce</h4><ol>${item.steps.map(s=>`<li>${s}</li>`).join('')}</ol></div>
+      <div class="section"><h4>Expected</h4><p>${item.expected}</p></div>
+      <div class="section"><h4>Actual</h4><p>${item.actual}</p></div>
+      <div class="section"><h4>Environment</h4>
+        <div class="env">
+          <div><strong>Device</strong><span>${item.environment.device}</span></div>
+          <div><strong>OS</strong><span>${item.environment.os}</span></div>
+          <div><strong>Browser</strong><span>${item.environment.browser}</span></div>
+        </div>
+      </div>`;
+
+    head.append(left);
+    card.append(head, meta, details);
+
+    const toggle = ()=>{
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', String(!expanded));
+      details.style.display = expanded ? 'none' : 'block';
+    };
+    card.addEventListener('click', e=>{ if(e.target.closest('.details')) return; toggle(); });
+    card.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+
+    grid.append(card);
+  });
+  qs('#bug-empty').style.display = list.length ? 'none' : 'block';
+  qs('#bugs-pill').textContent = String(list.length);
+}
+
+function renderTCs(list){
+  const grid = qs('#tcGrid');
+  grid.innerHTML = '';
+  list.forEach(tc=>{
+    const card = elc('article','card');
+    card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-expanded','false');
+
+    const head = elc('div','header');
+    const left = elc('div');
+    const id = elc('div','id'); id.textContent = tc.id;
+    const title = elc('div','title'); title.textContent = tc.title;
+    left.append(id,title);
+
+    const meta = elc('div','meta');
+    meta.append(
+      badge('category-' + (tc.category||'functional'), (tc.category||'functional').toUpperCase()),
+      badge('priority-' + (tc.priority||'Medium').toLowerCase(), 'Priority: ' + (tc.priority||'Medium')),
+      badge(tc.outcome==='negative' ? 'outcome-negative' : 'outcome-positive', (tc.outcome||'positive').toUpperCase())
+    );
+
+    const details = elc('div','details');
+    details.innerHTML = `
+      ${tc.type?`<div class="section"><h4>Type</h4><p>${tc.type}</p></div>`:''}
+      ${tc.preconditions?`<div class="section"><h4>Preconditions</h4><p>${tc.preconditions}</p></div>`:''}
+      ${tc.steps?`<div class="section"><h4>Steps</h4><ol>${tc.steps.map(s=>`<li>${s}</li>`).join('')}</ol></div>`:''}
+      ${tc.expected?`<div class="section"><h4>Expected</h4><p>${tc.expected}</p></div>`:''}
+      ${tc.postconditions?`<div class="section"><h4>Postconditions</h4><p>${tc.postconditions}</p></div>`:''}
+      ${tc.testData?`<div class="section"><h4>Test Data</h4><p>${tc.testData}</p></div>`:''}
+      ${tc.tags?`<div class="section"><h4>Tags</h4><p>${tc.tags.join(', ')}</p></div>`:''}
+    `;
+
+    head.append(left);
+    card.append(head, meta, details);
+
+    const toggle = ()=>{
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', String(!expanded));
+      details.style.display = expanded ? 'none' : 'block';
+    };
+    card.addEventListener('click', e=>{ if(e.target.closest('.details')) return; toggle(); });
+    card.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+
+    grid.append(card);
+  });
+  qs('#tc-empty').style.display = list.length ? 'none' : 'block';
+  qs('#tcs-pill').textContent = String(list.length);
+}
+
+function updateStats(){
+  const bugsSection = qs('#bugs-section');
+  const tcsSection = qs('#testcases-section');
+  
+  if(bugsSection && bugsSection.style.display !== 'none'){
+    qs('#bug-stats').innerHTML = `<div class="stat-card"><div class="stat-number">${qs('#bugs-pill').textContent}</div><div class="stat-label">Bugs in view</div></div>`;
+  }
+  
+  if(tcsSection && tcsSection.style.display !== 'none'){
+    qs('#tc-stats').innerHTML = `<div class="stat-card"><div class="stat-number">${qs('#tcs-pill').textContent}</div><div class="stat-label">Test cases in view</div></div>`;
+  }
+}
+
+// Filters
+let bugFilterCat = 'all';
+let tcFilterCat = 'all';
+let tcOutcome = 'all';
+let bugSearch = '';
+let tcSearch = '';
+
+function applyBugFilters(){
+  const list = bugs.filter(b => (
+    (bugFilterCat==='all' || b.category===bugFilterCat) &&
+    (b.id+ b.title + b.category).toLowerCase().includes(bugSearch)
+  ));
+  renderBugs(list);
+}
+
+function applyTCFilters(){
+  const list = testCases.filter(tc => {
+    const catOK = (tcFilterCat==='all' || (tc.category||'').toLowerCase()===tcFilterCat);
+    const outOK = (tcOutcome==='all' || (tc.outcome||'positive')===tcOutcome);
+    const s = (tc.id + tc.title + (tc.category||'')).toLowerCase();
+    return catOK && outOK && s.includes(tcSearch);
+  });
+  renderTCs(list);
+}
+
+function init(){
+  setTab('testcases');
+
+  // Bug filters
+  qsa('#bugs-section .filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      qsa('#bugs-section .filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      bugFilterCat = btn.dataset.filter;
+      applyBugFilters(); updateStats();
+    });
+  });
+  
+  const bugSearchEl = qs('#bug-search');
+  if(bugSearchEl) bugSearchEl.addEventListener('input', e=>{ bugSearch = e.target.value.toLowerCase(); applyBugFilters(); updateStats(); });
+
+  // TC filters
+  qsa('#tc-cat-filters .filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      qsa('#tc-cat-filters .filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      tcFilterCat = btn.dataset.filter;
+      applyTCFilters(); updateStats();
+    });
+  });
+  
+  qsa('#tc-outcome-filters .filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      qsa('#tc-outcome-filters .filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      tcOutcome = btn.dataset.outcome;
+      applyTCFilters(); updateStats();
+    });
+  });
+  
+  const tcSearchEl = qs('#tc-search');
+  if(tcSearchEl) tcSearchEl.addEventListener('input', e=>{ tcSearch = e.target.value.toLowerCase(); applyTCFilters(); updateStats(); });
+
+  // Tab switching
+  qsa('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{ setTab(btn.dataset.tab); });
+  });
+
+  applyBugFilters();
+  applyTCFilters();
+  updateStats();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
