@@ -25,7 +25,7 @@
     "react-slick": "^0.30.2"
   },
   "devDependencies": {
-    "plop": "^3.0.5",
+    "plop": "^4.0.0",
     "prettier": "^3.2.5"
   }
 }
