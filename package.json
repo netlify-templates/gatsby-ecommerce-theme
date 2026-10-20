@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-slick": "^0.30.2"
+    "react-slick": "^0.31.0"
   },
   "devDependencies": {
     "plop": "^3.0.5",
